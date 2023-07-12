@@ -29,6 +29,8 @@
 		54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */; };
 		54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0232A5C36F600E4E31F /* DVert.swift */; };
 		54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0252A5C375800E4E31F /* FixTestStore.swift */; };
+		54FC0EAC2A5D94E400BF38DB /* FixGraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* FixGraphScene.swift */; };
+		54FC0EAE2A5D94FD00BF38DB /* FixGraphSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* FixGraphSceneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateTestStore.swift; sourceTree = "<group>"; };
 		54EBB0232A5C36F600E4E31F /* DVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVert.swift; sourceTree = "<group>"; };
 		54EBB0252A5C375800E4E31F /* FixTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTestStore.swift; sourceTree = "<group>"; };
+		54FC0EAB2A5D94E400BF38DB /* FixGraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixGraphScene.swift; sourceTree = "<group>"; };
+		54FC0EAD2A5D94FD00BF38DB /* FixGraphSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixGraphSceneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54FC0EAA2A5D94C500BF38DB /* FixGraph */,
 				54EBB0182A5C336400E4E31F /* Pin */,
 				54EBB0132A5C331200E4E31F /* Degenerate */,
 				54EBB00E2A5C32F200E4E31F /* Fix */,
@@ -189,6 +194,15 @@
 				54EBB01F2A5C35B200E4E31F /* PinVector.swift */,
 			);
 			path = Pin;
+			sourceTree = "<group>";
+		};
+		54FC0EAA2A5D94C500BF38DB /* FixGraph */ = {
+			isa = PBXGroup;
+			children = (
+				54FC0EAB2A5D94E400BF38DB /* FixGraphScene.swift */,
+				54FC0EAD2A5D94FD00BF38DB /* FixGraphSceneView.swift */,
+			);
+			path = FixGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,11 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FC0EAE2A5D94FD00BF38DB /* FixGraphSceneView.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
 				54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */,
 				54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */,
+				54FC0EAC2A5D94E400BF38DB /* FixGraphScene.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
 				54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */,
 				54EBB0102A5C32FE00E4E31F /* FixScene.swift in Sources */,

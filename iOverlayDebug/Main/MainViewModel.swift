@@ -13,6 +13,7 @@ final class MainViewModel: ObservableObject {
     private let pinScene = PinScene(id: 0)
     private let degScene = DegenerateScene(id: 1)
     private let fixScene = FixScene(id: 2)
+    private let graphScene = FixGraphScene(id: 3)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -20,7 +21,8 @@ final class MainViewModel: ObservableObject {
     lazy var scenes: [SceneHandler] = [
         pinScene.handler,
         degScene.handler,
-        fixScene.handler
+        fixScene.handler,
+        graphScene.handler
     ]
 
     @Published
@@ -49,6 +51,8 @@ final class MainViewModel: ObservableObject {
             degScene.makeView()
         case 2:
             fixScene.makeView()
+        case 3:
+            graphScene.makeView()
         default:
             fatalError("scene not set")
         }
@@ -74,6 +78,8 @@ final class MainViewModel: ObservableObject {
             testStore = degScene.testStore
         case 2:
             testStore = fixScene.testStore
+        case 3:
+            testStore = graphScene.testStore
         default:
             break
         }
