@@ -84,6 +84,69 @@ final class FixTestStore: TestStore {
                 CGPoint(x:  10, y:  10),
                 CGPoint(x:  10, y: -10)
             ]),
+        .init(
+            name: "Simple 3",
+            path: [
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:   0.0, y:  20.0),
+                CGPoint(x:  10.0, y:   0.0),
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:  -5.0, y:   0.0),
+                CGPoint(x:   0.0, y:  10.0),
+                CGPoint(x:   5.0, y:   0.0),
+                CGPoint(x:   0.0, y: -10.0)
+            ]),
+        .init(
+            name: "Simple 4",
+            path: [
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:  10.0, y:   0.0),
+                CGPoint(x:   0.0, y: -10.0),
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:   0.0, y:  10.0),
+                CGPoint(x:  10.0, y:   0.0)
+            ]),
+        .init(
+            name: "Simple 5",
+            path: [
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:  10.0, y:   0.0),
+                CGPoint(x:   0.0, y: -10.0),
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:  10.0, y:   0.0),
+                CGPoint(x:   0.0, y:  10.0)
+            ]),
+        .init(
+            name: "Simple 6",
+            path: [
+                CGPoint(x:   0.0, y:   5.0),
+                CGPoint(x:   0.0, y:  -5.0),
+                CGPoint(x:   5.0, y:  -5.0),
+                CGPoint(x:   5.0, y:   0.0),
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x: -10.0, y:  10.0),
+                CGPoint(x:  10.0, y:  10.0),
+                CGPoint(x:  10.0, y: -10.0),
+                CGPoint(x:  -5.0, y: -10.0),
+                CGPoint(x:  -5.0, y:   5.0)
+            ]),
+        .init(
+            name: "Simple 7",
+            path: [
+                CGPoint(x:   0.0, y:  -5.0),
+                CGPoint(x:   0.0, y:   5.0),
+                CGPoint(x:  -5.0, y:   5.0),
+                CGPoint(x:  -5.0, y: -10.0),
+                CGPoint(x:  10.0, y: -10.0),
+                CGPoint(x:  10.0, y: -15.0),
+                CGPoint(x:  -5.0, y: -15.0),
+                CGPoint(x:  -5.0, y: -20.0),
+                CGPoint(x:   5.0, y: -20.0),
+                CGPoint(x:   5.0, y:  10.0),
+                CGPoint(x: -10.0, y:  10.0),
+                CGPoint(x: -10.0, y:   0.0),
+                CGPoint(x:  10.0, y:   0.0),
+                CGPoint(x:  10.0, y:  -5.0)
+            ]),
     ]
-    
 }

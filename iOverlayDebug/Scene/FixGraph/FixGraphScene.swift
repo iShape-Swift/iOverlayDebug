@@ -73,6 +73,7 @@ final class FixGraphScene: ObservableObject, SceneContainer {
     func solve() {
         let path = editor.points.map({ $0.fixVec })
         vectors.removeAll()
+        /*
         guard !path.isEmpty else { return }
         
         let graph = path.segGraph()
@@ -92,7 +93,7 @@ final class FixGraphScene: ObservableObject, SceneContainer {
             }
             id += 1
         }
-        
+        */
         self.objectWillChange.send()
     }
     

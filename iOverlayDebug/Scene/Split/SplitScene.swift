@@ -1,8 +1,8 @@
 //
-//  FixScene.swift
+//  SplitScene.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 10.07.2023.
+//  Created by Nail Sharipov on 13.07.2023.
 //
 
 import SwiftUI
@@ -10,22 +10,17 @@ import iDebug
 import iOverlay
 import iFixFloat
 
-struct FixSection: Identifiable {
-    
-    let id: Int
-    let color: Color
-    let path: [CGPoint]
-}
 
-final class FixScene: ObservableObject, SceneContainer {
+final class SplitScene: ObservableObject, SceneContainer {
 
     let id: Int
-    let title = "Fix"
+    let title = "Split"
     
     let fixTestStore = FixTestStore()
     var testStore: TestStore { fixTestStore }
-    let editor = ContourEditor(showIndex: true)
-    private (set) var sections: [FixSection] = []
+    let editor = ContourEditor(showIndex: false, color: .gray.opacity(0.3))
+    private (set) var clean: [CGPoint] = []
+    private (set) var dots: [TextDot] = []
     
     private var matrix: Matrix = .empty
     
@@ -47,8 +42,8 @@ final class FixScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> FixSceneView {
-        FixSceneView(scene: self)
+    func makeView() -> SplitSceneView {
+        SplitSceneView(scene: self)
     }
 
     func editorView() -> ContourEditorView {
@@ -60,7 +55,6 @@ final class FixScene: ObservableObject, SceneContainer {
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            // TODO validate convex
             self.editor.set(points: test.path)
             self.solve()
         }
@@ -69,7 +63,6 @@ final class FixScene: ObservableObject, SceneContainer {
     func didUpdateEditor() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            // TODO validate convex
             self.solve()
         }
     }
@@ -79,21 +72,22 @@ final class FixScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-//        let path = editor.points.map({ $0.fixVec })
-//        let paths = path.fix()
-//
-//        var secList = [FixSection]()
-//        var i = 0
-//        while i < paths.count {
-//            let points = matrix.screen(worldPoints: paths[i].map({ $0.cgPoint }))
-//            let section = FixSection(id: i, color: .init(index: i), path: points)
-//            secList.append(section)
-//            i += 1
-//        }
-//
-//        sections = secList
-//        
-//        self.objectWillChange.send()
+        let path = editor.points.map({ $0.fixVec })
+        let cleanPath = path.removedDegenerates()
+        let points = cleanPath.split()
+        dots.removeAll()
+        clean.removeAll()
+        guard !points.isEmpty else { return }
+        
+        for i in 0..<points.count {
+            let p = points[i]
+            let screen = matrix.screen(worldPoint: p.cgPoint)
+            dots.append(.init(id: i, center: screen, radius: 4, color: .red))
+        }
+
+        clean = matrix.screen(worldPoints: cleanPath.map({ $0.cgPoint }))
+
+        self.objectWillChange.send()
     }
     
     func printTest() {
