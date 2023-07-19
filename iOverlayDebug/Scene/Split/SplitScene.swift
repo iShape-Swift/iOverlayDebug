@@ -78,10 +78,10 @@ final class SplitScene: ObservableObject, SceneContainer {
         dots.removeAll()
         clean.removeAll()
         guard !points.isEmpty else { return }
-        
+
         for i in 0..<points.count {
             let p = points[i]
-            let screen = matrix.screen(worldPoint: p.cgPoint)
+            let screen = matrix.screen(worldPoint: p.point.cgPoint)
             dots.append(.init(id: i, center: screen, radius: 4, color: .red))
         }
 

@@ -1,19 +1,20 @@
 //
-//  PinSceneView.swift
+//  SGraphSceneView.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 10.07.2023.
+//  Created by Nail Sharipov on 11.07.2023.
 //
 
 import SwiftUI
+import iDebug
 
-struct PinSceneView: View {
+struct SGraphSceneView: View {
  
     @ObservedObject
-    var scene: PinScene
+    var scene: SGraphScene
     
     var body: some View {
-        return HStack {
+        HStack {
             GeometryReader { proxy in
                 content(size: proxy.size)
             }
@@ -31,16 +32,14 @@ struct PinSceneView: View {
                 Button("Solve") {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
-                HStack {
-                    Text("Polygon A").font(.title2).foregroundColor(PinScene.colorA)
-                    Text("Polygon B").font(.title2).foregroundColor(PinScene.colorB)
-                }
                 Spacer()
             }
-            scene.editorAView()
-            scene.editorBView()
-            ForEach(scene.pins) { pin in
-                PinVectorView(pin: pin)
+            scene.editorView()
+            ForEach(scene.segs) { seg in
+                GSegmentView(seg: seg)
+            }
+            ForEach(scene.dots) { dot in
+                TextDotView(dot: dot)
             }
         }.onAppear() {
             scene.onAppear()

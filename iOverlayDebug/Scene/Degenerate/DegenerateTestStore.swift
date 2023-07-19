@@ -2,7 +2,7 @@
 //  DegenerateTestStore.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 10.07.2023.
+//  Created by Nail Sharipov on 107.2023.
 //
 
 import iDebug
@@ -98,6 +98,30 @@ final class DegenerateTestStore: TestStore {
                 CGPoint(x:  10, y:   0),
                 CGPoint(x:  10, y: -10),
                 CGPoint(x: -10, y:  -5)
+            ]),
+        .init(
+            name: "Test 2",
+            path: [
+                CGPoint(x:  -5, y:  10),
+                CGPoint(x:  -5, y:   0),
+                CGPoint(x:  10, y:   0),
+                CGPoint(x:  10, y: -10),
+                CGPoint(x:  -5, y: -10),
+                CGPoint(x:  10, y: -10),
+                CGPoint(x:  10, y:   0),
+                CGPoint(x:  10, y:  10)
+            ]),
+        .init(
+            name: "Test 3",
+            path: [
+                CGPoint(x:  10, y: 15),
+                CGPoint(x: -10, y: 15),
+                CGPoint(x: -10, y: 25),
+                CGPoint(x:   0, y: 15),
+                CGPoint(x:  10, y: 15),
+                CGPoint(x:  10, y:  0),
+                CGPoint(x:   0, y:  0),
+                CGPoint(x:  10, y:  0)
             ])
     ]
     

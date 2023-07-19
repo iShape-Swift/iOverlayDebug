@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A22A60071D00EC8F70 /* SplitScene.swift */; };
 		544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A42A60072600EC8F70 /* SplitSceneView.swift */; };
+		54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A42A6404470064D79B /* AngleSortScene.swift */; };
+		54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A62A6404530064D79B /* AngleSortSceneView.swift */; };
+		54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A82A6405960064D79B /* AngleSortTestStore.swift */; };
+		54D744AB2A6451220064D79B /* GSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744AA2A6451220064D79B /* GSegment.swift */; };
 		54EBAFE92A5C315B00E4E31F /* iOverlayDebugApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBAFE82A5C315B00E4E31F /* iOverlayDebugApp.swift */; };
 		54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBAFEA2A5C315B00E4E31F /* MainView.swift */; };
 		54EBAFED2A5C315D00E4E31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54EBAFEC2A5C315D00E4E31F /* Assets.xcassets */; };
@@ -20,24 +24,23 @@
 		54EBB0092A5C32CF00E4E31F /* iFixFloat in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBB0082A5C32CF00E4E31F /* iFixFloat */; };
 		54EBB00B2A5C32CF00E4E31F /* iOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBB00A2A5C32CF00E4E31F /* iOverlay */; };
 		54EBB00D2A5C32CF00E4E31F /* iShape in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBB00C2A5C32CF00E4E31F /* iShape */; };
-		54EBB0102A5C32FE00E4E31F /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB00F2A5C32FE00E4E31F /* FixScene.swift */; };
-		54EBB0122A5C330700E4E31F /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0112A5C330700E4E31F /* FixSceneView.swift */; };
 		54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0142A5C332000E4E31F /* DegenerateScene.swift */; };
 		54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0162A5C332B00E4E31F /* DegenerateSceneView.swift */; };
-		54EBB01A2A5C336F00E4E31F /* PinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0192A5C336F00E4E31F /* PinScene.swift */; };
-		54EBB01C2A5C337700E4E31F /* PinSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB01B2A5C337700E4E31F /* PinSceneView.swift */; };
 		54EBB01E2A5C339E00E4E31F /* PinTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */; };
-		54EBB0202A5C35B200E4E31F /* PinVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB01F2A5C35B200E4E31F /* PinVector.swift */; };
 		54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */; };
 		54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0232A5C36F600E4E31F /* DVert.swift */; };
 		54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0252A5C375800E4E31F /* FixTestStore.swift */; };
-		54FC0EAC2A5D94E400BF38DB /* FixGraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* FixGraphScene.swift */; };
-		54FC0EAE2A5D94FD00BF38DB /* FixGraphSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* FixGraphSceneView.swift */; };
+		54FC0EAC2A5D94E400BF38DB /* SGraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* SGraphScene.swift */; };
+		54FC0EAE2A5D94FD00BF38DB /* SGraphSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* SGraphSceneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		544680A22A60071D00EC8F70 /* SplitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScene.swift; sourceTree = "<group>"; };
 		544680A42A60072600EC8F70 /* SplitSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitSceneView.swift; sourceTree = "<group>"; };
+		54D744A42A6404470064D79B /* AngleSortScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortScene.swift; sourceTree = "<group>"; };
+		54D744A62A6404530064D79B /* AngleSortSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortSceneView.swift; sourceTree = "<group>"; };
+		54D744A82A6405960064D79B /* AngleSortTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortTestStore.swift; sourceTree = "<group>"; };
+		54D744AA2A6451220064D79B /* GSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSegment.swift; sourceTree = "<group>"; };
 		54EBAFE52A5C315B00E4E31F /* iOverlayDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOverlayDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EBAFE82A5C315B00E4E31F /* iOverlayDebugApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOverlayDebugApp.swift; sourceTree = "<group>"; };
 		54EBAFEA2A5C315B00E4E31F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -51,19 +54,14 @@
 		54EBAFFE2A5C324200E4E31F /* SceneContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneContainer.swift; sourceTree = "<group>"; };
 		54EBB0012A5C325F00E4E31F /* TestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
 		54EBB0032A5C329600E4E31F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		54EBB00F2A5C32FE00E4E31F /* FixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixScene.swift; sourceTree = "<group>"; };
-		54EBB0112A5C330700E4E31F /* FixSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixSceneView.swift; sourceTree = "<group>"; };
 		54EBB0142A5C332000E4E31F /* DegenerateScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateScene.swift; sourceTree = "<group>"; };
 		54EBB0162A5C332B00E4E31F /* DegenerateSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateSceneView.swift; sourceTree = "<group>"; };
-		54EBB0192A5C336F00E4E31F /* PinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinScene.swift; sourceTree = "<group>"; };
-		54EBB01B2A5C337700E4E31F /* PinSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSceneView.swift; sourceTree = "<group>"; };
 		54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTestStore.swift; sourceTree = "<group>"; };
-		54EBB01F2A5C35B200E4E31F /* PinVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVector.swift; sourceTree = "<group>"; };
 		54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateTestStore.swift; sourceTree = "<group>"; };
 		54EBB0232A5C36F600E4E31F /* DVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVert.swift; sourceTree = "<group>"; };
 		54EBB0252A5C375800E4E31F /* FixTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTestStore.swift; sourceTree = "<group>"; };
-		54FC0EAB2A5D94E400BF38DB /* FixGraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixGraphScene.swift; sourceTree = "<group>"; };
-		54FC0EAD2A5D94FD00BF38DB /* FixGraphSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixGraphSceneView.swift; sourceTree = "<group>"; };
+		54FC0EAB2A5D94E400BF38DB /* SGraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGraphScene.swift; sourceTree = "<group>"; };
+		54FC0EAD2A5D94FD00BF38DB /* SGraphSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGraphSceneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +86,16 @@
 				544680A42A60072600EC8F70 /* SplitSceneView.swift */,
 			);
 			path = Split;
+			sourceTree = "<group>";
+		};
+		54D744A32A64041F0064D79B /* AngleSort */ = {
+			isa = PBXGroup;
+			children = (
+				54D744A42A6404470064D79B /* AngleSortScene.swift */,
+				54D744A62A6404530064D79B /* AngleSortSceneView.swift */,
+				54D744A82A6405960064D79B /* AngleSortTestStore.swift */,
+			);
+			path = AngleSort;
 			sourceTree = "<group>";
 		};
 		54EBAFDC2A5C315B00E4E31F = {
@@ -153,11 +161,10 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54D744A32A64041F0064D79B /* AngleSort */,
 				544680A12A60070D00EC8F70 /* Split */,
 				54FC0EAA2A5D94C500BF38DB /* FixGraph */,
-				54EBB0182A5C336400E4E31F /* Pin */,
 				54EBB0132A5C331200E4E31F /* Degenerate */,
-				54EBB00E2A5C32F200E4E31F /* Fix */,
 				54EBAFFE2A5C324200E4E31F /* SceneContainer.swift */,
 			);
 			path = Scene;
@@ -166,6 +173,8 @@
 		54EBB0002A5C325400E4E31F /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				54EBB0252A5C375800E4E31F /* FixTestStore.swift */,
+				54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */,
 				54EBB0012A5C325F00E4E31F /* TestStore.swift */,
 			);
 			path = Test;
@@ -176,16 +185,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		54EBB00E2A5C32F200E4E31F /* Fix */ = {
-			isa = PBXGroup;
-			children = (
-				54EBB00F2A5C32FE00E4E31F /* FixScene.swift */,
-				54EBB0112A5C330700E4E31F /* FixSceneView.swift */,
-				54EBB0252A5C375800E4E31F /* FixTestStore.swift */,
-			);
-			path = Fix;
 			sourceTree = "<group>";
 		};
 		54EBB0132A5C331200E4E31F /* Degenerate */ = {
@@ -199,22 +198,12 @@
 			path = Degenerate;
 			sourceTree = "<group>";
 		};
-		54EBB0182A5C336400E4E31F /* Pin */ = {
-			isa = PBXGroup;
-			children = (
-				54EBB0192A5C336F00E4E31F /* PinScene.swift */,
-				54EBB01B2A5C337700E4E31F /* PinSceneView.swift */,
-				54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */,
-				54EBB01F2A5C35B200E4E31F /* PinVector.swift */,
-			);
-			path = Pin;
-			sourceTree = "<group>";
-		};
 		54FC0EAA2A5D94C500BF38DB /* FixGraph */ = {
 			isa = PBXGroup;
 			children = (
-				54FC0EAB2A5D94E400BF38DB /* FixGraphScene.swift */,
-				54FC0EAD2A5D94FD00BF38DB /* FixGraphSceneView.swift */,
+				54FC0EAB2A5D94E400BF38DB /* SGraphScene.swift */,
+				54FC0EAD2A5D94FD00BF38DB /* SGraphSceneView.swift */,
+				54D744AA2A6451220064D79B /* GSegment.swift */,
 			);
 			path = FixGraph;
 			sourceTree = "<group>";
@@ -295,26 +284,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54FC0EAE2A5D94FD00BF38DB /* FixGraphSceneView.swift in Sources */,
+				54FC0EAE2A5D94FD00BF38DB /* SGraphSceneView.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
+				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
 				544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */,
 				54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */,
 				54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */,
-				54FC0EAC2A5D94E400BF38DB /* FixGraphScene.swift in Sources */,
+				54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */,
+				54FC0EAC2A5D94E400BF38DB /* SGraphScene.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
+				54D744AB2A6451220064D79B /* GSegment.swift in Sources */,
 				54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */,
-				54EBB0102A5C32FE00E4E31F /* FixScene.swift in Sources */,
 				54EBAFE92A5C315B00E4E31F /* iOverlayDebugApp.swift in Sources */,
-				54EBB0122A5C330700E4E31F /* FixSceneView.swift in Sources */,
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,
-				54EBB0202A5C35B200E4E31F /* PinVector.swift in Sources */,
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
-				54EBB01A2A5C336F00E4E31F /* PinScene.swift in Sources */,
 				54EBB01E2A5C339E00E4E31F /* PinTestStore.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,
-				54EBB01C2A5C337700E4E31F /* PinSceneView.swift in Sources */,
+				54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

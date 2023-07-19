@@ -10,21 +10,19 @@ import iDebug
 
 final class MainViewModel: ObservableObject {
 
-    private let pinScene = PinScene(id: 0)
-    private let degScene = DegenerateScene(id: 1)
-    private let fixScene = FixScene(id: 2)
-    private let graphScene = FixGraphScene(id: 3)
-    private let splitScene = SplitScene(id: 4)
+    private let degScene = DegenerateScene(id: 0)
+    private let graphScene = SGraphScene(id: 1)
+    private let splitScene = SplitScene(id: 2)
+    private let angleSortScene = AngleSortScene(id: 3)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
     
     lazy var scenes: [SceneHandler] = [
-        pinScene.handler,
         degScene.handler,
-        fixScene.handler,
         graphScene.handler,
-        splitScene.handler
+        splitScene.handler,
+        angleSortScene.handler
     ]
 
     @Published
@@ -48,15 +46,13 @@ final class MainViewModel: ObservableObject {
     @ViewBuilder var sceneView: some View {
         switch sceneId {
         case 0:
-            pinScene.makeView()
-        case 1:
             degScene.makeView()
-        case 2:
-            fixScene.makeView()
-        case 3:
+        case 1:
             graphScene.makeView()
-        case 4:
+        case 2:
             splitScene.makeView()
+        case 3:
+            angleSortScene.makeView()
         default:
             fatalError("scene not set")
         }
@@ -77,15 +73,13 @@ final class MainViewModel: ObservableObject {
         
         switch id {
         case 0:
-            testStore = pinScene.testStore
-        case 1:
             testStore = degScene.testStore
-        case 2:
-            testStore = fixScene.testStore
-        case 3:
+        case 1:
             testStore = graphScene.testStore
-        case 4:
+        case 2:
             testStore = splitScene.testStore
+        case 3:
+            testStore = angleSortScene.testStore
         default:
             break
         }

@@ -1,16 +1,17 @@
 //
-//  FixSceneView.swift
+//  AngleSortSceneView.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 10.07.2023.
+//  Created by Nail Sharipov on 16.07.2023.
 //
 
 import SwiftUI
+import iDebug
 
-struct FixSceneView: View {
+struct AngleSortSceneView: View {
  
     @ObservedObject
-    var scene: FixScene
+    var scene: AngleSortScene
     
     var body: some View {
         HStack {
@@ -34,11 +35,8 @@ struct FixSceneView: View {
                 Spacer()
             }
             scene.editorView()
-            ForEach(scene.sections) { sec in
-                Path { path in
-                    path.addLines(sec.path)
-                    path.closeSubpath()
-                }.fill(sec.color)
+            ForEach(scene.dots) { dot in
+                TextDotView(dot: dot)
             }
         }.onAppear() {
             scene.onAppear()
