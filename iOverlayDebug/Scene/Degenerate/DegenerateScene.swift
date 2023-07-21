@@ -17,7 +17,8 @@ final class DegenerateScene: ObservableObject, SceneContainer {
     
     let degTestStore = DegenerateTestStore()
     var testStore: TestStore { degTestStore }
-    let editor = ContourEditor(showIndex: true)
+    let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7))
+    private (set) var clean: [CGPoint] = []
     private (set) var verts: [DVert] = []
     
     private var matrix: Matrix = .empty
@@ -72,19 +73,25 @@ final class DegenerateScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        let path = editor.points.map({ $0.fixVec })
-        let clean = path.removedDegenerates()
-        debugPrint("clean: \(clean)")
-        let points = matrix.screen(worldPoints: clean.map({ $0.cgPoint }))
-
-        var i = 0
         verts.removeAll()
-        while i < points.count {
-            verts.append(.init(id: i, title: "", pos: points[i], color: .red))
+        clean.removeAll()
+        
+        defer {
+            self.objectWillChange.send()
+        }
+        
+        guard !editor.points.isEmpty else { return }
+        
+        let path = editor.points.map({ $0.fixVec })
+
+        let cleanPath = path.removedDegenerates()
+        clean = matrix.screen(worldPoints: cleanPath.map({ $0.cgPoint }))
+        
+        var i = 0
+        while i < clean.count {
+            verts.append(.init(id: i, title: "", pos: clean[i], color: .red))
             i += 1
         }
-
-        self.objectWillChange.send()
     }
     
     func printTest() {

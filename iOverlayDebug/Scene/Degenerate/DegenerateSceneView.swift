@@ -34,6 +34,10 @@ struct DegenerateSceneView: View {
                 Spacer()
             }
             scene.editorView()
+            Path() { path in
+                path.addLines(scene.clean)
+                path.closeSubpath()
+            }.stroke(style: .init(lineWidth: 2, lineJoin: .round)).foregroundColor(.orange)
             ForEach(scene.verts) { vert in
                 DVertView(vert: vert)
             }

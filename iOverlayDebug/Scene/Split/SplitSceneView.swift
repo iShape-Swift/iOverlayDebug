@@ -35,9 +35,15 @@ struct SplitSceneView: View {
                 Spacer()
             }
             Path() { path in
-                path.addLines(scene.clean)
-                path.closeSubpath()
-            }.stroke(style: .init(lineWidth: 4, lineJoin: .round)).foregroundColor(.yellow.opacity(0.7))
+                var i = 0
+                while i < scene.clean.count {
+                    let a = scene.clean[i]
+                    let b = scene.clean[i + 1]
+                    path.move(to: a)
+                    path.addLine(to: b)
+                    i += 2
+                }
+            }.stroke(style: .init(lineWidth: 4)).foregroundColor(.yellow.opacity(0.7))
             scene.editorView()
             ForEach(scene.dots) { dot in
                 TextDotView(dot: dot)

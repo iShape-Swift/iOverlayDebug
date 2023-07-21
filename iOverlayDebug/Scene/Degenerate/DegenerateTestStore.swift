@@ -122,6 +122,16 @@ final class DegenerateTestStore: TestStore {
                 CGPoint(x:  10, y:  0),
                 CGPoint(x:   0, y:  0),
                 CGPoint(x:  10, y:  0)
+            ]),
+        .init(
+            name: "Test 4",
+            path: [
+                CGPoint(x: -10, y:   0),
+                CGPoint(x:  10, y:   0),
+                CGPoint(x:   0, y: -10),
+                CGPoint(x: -10, y:   0),
+                CGPoint(x:  10, y:  20),
+                CGPoint(x:   0, y:  10)
             ])
     ]
     

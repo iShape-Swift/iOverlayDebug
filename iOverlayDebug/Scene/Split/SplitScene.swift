@@ -72,22 +72,41 @@ final class SplitScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        let path = editor.points.map({ $0.fixVec })
-        let cleanPath = path.removedDegenerates()
-        let points = cleanPath.split()
         dots.removeAll()
         clean.removeAll()
-        guard !points.isEmpty else { return }
+
+        defer {
+            self.objectWillChange.send()
+        }
+        
+        guard !editor.points.isEmpty else { return }
+        
+        let path = editor.points.map({ $0.fixVec })
+        var boolShape = BoolShape(capacity: 20)
+        boolShape.add(path: path)
+        boolShape.build()
+        let edges = boolShape.edges
+        
+        var set = Set<FixVec>()
+        for edge in edges {
+            set.insert(edge.a)
+            set.insert(edge.b)
+        }
+
+        let points = Array(set)
 
         for i in 0..<points.count {
             let p = points[i]
-            let screen = matrix.screen(worldPoint: p.point.cgPoint)
+            let screen = matrix.screen(worldPoint: p.cgPoint)
             dots.append(.init(id: i, center: screen, radius: 4, color: .red))
         }
 
-        clean = matrix.screen(worldPoints: cleanPath.map({ $0.cgPoint }))
-
-        self.objectWillChange.send()
+        for edge in edges {
+            let a = matrix.screen(worldPoint: edge.a.cgPoint)
+            let b = matrix.screen(worldPoint: edge.b.cgPoint)
+            clean.append(a)
+            clean.append(b)
+        }
     }
     
     func printTest() {
