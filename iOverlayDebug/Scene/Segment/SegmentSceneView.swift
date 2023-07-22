@@ -1,5 +1,5 @@
 //
-//  SGraphSceneView.swift
+//  SegmentSceneView.swift
 //  iOverlayDebug
 //
 //  Created by Nail Sharipov on 11.07.2023.
@@ -8,10 +8,10 @@
 import SwiftUI
 import iDebug
 
-struct SGraphSceneView: View {
+struct SegmentSceneView: View {
  
     @ObservedObject
-    var scene: SGraphScene
+    var scene: SegmentScene
     
     var body: some View {
         HStack {
@@ -36,10 +36,7 @@ struct SGraphSceneView: View {
             }
             scene.editorView()
             ForEach(scene.segs) { seg in
-                GSegmentView(seg: seg)
-            }
-            ForEach(scene.dots) { dot in
-                TextDotView(dot: dot)
+                SegmentView(seg: seg)
             }
         }.onAppear() {
             scene.onAppear()

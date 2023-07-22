@@ -12,7 +12,7 @@
 		54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A42A6404470064D79B /* AngleSortScene.swift */; };
 		54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A62A6404530064D79B /* AngleSortSceneView.swift */; };
 		54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A82A6405960064D79B /* AngleSortTestStore.swift */; };
-		54D744AB2A6451220064D79B /* GSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744AA2A6451220064D79B /* GSegment.swift */; };
+		54D744AB2A6451220064D79B /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744AA2A6451220064D79B /* SegmentView.swift */; };
 		54EBAFE92A5C315B00E4E31F /* iOverlayDebugApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBAFE82A5C315B00E4E31F /* iOverlayDebugApp.swift */; };
 		54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBAFEA2A5C315B00E4E31F /* MainView.swift */; };
 		54EBAFED2A5C315D00E4E31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54EBAFEC2A5C315D00E4E31F /* Assets.xcassets */; };
@@ -30,8 +30,8 @@
 		54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */; };
 		54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0232A5C36F600E4E31F /* DVert.swift */; };
 		54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0252A5C375800E4E31F /* FixTestStore.swift */; };
-		54FC0EAC2A5D94E400BF38DB /* SGraphScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* SGraphScene.swift */; };
-		54FC0EAE2A5D94FD00BF38DB /* SGraphSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* SGraphSceneView.swift */; };
+		54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */; };
+		54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 		54D744A42A6404470064D79B /* AngleSortScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortScene.swift; sourceTree = "<group>"; };
 		54D744A62A6404530064D79B /* AngleSortSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortSceneView.swift; sourceTree = "<group>"; };
 		54D744A82A6405960064D79B /* AngleSortTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortTestStore.swift; sourceTree = "<group>"; };
-		54D744AA2A6451220064D79B /* GSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSegment.swift; sourceTree = "<group>"; };
+		54D744AA2A6451220064D79B /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		54EBAFE52A5C315B00E4E31F /* iOverlayDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOverlayDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EBAFE82A5C315B00E4E31F /* iOverlayDebugApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOverlayDebugApp.swift; sourceTree = "<group>"; };
 		54EBAFEA2A5C315B00E4E31F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateTestStore.swift; sourceTree = "<group>"; };
 		54EBB0232A5C36F600E4E31F /* DVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVert.swift; sourceTree = "<group>"; };
 		54EBB0252A5C375800E4E31F /* FixTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTestStore.swift; sourceTree = "<group>"; };
-		54FC0EAB2A5D94E400BF38DB /* SGraphScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGraphScene.swift; sourceTree = "<group>"; };
-		54FC0EAD2A5D94FD00BF38DB /* SGraphSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGraphSceneView.swift; sourceTree = "<group>"; };
+		54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentScene.swift; sourceTree = "<group>"; };
+		54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSceneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,7 @@
 			children = (
 				54D744A32A64041F0064D79B /* AngleSort */,
 				544680A12A60070D00EC8F70 /* Split */,
-				54FC0EAA2A5D94C500BF38DB /* FixGraph */,
+				54FC0EAA2A5D94C500BF38DB /* Segment */,
 				54EBB0132A5C331200E4E31F /* Degenerate */,
 				54EBAFFE2A5C324200E4E31F /* SceneContainer.swift */,
 			);
@@ -198,14 +198,14 @@
 			path = Degenerate;
 			sourceTree = "<group>";
 		};
-		54FC0EAA2A5D94C500BF38DB /* FixGraph */ = {
+		54FC0EAA2A5D94C500BF38DB /* Segment */ = {
 			isa = PBXGroup;
 			children = (
-				54FC0EAB2A5D94E400BF38DB /* SGraphScene.swift */,
-				54FC0EAD2A5D94FD00BF38DB /* SGraphSceneView.swift */,
-				54D744AA2A6451220064D79B /* GSegment.swift */,
+				54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */,
+				54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */,
+				54D744AA2A6451220064D79B /* SegmentView.swift */,
 			);
-			path = FixGraph;
+			path = Segment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54FC0EAE2A5D94FD00BF38DB /* SGraphSceneView.swift in Sources */,
+				54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
@@ -293,9 +293,9 @@
 				54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */,
 				54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */,
 				54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */,
-				54FC0EAC2A5D94E400BF38DB /* SGraphScene.swift in Sources */,
+				54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
-				54D744AB2A6451220064D79B /* GSegment.swift in Sources */,
+				54D744AB2A6451220064D79B /* SegmentView.swift in Sources */,
 				54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */,
 				54EBAFE92A5C315B00E4E31F /* iOverlayDebugApp.swift in Sources */,
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,

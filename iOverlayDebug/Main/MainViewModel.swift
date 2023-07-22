@@ -11,7 +11,7 @@ import iDebug
 final class MainViewModel: ObservableObject {
 
     private let degScene = DegenerateScene(id: 0)
-    private let graphScene = SGraphScene(id: 1)
+    private let segmentScene = SegmentScene(id: 1)
     private let splitScene = SplitScene(id: 2)
     private let angleSortScene = AngleSortScene(id: 3)
     private var testStore: TestStore?
@@ -20,7 +20,7 @@ final class MainViewModel: ObservableObject {
     
     lazy var scenes: [SceneHandler] = [
         degScene.handler,
-        graphScene.handler,
+        segmentScene.handler,
         splitScene.handler,
         angleSortScene.handler
     ]
@@ -48,7 +48,7 @@ final class MainViewModel: ObservableObject {
         case 0:
             degScene.makeView()
         case 1:
-            graphScene.makeView()
+            segmentScene.makeView()
         case 2:
             splitScene.makeView()
         case 3:
@@ -75,7 +75,7 @@ final class MainViewModel: ObservableObject {
         case 0:
             testStore = degScene.testStore
         case 1:
-            testStore = graphScene.testStore
+            testStore = segmentScene.testStore
         case 2:
             testStore = splitScene.testStore
         case 3:

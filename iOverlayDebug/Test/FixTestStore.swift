@@ -68,11 +68,19 @@ final class FixTestStore: TestStore {
                 CGPoint(x:   0, y: -10)
             ]),
         .init(
-            name: "Simple 1",
+            name: "Simple 0",
             path: [
                 CGPoint(x: -20, y:   0),
                 CGPoint(x: -10, y:  15),
                 CGPoint(x:  10, y: -15),
+                CGPoint(x:  20, y:   0)
+            ]),
+        .init(
+            name: "Simple 1",
+            path: [
+                CGPoint(x: -20, y:   0),
+                CGPoint(x:  10, y:  15),
+                CGPoint(x: -10, y: -15),
                 CGPoint(x:  20, y:   0)
             ]),
         .init(
