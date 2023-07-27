@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A22A60071D00EC8F70 /* SplitScene.swift */; };
 		544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A42A60072600EC8F70 /* SplitSceneView.swift */; };
+		5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E02A6FC6A600E1B26C /* FixScene.swift */; };
+		5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */; };
+		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
 		54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A42A6404470064D79B /* AngleSortScene.swift */; };
 		54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A62A6404530064D79B /* AngleSortSceneView.swift */; };
 		54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A82A6405960064D79B /* AngleSortTestStore.swift */; };
@@ -30,6 +33,9 @@
 		54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */; };
 		54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0232A5C36F600E4E31F /* DVert.swift */; };
 		54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0252A5C375800E4E31F /* FixTestStore.swift */; };
+		54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED9D8E2A71A34100E5CBDB /* AngleClockWiseScene.swift */; };
+		54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED9D902A71A34B00E5CBDB /* AngleClockWiseSceneView.swift */; };
+		54ED9D932A71A46D00E5CBDB /* AngleClockWiseTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED9D922A71A46D00E5CBDB /* AngleClockWiseTestStore.swift */; };
 		54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */; };
 		54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +43,9 @@
 /* Begin PBXFileReference section */
 		544680A22A60071D00EC8F70 /* SplitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScene.swift; sourceTree = "<group>"; };
 		544680A42A60072600EC8F70 /* SplitSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitSceneView.swift; sourceTree = "<group>"; };
+		5489C0E02A6FC6A600E1B26C /* FixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixScene.swift; sourceTree = "<group>"; };
+		5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixSceneView.swift; sourceTree = "<group>"; };
+		5489C0E52A6FCE5200E1B26C /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
 		54D744A42A6404470064D79B /* AngleSortScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortScene.swift; sourceTree = "<group>"; };
 		54D744A62A6404530064D79B /* AngleSortSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortSceneView.swift; sourceTree = "<group>"; };
 		54D744A82A6405960064D79B /* AngleSortTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortTestStore.swift; sourceTree = "<group>"; };
@@ -60,6 +69,9 @@
 		54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateTestStore.swift; sourceTree = "<group>"; };
 		54EBB0232A5C36F600E4E31F /* DVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVert.swift; sourceTree = "<group>"; };
 		54EBB0252A5C375800E4E31F /* FixTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTestStore.swift; sourceTree = "<group>"; };
+		54ED9D8E2A71A34100E5CBDB /* AngleClockWiseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleClockWiseScene.swift; sourceTree = "<group>"; };
+		54ED9D902A71A34B00E5CBDB /* AngleClockWiseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleClockWiseSceneView.swift; sourceTree = "<group>"; };
+		54ED9D922A71A46D00E5CBDB /* AngleClockWiseTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleClockWiseTestStore.swift; sourceTree = "<group>"; };
 		54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentScene.swift; sourceTree = "<group>"; };
 		54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSceneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +98,23 @@
 				544680A42A60072600EC8F70 /* SplitSceneView.swift */,
 			);
 			path = Split;
+			sourceTree = "<group>";
+		};
+		5489C0DF2A6FC69400E1B26C /* Fix */ = {
+			isa = PBXGroup;
+			children = (
+				5489C0E02A6FC6A600E1B26C /* FixScene.swift */,
+				5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */,
+			);
+			path = Fix;
+			sourceTree = "<group>";
+		};
+		5489C0E42A6FCE3E00E1B26C /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				5489C0E52A6FCE5200E1B26C /* XShape.swift */,
+			);
+			path = Shape;
 			sourceTree = "<group>";
 		};
 		54D744A32A64041F0064D79B /* AngleSort */ = {
@@ -119,6 +148,7 @@
 		54EBAFE72A5C315B00E4E31F /* iOverlayDebug */ = {
 			isa = PBXGroup;
 			children = (
+				5489C0E42A6FCE3E00E1B26C /* Shape */,
 				54EBB0002A5C325400E4E31F /* Test */,
 				54EBAFFD2A5C320500E4E31F /* Scene */,
 				54EBAFF72A5C317400E4E31F /* Main */,
@@ -161,6 +191,8 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54ED9D8D2A719BF100E5CBDB /* AngleClockWise */,
+				5489C0DF2A6FC69400E1B26C /* Fix */,
 				54D744A32A64041F0064D79B /* AngleSort */,
 				544680A12A60070D00EC8F70 /* Split */,
 				54FC0EAA2A5D94C500BF38DB /* Segment */,
@@ -196,6 +228,16 @@
 				54EBB0232A5C36F600E4E31F /* DVert.swift */,
 			);
 			path = Degenerate;
+			sourceTree = "<group>";
+		};
+		54ED9D8D2A719BF100E5CBDB /* AngleClockWise */ = {
+			isa = PBXGroup;
+			children = (
+				54ED9D8E2A71A34100E5CBDB /* AngleClockWiseScene.swift */,
+				54ED9D902A71A34B00E5CBDB /* AngleClockWiseSceneView.swift */,
+				54ED9D922A71A46D00E5CBDB /* AngleClockWiseTestStore.swift */,
+			);
+			path = AngleClockWise;
 			sourceTree = "<group>";
 		};
 		54FC0EAA2A5D94C500BF38DB /* Segment */ = {
@@ -286,6 +328,7 @@
 			files = (
 				54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
+				5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */,
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
@@ -294,13 +337,18 @@
 				54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */,
 				54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */,
 				54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */,
+				54ED9D932A71A46D00E5CBDB /* AngleClockWiseTestStore.swift in Sources */,
+				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
+				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
 				54D744AB2A6451220064D79B /* SegmentView.swift in Sources */,
 				54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */,
 				54EBAFE92A5C315B00E4E31F /* iOverlayDebugApp.swift in Sources */,
+				5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */,
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
 				54EBB01E2A5C339E00E4E31F /* PinTestStore.swift in Sources */,
+				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,
 				54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */,
 			);

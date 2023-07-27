@@ -1,8 +1,8 @@
 //
-//  SegmentScene.swift
+//  FixScene.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 11.07.2023.
+//  Created by Nail Sharipov on 25.07.2023.
 //
 
 import SwiftUI
@@ -10,16 +10,16 @@ import iDebug
 import iOverlay
 import iFixFloat
 
-
-final class SegmentScene: ObservableObject, SceneContainer {
+final class FixScene: ObservableObject, SceneContainer {
 
     let id: Int
-    let title = "Segment"
+    let title = "Fix"
     
     let fixTestStore = FixTestStore()
     var testStore: TestStore { fixTestStore }
-    let editor = ContourEditor(showIndex: false, color: .gray.opacity(0.3))
-    private (set) var segs: [SegmentData] = []
+    let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7))
+    var shapes: [XShape] = []
+    
     
     private var matrix: Matrix = .empty
     
@@ -41,8 +41,8 @@ final class SegmentScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> SegmentSceneView {
-        SegmentSceneView(scene: self)
+    func makeView() -> FixSceneView {
+        FixSceneView(scene: self)
     }
 
     func editorView() -> ContourEditorView {
@@ -54,6 +54,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            // TODO validate convex
             self.editor.set(points: test.path)
             self.solve()
         }
@@ -62,6 +63,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
     func didUpdateEditor() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            // TODO validate convex
             self.solve()
         }
     }
@@ -71,37 +73,25 @@ final class SegmentScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        let path = editor.points.map({ $0.fixVec })
-        segs.removeAll()
+        
+        shapes.removeAll()
         
         defer {
             self.objectWillChange.send()
         }
         
-        guard !path.isEmpty else { return }
+        guard !editor.points.isEmpty else { return }
+        
+        let path = editor.points.map({ $0.fixVec })
 
         var boolShape = BoolShape(capacity: 20)
         boolShape.add(path: path)
-        boolShape.build()
-        let segments = boolShape.buildSegments()
+        let list = boolShape.shapes()
 
-        var id = 0
-        for s in segments {
-            let start = matrix.screen(worldPoint: s.a.cgPoint)
-            let end = matrix.screen(worldPoint: s.b.cgPoint)
-            
-            segs.append(
-                SegmentData(
-                    id: id,
-                    start: start,
-                    end: end,
-                    isFillTop: s.fill == SegmentFillMask.subjectTop
-                )
-            )
-            
-            id += 1
+        for i in 0..<list.count {
+            let points = matrix.screen(worldPoints: list[i].map({ $0.cgPoint }))
+            shapes.append(XShape(id: i, paths: [points], color: Color(index: i)))
         }
-
     }
     
     func printTest() {
