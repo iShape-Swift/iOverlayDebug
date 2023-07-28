@@ -1,8 +1,8 @@
 //
-//  FixScene.swift
+//  ComplexScene.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 25.07.2023.
+//  Created by Nail Sharipov on 28.07.2023.
 //
 
 import SwiftUI
@@ -10,14 +10,14 @@ import iDebug
 import iOverlay
 import iFixFloat
 
-final class FixScene: ObservableObject, SceneContainer {
+final class ComplexScene: ObservableObject, SceneContainer {
 
     let id: Int
-    let title = "Fix"
+    let title = "Complex"
     
-    let fixTestStore = FixTestStore()
-    var testStore: TestStore { fixTestStore }
-    let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7))
+    let complexTestStore = ComplexTestStore()
+    var testStore: TestStore { complexTestStore }
+    var editors: [ContourEditor] = []
     var shapes: [XShape] = []
     
     
@@ -25,11 +25,7 @@ final class FixScene: ObservableObject, SceneContainer {
     
     init(id: Int) {
         self.id = id
-        fixTestStore.onUpdate = self.didUpdateTest
-        
-        editor.onUpdate = { [weak self] _ in
-            self?.didUpdateEditor()
-        }
+        complexTestStore.onUpdate = self.didUpdateTest
     }
     
     func initSize(screenSize: CGSize) {
@@ -41,21 +37,31 @@ final class FixScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> FixSceneView {
-        FixSceneView(scene: self)
+    func makeView() -> ComplexSceneView {
+        ComplexSceneView(scene: self)
     }
 
-    func editorView() -> ContourEditorView {
+    func editorView(editor: ContourEditor) -> ContourEditorView {
         editor.makeView(matrix: matrix)
     }
 
     func didUpdateTest() {
-        let test = fixTestStore.test
+        let test = complexTestStore.test
+
+        var newEditors = [ContourEditor]()
+        for path in test.paths {
+            let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7), showArrows: false)
+            editor.onUpdate = { [weak self] _ in
+                self?.didUpdateEditor()
+            }
+            editor.set(points: path)
+            newEditors.append(editor)
+        }
+        
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            // TODO validate convex
-            self.editor.set(points: test.path)
+            self.editors = newEditors
             self.solve()
         }
     }
@@ -80,12 +86,15 @@ final class FixScene: ObservableObject, SceneContainer {
             self.objectWillChange.send()
         }
         
-        guard !editor.points.isEmpty else { return }
+        guard !editors.isEmpty else { return }
         
-        let path = editor.points.map({ $0.fixVec })
-
         var boolShape = BoolShape(capacity: 20)
-        boolShape.add(path: path)
+        
+        for editor in editors {
+            let path = editor.points.map({ $0.fixVec })
+            boolShape.add(path: path)
+        }
+        
         let list = boolShape.shapes()
 
         for i in 0..<list.count {
@@ -104,7 +113,10 @@ final class FixScene: ObservableObject, SceneContainer {
     }
     
     func printTest() {
-        print("path: \(editor.points.prettyPrint())")
+        for editor in editors {
+            print("path \(editor.id): \(editor.points.prettyPrint())")
+            print("")
+        }
     }
     
 }
