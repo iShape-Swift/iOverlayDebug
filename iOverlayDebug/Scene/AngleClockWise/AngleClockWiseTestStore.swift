@@ -41,11 +41,11 @@ final class AngleClockWiseTestStore: TestStore {
         }
     }
     
-    var test: FixTest {
+    var test: AngleClockWiseTest {
         data[testId]
     }
     
-    let data: [FixTest] = [
+    let data: [AngleClockWiseTest] = [
         .init(
             name: "Test 1",
             path: [
@@ -70,6 +70,15 @@ final class AngleClockWiseTestStore: TestStore {
                 CGPoint(x:  10, y: -10),
                 CGPoint(x:   0, y: -20),
                 CGPoint(x:   0, y:  20)
+            ]),
+        .init(
+            name: "Test 4",
+            path: [
+                CGPoint(x:   0, y:   0),
+                CGPoint(x:   0, y: -10),
+                CGPoint(x:  10, y:   0),
+                CGPoint(x:   0, y:  10),
+                CGPoint(x: -10, y:   0)
             ])
     ]
 }

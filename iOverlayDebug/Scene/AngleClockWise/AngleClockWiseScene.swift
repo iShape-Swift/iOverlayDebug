@@ -16,7 +16,7 @@ final class AngleClockWiseScene: ObservableObject, SceneContainer {
     let id: Int
     let title = "AngleClockWise"
     
-    let angleSortTestStore = AngleSortTestStore()
+    let angleSortTestStore = AngleClockWiseTestStore()
     var testStore: TestStore { angleSortTestStore }
     let editor = PointsEditor(showIndex: true)
     private (set) var dots: [TextDot] = []
@@ -140,7 +140,7 @@ private extension Array where Element == FixVec {
         while i < count {
             let vi = self[i] - center
 
-            if v0.isCloserInRotation(to: vi, comparedTo: minVec, inClockWise: inClockWise) {
+            if v0.isCloserInRotation(to: vi, comparedTo: minVec) == inClockWise {
                 minVec = vi
                 minIndex = i
             }
@@ -155,7 +155,7 @@ private extension Array where Element == FixVec {
 private extension FixVec {
     
     // v, a, b vectors are multidirectional
-    func isCloserInRotation(to a: FixVec, comparedTo b: FixVec, inClockWise: Bool) -> Bool {
+    func isCloserInRotation(to a: FixVec, comparedTo b: FixVec) -> Bool {
         let crossA = self.unsafeCrossProduct(a)
         let crossB = self.unsafeCrossProduct(b)
 

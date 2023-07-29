@@ -95,7 +95,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
                     id: id,
                     start: start,
                     end: end,
-                    isFillTop: s.fill == SegmentFillMask.subjectTop
+                    isFillTop: s.fill == FillMask.subjectTop
                 )
             )
             

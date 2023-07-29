@@ -15,8 +15,9 @@ final class MainViewModel: ObservableObject {
     private let splitScene = SplitScene(id: 2)
     private let fixScene = FixScene(id: 3)
     private let complexScene = ComplexScene(id: 4)
-    private let angleSortScene = AngleSortScene(id: 5)
-    private let angleClockWiseScene = AngleClockWiseScene(id: 6)
+    private let twoSplitScene = TwoSplitScene(id: 5)
+    private let angleSortScene = AngleSortScene(id: 6)
+    private let angleClockWiseScene = AngleClockWiseScene(id: 7)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -27,6 +28,7 @@ final class MainViewModel: ObservableObject {
         splitScene.handler,
         fixScene.handler,
         complexScene.handler,
+        twoSplitScene.handler,
         angleSortScene.handler,
         angleClockWiseScene.handler
     ]
@@ -62,8 +64,10 @@ final class MainViewModel: ObservableObject {
         case 4:
             complexScene.makeView()
         case 5:
-            angleSortScene.makeView()
+            twoSplitScene.makeView()
         case 6:
+            angleSortScene.makeView()
+        case 7:
             angleClockWiseScene.makeView()
         default:
             fatalError("scene not set")
@@ -95,8 +99,10 @@ final class MainViewModel: ObservableObject {
         case 4:
             testStore = complexScene.testStore
         case 5:
-            testStore = angleSortScene.testStore
+            testStore = twoSplitScene.testStore
         case 6:
+            testStore = angleSortScene.testStore
+        case 7:
             testStore = angleClockWiseScene.testStore
         default:
             break

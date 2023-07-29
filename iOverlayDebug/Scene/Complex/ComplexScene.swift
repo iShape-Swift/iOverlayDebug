@@ -100,15 +100,23 @@ final class ComplexScene: ObservableObject, SceneContainer {
         for i in 0..<list.count {
             let color = Color(index: i)
             let item = list[i]
-            var paths = [[CGPoint]]()
+
+            let hull = matrix.screen(worldPoints: item.contour.map({ $0.cgPoint }))
             
-            paths.append(matrix.screen(worldPoints: item.contour.map({ $0.cgPoint })))
-            
+            var holes = [[CGPoint]]()
             for hole in item.holes {
-                paths.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
+                holes.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
             }
 
-            shapes.append(XShape(id: i, paths: paths, color: color))
+            shapes.append(
+                XShape(
+                    id: i,
+                    hull: hull,
+                    holes: holes,
+                    color: color,
+                    fillColor: color.opacity(0.5)
+                )
+            )
         }
     }
     

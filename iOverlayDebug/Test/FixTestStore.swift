@@ -347,6 +347,120 @@ final class FixTestStore: TestStore {
                 CGPoint(x:   0, y:  10)
             ]),
         .init(
+            name: "Simple 21",
+            path: [
+                CGPoint(x:   5, y:  -5),
+                CGPoint(x: -12, y:  24),
+                CGPoint(x:  -5, y:   5),
+                CGPoint(x:  20, y:  -3),
+                CGPoint(x:  10, y: -10),
+                CGPoint(x:  10, y: -15),
+                CGPoint(x:  -5, y: -15),
+                CGPoint(x:  -5, y: -20),
+                CGPoint(x:  -1, y:  19),
+                CGPoint(x:   5, y:  10),
+                CGPoint(x: -10, y:  10),
+                CGPoint(x: -10, y:   0),
+                CGPoint(x: -12, y:  24),
+                CGPoint(x:  10, y:  -5)
+            ]),
+        .init(
+            name: "Simple 22",
+            path: [
+                CGPoint(x:  15, y:  25),
+                CGPoint(x: -12, y:  20),
+                CGPoint(x:  -5, y:   0),
+                CGPoint(x:  -5, y:  -9),
+                CGPoint(x:  -5, y: -15),
+                CGPoint(x:  -5, y: -22),
+                CGPoint(x:  -5, y: -25),
+                CGPoint(x:   0, y: -25),
+                CGPoint(x:   0, y:  30),
+                CGPoint(x:  10, y:  10),
+                CGPoint(x:  10, y:   0),
+                CGPoint(x: -11, y:   0),
+                CGPoint(x: -12, y:  20),
+                CGPoint(x:  15, y:  20)
+            ]),
+        .init(
+            name: "Simple 23",
+            path: [
+                CGPoint(x:  15, y:  25),
+                CGPoint(x: -12, y:  20),
+                CGPoint(x:  -5, y:   0),
+                CGPoint(x:   0, y:  30),
+                CGPoint(x:  10, y:  10),
+                CGPoint(x:  10, y:   0),
+                CGPoint(x: -11, y:   0),
+                CGPoint(x: -12, y:  20),
+                CGPoint(x:  15, y:  20)
+            ]),
+        .init(
+            name: "Simple 24",
+            path: [
+                CGPoint(x:  10, y:  20),
+                CGPoint(x: -10, y:   0),
+                CGPoint(x: -10, y:  10),
+                CGPoint(x:   0, y:  10),
+                CGPoint(x:   0, y: -10),
+                CGPoint(x: -10, y:   0),
+                CGPoint(x:  10, y:   0)
+            ]),
+        .init(
+            name: "Simple 25",
+            path: [
+                CGPoint(x:   5, y:  -5),
+                CGPoint(x:  -5, y:  21),
+                CGPoint(x:  -5, y:   5),
+                CGPoint(x:  20, y:   5),
+                CGPoint(x:  10, y: -10),
+                CGPoint(x:  10, y: -15),
+                CGPoint(x:  -5, y: -15),
+                CGPoint(x:   0, y: -20),
+                CGPoint(x:   0, y:  21),
+                CGPoint(x:  10, y:  14),
+                CGPoint(x: -10, y:  14),
+                CGPoint(x: -10, y:  -7),
+                CGPoint(x:  10, y:   5),
+                CGPoint(x:  10, y:  -5)
+            ]),
+        .init(
+            name: "Simple 26",
+            path: [
+                CGPoint(x:   5, y:  -5),
+                CGPoint(x:  -2, y: -26),
+                CGPoint(x:  -2, y:   5),
+                CGPoint(x:  20, y:   5),
+                CGPoint(x:  20, y: -15),
+                CGPoint(x:  -5, y: -15),
+                CGPoint(x:   0, y: -20),
+                CGPoint(x:   0, y:  25),
+            ]),
+        .init(
+            name: "Simple 27",
+            path: [
+                CGPoint(x:   5, y:  -5),
+                CGPoint(x:  -2, y: -26),
+                CGPoint(x:  -2, y:   5),
+                CGPoint(x:  20, y:   5),
+                CGPoint(x:  20, y: -15),
+                CGPoint(x:  -5, y: -15),
+                CGPoint(x:   0, y: -20),
+                CGPoint(x:   0, y:  -5),
+            ]),
+        .init(
+            name: "Simple 28",
+            path: [
+                CGPoint(x: 15.0, y: -4.0),
+                CGPoint(x: -5.0, y: -24.0),
+                CGPoint(x: -5.0, y: 5.0),
+                CGPoint(x: 20.0, y: 5.0),
+                CGPoint(x: 20.0, y: -15.0),
+                CGPoint(x: -9.0, y: -10.0),
+                CGPoint(x: -1, y: -20.0),
+                CGPoint(x: -1, y: 25.0)
+            ]),
+        .init(
             name: "Same Line 1",
             path: [
                 CGPoint(x:   5, y:   5),
