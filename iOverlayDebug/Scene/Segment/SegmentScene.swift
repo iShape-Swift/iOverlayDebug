@@ -18,7 +18,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
     
     let fixTestStore = FixTestStore()
     var testStore: TestStore { fixTestStore }
-    let editor = ContourEditor(showIndex: false, color: .gray.opacity(0.3))
+    let editor = ContourEditor(showIndex: false, color: .gray.opacity(0.2))
     private (set) var segs: [SegmentData] = []
     
     private var matrix: Matrix = .empty
@@ -82,8 +82,8 @@ final class SegmentScene: ObservableObject, SceneContainer {
 
         var boolShape = BoolShape(capacity: 20)
         boolShape.add(path: path)
-        boolShape.build()
-        let segments = boolShape.buildSegments()
+        _ = boolShape.fix()
+        let segments = boolShape.buildSegments(fillTop: .subjectTop, fillBottom: .subjectBottom)
 
         var id = 0
         for s in segments {
@@ -95,7 +95,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
                     id: id,
                     start: start,
                     end: end,
-                    isFillTop: s.fill == FillMask.subjectTop
+                    fill: s.fill
                 )
             )
             

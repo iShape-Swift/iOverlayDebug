@@ -1,8 +1,8 @@
 //
-//  TwoSplitScene.swift
+//  TwoSegmentScene.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 28.07.2023.
+//  Created by Nail Sharipov on 01.08.2023.
 //
 
 import SwiftUI
@@ -10,16 +10,17 @@ import iDebug
 import iOverlay
 import iFixFloat
 
-final class TwoSplitScene: ObservableObject, SceneContainer {
+
+final class TwoSegmentScene: ObservableObject, SceneContainer {
 
     let id: Int
-    let title = "TwoSplit"
+    let title = "Two Segment"
     
     let twoTestStore = TwoTestStore()
     var testStore: TestStore { twoTestStore }
     var subjEditors: [ContourEditor] = []
     var clipEditors: [ContourEditor] = []
-    private (set) var cross: [CGPoint] = []
+    private (set) var segs: [SegmentData] = []
     
     private var matrix: Matrix = .empty
     
@@ -37,8 +38,8 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> TwoSplitSceneView {
-        TwoSplitSceneView(scene: self)
+    func makeView() -> TwoSegmentSceneView {
+        TwoSegmentSceneView(scene: self)
     }
 
     func editorView(editor: ContourEditor) -> ContourEditorView {
@@ -89,22 +90,19 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        cross.removeAll()
+        segs.removeAll()
         
         defer {
             self.objectWillChange.send()
         }
         
         guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
-
-        var original = Set<FixVec>()
         
         var subjShape = BoolShape(capacity: 20)
         
         for editor in subjEditors {
             let path = editor.points.map({ $0.fixVec })
             subjShape.add(path: path)
-            original.formUnion(path)
         }
         
         var clipShape = BoolShape(capacity: 20)
@@ -112,23 +110,26 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
         for editor in clipEditors {
             let path = editor.points.map({ $0.fixVec })
             clipShape.add(path: path)
-            original.formUnion(path)
         }
         
-        _ = subjShape.overlay(&clipShape)
-        
-        let clipEdges = clipShape.edges
-        
-        var points = Set<FixVec>()
-        
-        for edge in clipEdges {
-            points.insert(edge.a)
-            points.insert(edge.b)
+        let segments = subjShape.segments(&clipShape)
+
+        var id = 0
+        for s in segments {
+            let start = matrix.screen(worldPoint: s.a.cgPoint)
+            let end = matrix.screen(worldPoint: s.b.cgPoint)
+            
+            segs.append(
+                SegmentData(
+                    id: id,
+                    start: start,
+                    end: end,
+                    fill: s.fill
+                )
+            )
+            
+            id += 1
         }
-        
-        points.subtract(original)
-        
-        cross = matrix.screen(worldPoints: points.map({ $0.cgPoint }))
     }
     
     func printTest() {
@@ -142,5 +143,4 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
             print("path \(editor.id): \(editor.points.prettyPrint())")
         }
     }
-    
 }

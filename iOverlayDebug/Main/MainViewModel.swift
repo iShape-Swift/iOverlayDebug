@@ -18,6 +18,8 @@ final class MainViewModel: ObservableObject {
     private let twoSplitScene = TwoSplitScene(id: 5)
     private let angleSortScene = AngleSortScene(id: 6)
     private let angleClockWiseScene = AngleClockWiseScene(id: 7)
+    private let starScene = StarScene(id: 8)
+    private let twoSegmentScene = TwoSegmentScene(id: 9)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -30,7 +32,9 @@ final class MainViewModel: ObservableObject {
         complexScene.handler,
         twoSplitScene.handler,
         angleSortScene.handler,
-        angleClockWiseScene.handler
+        angleClockWiseScene.handler,
+        starScene.handler,
+        twoSegmentScene.handler
     ]
 
     @Published
@@ -69,6 +73,10 @@ final class MainViewModel: ObservableObject {
             angleSortScene.makeView()
         case 7:
             angleClockWiseScene.makeView()
+        case 8:
+            starScene.makeView()
+        case 9:
+            twoSegmentScene.makeView()
         default:
             fatalError("scene not set")
         }
@@ -104,6 +112,10 @@ final class MainViewModel: ObservableObject {
             testStore = angleSortScene.testStore
         case 7:
             testStore = angleClockWiseScene.testStore
+        case 8:
+            testStore = starScene.testStore
+        case 9:
+            testStore = twoSegmentScene.testStore
         default:
             break
         }

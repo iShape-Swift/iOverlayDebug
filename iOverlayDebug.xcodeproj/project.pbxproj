@@ -12,6 +12,13 @@
 		5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E02A6FC6A600E1B26C /* FixScene.swift */; };
 		5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */; };
 		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
+		54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261162A78E315007BFBEF /* TwoSegmentScene.swift */; };
+		54D261192A78E31F007BFBEF /* TwoSegmentSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */; };
+		54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA172A77BE610011AAAF /* StarSceneView.swift */; };
+		54D5CA1A2A77BE690011AAAF /* StarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA192A77BE690011AAAF /* StarScene.swift */; };
+		54D5CA1C2A77BF4C0011AAAF /* StarTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */; };
+		54D5CA1F2A77DA430011AAAF /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA1E2A77DA430011AAAF /* OverlayScene.swift */; };
+		54D5CA212A77DA4D0011AAAF /* OverlaySceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA202A77DA4D0011AAAF /* OverlaySceneView.swift */; };
 		54D65DE02A73B472004EB898 /* ComplexScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65DDF2A73B472004EB898 /* ComplexScene.swift */; };
 		54D65DE22A73B47B004EB898 /* ComplexSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65DE12A73B47B004EB898 /* ComplexSceneView.swift */; };
 		54D65DE42A73B4E6004EB898 /* ComplexTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65DE32A73B4E6004EB898 /* ComplexTestStore.swift */; };
@@ -35,7 +42,6 @@
 		54EBB00D2A5C32CF00E4E31F /* iShape in Frameworks */ = {isa = PBXBuildFile; productRef = 54EBB00C2A5C32CF00E4E31F /* iShape */; };
 		54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0142A5C332000E4E31F /* DegenerateScene.swift */; };
 		54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0162A5C332B00E4E31F /* DegenerateSceneView.swift */; };
-		54EBB01E2A5C339E00E4E31F /* PinTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */; };
 		54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */; };
 		54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0232A5C36F600E4E31F /* DVert.swift */; };
 		54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBB0252A5C375800E4E31F /* FixTestStore.swift */; };
@@ -52,6 +58,13 @@
 		5489C0E02A6FC6A600E1B26C /* FixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixScene.swift; sourceTree = "<group>"; };
 		5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixSceneView.swift; sourceTree = "<group>"; };
 		5489C0E52A6FCE5200E1B26C /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
+		54D261162A78E315007BFBEF /* TwoSegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentScene.swift; sourceTree = "<group>"; };
+		54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentSceneView.swift; sourceTree = "<group>"; };
+		54D5CA172A77BE610011AAAF /* StarSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarSceneView.swift; sourceTree = "<group>"; };
+		54D5CA192A77BE690011AAAF /* StarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarScene.swift; sourceTree = "<group>"; };
+		54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTestStore.swift; sourceTree = "<group>"; };
+		54D5CA1E2A77DA430011AAAF /* OverlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
+		54D5CA202A77DA4D0011AAAF /* OverlaySceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySceneView.swift; sourceTree = "<group>"; };
 		54D65DDF2A73B472004EB898 /* ComplexScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexScene.swift; sourceTree = "<group>"; };
 		54D65DE12A73B47B004EB898 /* ComplexSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexSceneView.swift; sourceTree = "<group>"; };
 		54D65DE32A73B4E6004EB898 /* ComplexTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTestStore.swift; sourceTree = "<group>"; };
@@ -77,7 +90,6 @@
 		54EBB0032A5C329600E4E31F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		54EBB0142A5C332000E4E31F /* DegenerateScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateScene.swift; sourceTree = "<group>"; };
 		54EBB0162A5C332B00E4E31F /* DegenerateSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateSceneView.swift; sourceTree = "<group>"; };
-		54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTestStore.swift; sourceTree = "<group>"; };
 		54EBB0212A5C369200E4E31F /* DegenerateTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegenerateTestStore.swift; sourceTree = "<group>"; };
 		54EBB0232A5C36F600E4E31F /* DVert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVert.swift; sourceTree = "<group>"; };
 		54EBB0252A5C375800E4E31F /* FixTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixTestStore.swift; sourceTree = "<group>"; };
@@ -127,6 +139,34 @@
 				5489C0E52A6FCE5200E1B26C /* XShape.swift */,
 			);
 			path = Shape;
+			sourceTree = "<group>";
+		};
+		54D261152A78E302007BFBEF /* TwoSegment */ = {
+			isa = PBXGroup;
+			children = (
+				54D261162A78E315007BFBEF /* TwoSegmentScene.swift */,
+				54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */,
+			);
+			path = TwoSegment;
+			sourceTree = "<group>";
+		};
+		54D5CA162A77BE470011AAAF /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				54D5CA192A77BE690011AAAF /* StarScene.swift */,
+				54D5CA172A77BE610011AAAF /* StarSceneView.swift */,
+				54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */,
+			);
+			path = Star;
+			sourceTree = "<group>";
+		};
+		54D5CA1D2A77DA330011AAAF /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				54D5CA1E2A77DA430011AAAF /* OverlayScene.swift */,
+				54D5CA202A77DA4D0011AAAF /* OverlaySceneView.swift */,
+			);
+			path = Overlay;
 			sourceTree = "<group>";
 		};
 		54D65DDE2A73B43A004EB898 /* Complex */ = {
@@ -223,6 +263,9 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54D261152A78E302007BFBEF /* TwoSegment */,
+				54D5CA1D2A77DA330011AAAF /* Overlay */,
+				54D5CA162A77BE470011AAAF /* Star */,
 				54D65DE52A73FED5004EB898 /* TwoSplit */,
 				54D65DDE2A73B43A004EB898 /* Complex */,
 				54ED9D8D2A719BF100E5CBDB /* AngleClockWise */,
@@ -240,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				54EBB0252A5C375800E4E31F /* FixTestStore.swift */,
-				54EBB01D2A5C339E00E4E31F /* PinTestStore.swift */,
 				54EBB0012A5C325F00E4E31F /* TestStore.swift */,
 			);
 			path = Test;
@@ -362,7 +404,9 @@
 			files = (
 				54D65DEB2A74004D004EB898 /* TwoTestStore.swift in Sources */,
 				54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */,
+				54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */,
 				54D65DE72A73FEF0004EB898 /* TwoSplitScene.swift in Sources */,
+				54D5CA1C2A77BF4C0011AAAF /* StarTestStore.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
 				5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */,
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
@@ -376,7 +420,10 @@
 				54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */,
 				54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */,
 				54ED9D932A71A46D00E5CBDB /* AngleClockWiseTestStore.swift in Sources */,
+				54D261192A78E31F007BFBEF /* TwoSegmentSceneView.swift in Sources */,
+				54D5CA1A2A77BE690011AAAF /* StarScene.swift in Sources */,
 				54D65DE22A73B47B004EB898 /* ComplexSceneView.swift in Sources */,
+				54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */,
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
@@ -387,7 +434,8 @@
 				5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */,
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
-				54EBB01E2A5C339E00E4E31F /* PinTestStore.swift in Sources */,
+				54D5CA1F2A77DA430011AAAF /* OverlayScene.swift in Sources */,
+				54D5CA212A77DA4D0011AAAF /* OverlaySceneView.swift in Sources */,
 				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,
 				54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */,
