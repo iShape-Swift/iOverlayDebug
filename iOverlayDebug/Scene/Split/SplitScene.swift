@@ -84,7 +84,7 @@ final class SplitScene: ObservableObject, SceneContainer {
         let path = editor.points.map({ $0.fixVec })
         var boolShape = BoolShape(capacity: 20)
         boolShape.add(path: path)
-        _ = boolShape.fix()
+        _ = boolShape.fix(force: false)
         let edges = boolShape.edges
         
         var set = Set<FixVec>()

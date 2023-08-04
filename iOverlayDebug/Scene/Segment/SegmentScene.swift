@@ -82,7 +82,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
 
         var boolShape = BoolShape(capacity: 20)
         boolShape.add(path: path)
-        _ = boolShape.fix()
+        _ = boolShape.fix(force: false)
         let segments = boolShape.buildSegments(fillTop: .subjectTop, fillBottom: .subjectBottom)
 
         var id = 0
