@@ -80,10 +80,9 @@ final class SegmentScene: ObservableObject, SceneContainer {
         
         guard !path.isEmpty else { return }
 
-        var boolShape = BoolShape(capacity: 20)
-        boolShape.add(path: path)
-        _ = boolShape.fix(force: false)
-        let segments = boolShape.buildSegments(fillTop: .subjectTop, fillBottom: .subjectBottom)
+        var overlay = Overlay()
+        overlay.add(path: path, type: .subject)
+        let segments = overlay.buildSegments()
 
         var id = 0
         for s in segments {

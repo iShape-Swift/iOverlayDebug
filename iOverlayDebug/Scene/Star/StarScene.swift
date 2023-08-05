@@ -78,31 +78,24 @@ final class StarScene: ObservableObject, SceneContainer {
         self.starA = matrix.screen(worldPoints: pointsA)
         self.starB = matrix.screen(worldPoints: pointsB)
         
-        var original = Set<FixVec>()
-        
-        var subjShape = BoolShape(capacity: 20)
         let sA = pointsA.map({ $0.fixVec })
-        subjShape.add(path: sA)
-        original.formUnion(sA)
-
-        var clipShape = BoolShape(capacity: 20)
         let sB = pointsB.map({ $0.fixVec })
-        clipShape.add(path: sB)
-        original.formUnion(sB)
-
         
-        subjShape.overlay(&clipShape)
+//        var original = Set<FixVec>()
         
-        let clipEdges = clipShape.edges
+        var overlay = Overlay()
+        overlay.add(path: sA, type: .subject)
+        overlay.add(path: sB, type: .clip)
+        let segments = overlay.buildSegments()
         
         var points = Set<FixVec>()
         
-        for edge in clipEdges {
-            points.insert(edge.a)
-            points.insert(edge.b)
+        for seg in segments {
+            points.insert(seg.a)
+            points.insert(seg.b)
         }
         
-        points.subtract(original)
+//        points.subtract(original)
         
         cross = matrix.screen(worldPoints: points.map({ $0.cgPoint }))
         

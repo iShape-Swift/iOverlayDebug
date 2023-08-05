@@ -88,14 +88,14 @@ final class ComplexScene: ObservableObject, SceneContainer {
         
         guard !editors.isEmpty else { return }
         
-        var boolShape = BoolShape(capacity: 20)
-        
+        var overlay = Overlay()
+
         for editor in editors {
             let path = editor.points.map({ $0.fixVec })
-            boolShape.add(path: path)
+            overlay.add(path: path, type: .subject)
         }
-        
-        let list = boolShape.shapes()
+
+        let list = overlay.build().partitionEvenOddShapes()
 
         for i in 0..<list.count {
             let color = Color(index: i)

@@ -98,21 +98,19 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         
         guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
         
-        var subjShape = BoolShape(capacity: 20)
+        var overlay = Overlay()
         
         for editor in subjEditors {
             let path = editor.points.map({ $0.fixVec })
-            subjShape.add(path: path)
+            overlay.add(path: path, type: .subject)
         }
-        
-        var clipShape = BoolShape(capacity: 20)
         
         for editor in clipEditors {
             let path = editor.points.map({ $0.fixVec })
-            clipShape.add(path: path)
+            overlay.add(path: path, type: .clip)
         }
         
-        let segments = subjShape.segments(&clipShape)
+        let segments = overlay.buildSegments()
 
         var id = 0
         for s in segments {

@@ -84,9 +84,10 @@ final class FixScene: ObservableObject, SceneContainer {
         
         let path = editor.points.map({ $0.fixVec })
 
-        var boolShape = BoolShape(capacity: 20)
-        boolShape.add(path: path)
-        let list = boolShape.shapes()
+        var overlay = Overlay()
+        overlay.add(path: path, type: .subject)
+
+        let list = overlay.build().partitionEvenOddShapes()
 
         for i in 0..<list.count {
             let color = Color(index: i)

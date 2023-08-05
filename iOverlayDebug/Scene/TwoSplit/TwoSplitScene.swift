@@ -99,31 +99,27 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
 
         var original = Set<FixVec>()
         
-        var subjShape = BoolShape(capacity: 20)
+        var overlay = Overlay()
         
         for editor in subjEditors {
             let path = editor.points.map({ $0.fixVec })
-            subjShape.add(path: path)
+            overlay.add(path: path, type: .subject)
             original.formUnion(path)
         }
-        
-        var clipShape = BoolShape(capacity: 20)
         
         for editor in clipEditors {
             let path = editor.points.map({ $0.fixVec })
-            clipShape.add(path: path)
+            overlay.add(path: path, type: .clip)
             original.formUnion(path)
         }
         
-        _ = subjShape.overlay(&clipShape)
-        
-        let clipEdges = clipShape.edges
+        let segments = overlay.buildSegments()
         
         var points = Set<FixVec>()
         
-        for edge in clipEdges {
-            points.insert(edge.a)
-            points.insert(edge.b)
+        for seg in segments {
+            points.insert(seg.a)
+            points.insert(seg.b)
         }
         
         points.subtract(original)

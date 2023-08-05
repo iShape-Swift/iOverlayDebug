@@ -82,15 +82,16 @@ final class SplitScene: ObservableObject, SceneContainer {
         guard !editor.points.isEmpty else { return }
         
         let path = editor.points.map({ $0.fixVec })
-        var boolShape = BoolShape(capacity: 20)
-        boolShape.add(path: path)
-        _ = boolShape.fix(force: false)
-        let edges = boolShape.edges
+        
+        var overlay = Overlay()
+        overlay.add(path: path, type: .subject)
+
+        let segments = overlay.buildSegments()
         
         var set = Set<FixVec>()
-        for edge in edges {
-            set.insert(edge.a)
-            set.insert(edge.b)
+        for seg in segments {
+            set.insert(seg.a)
+            set.insert(seg.b)
         }
 
         let points = Array(set)
@@ -98,12 +99,12 @@ final class SplitScene: ObservableObject, SceneContainer {
         for i in 0..<points.count {
             let p = points[i]
             let screen = matrix.screen(worldPoint: p.cgPoint)
-            dots.append(.init(id: i, center: screen, radius: 4, color: .red))
+            dots.append(.init(id: i, center: screen, radius: 2.4, color: .red))
         }
 
-        for edge in edges {
-            let a = matrix.screen(worldPoint: edge.a.cgPoint)
-            let b = matrix.screen(worldPoint: edge.b.cgPoint)
+        for seg in segments {
+            let a = matrix.screen(worldPoint: seg.a.cgPoint)
+            let b = matrix.screen(worldPoint: seg.b.cgPoint)
             clean.append(a)
             clean.append(b)
         }

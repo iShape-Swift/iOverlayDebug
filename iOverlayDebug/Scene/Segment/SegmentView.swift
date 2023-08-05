@@ -14,7 +14,7 @@ struct SegmentData: Identifiable {
     let id: Int
     let start: CGPoint
     let end: CGPoint
-    let fill: FillMask
+    let fill: SegmentFill
 
 }
 
