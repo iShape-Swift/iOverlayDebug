@@ -247,7 +247,7 @@ final class TwoTestStore: TestStore {
                 ]
             ]),
         .init(
-            name: "Polygon With a Hole",
+            name: "Polygon With a Hole 0",
             subjPaths: [
                 [
                     CGPoint(x: -20, y: -20),
@@ -270,6 +270,209 @@ final class TwoTestStore: TestStore {
                     CGPoint(x: 5, y: -5)
                 ]
             ]),
+        .init(
+            name: "Polygon With a Hole 1",
+            subjPaths: [
+                [
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x: -10, y:  10),
+                    CGPoint(x:  10, y:  10),
+                    CGPoint(x:  10, y: -10)
+                ],
+                [
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: -5, y:  5),
+                    CGPoint(x:  5, y:  5),
+                    CGPoint(x:  5, y: -5)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -15, y: -15),
+                    CGPoint(x: -15, y:  15),
+                    CGPoint(x:  15, y:  15),
+                    CGPoint(x:  15, y: -15)
+                ]
+            ]),
+        .init(
+            name: "Polygon With a Hole 2",
+            subjPaths: [
+                [
+                    CGPoint(x: -15, y: -15),
+                    CGPoint(x: -15, y:  15),
+                    CGPoint(x:  15, y:  15),
+                    CGPoint(x:  15, y: -15)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x: -10, y:  10),
+                    CGPoint(x:  10, y:  10),
+                    CGPoint(x:  10, y: -10)
+                ],
+                [
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: -5, y:  5),
+                    CGPoint(x:  5, y:  5),
+                    CGPoint(x:  5, y: -5)
+                ]
+            ]),
+        .init(
+            name: "Many Holes in Subject",
+            subjPaths: [
+                [
+                    CGPoint(x: -20, y: -20),
+                    CGPoint(x: -20, y: 20),
+                    CGPoint(x: 20, y: 20),
+                    CGPoint(x: 20, y: -20)
+                ],
+                [
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x: -10, y: 0),
+                    CGPoint(x: 0, y: 0),
+                    CGPoint(x: 0, y: -10)
+                ],
+                [
+                    CGPoint(x: 0, y: 0),
+                    CGPoint(x: 0, y: 10),
+                    CGPoint(x: 10, y: 10),
+                    CGPoint(x: 10, y: 0)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: -5, y: 5),
+                    CGPoint(x: 5, y: 5),
+                    CGPoint(x: 5, y: -5)
+                ]
+            ]
+        ),
+        .init(
+            name: "Intersecting Holes in Subject and Clip",
+            subjPaths: [
+                [
+                    CGPoint(x: -20, y: -20),
+                    CGPoint(x: -20, y: 20),
+                    CGPoint(x: 20, y: 20),
+                    CGPoint(x: 20, y: -20)
+                ],
+                [
+                    CGPoint(x: -10, y: 10),
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x: 10, y: -10),
+                    CGPoint(x: 10, y: 10)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -15, y: -15),
+                    CGPoint(x: -15, y: 15),
+                    CGPoint(x: 15, y: 15),
+                    CGPoint(x: 15, y: -15)
+                ],
+                [
+                    CGPoint(x: -5, y: 5),
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: 5, y: -5),
+                    CGPoint(x: 5, y: 5)
+                ]
+            ]
+        ),
+        .init(
+            name: "Nested Holes",
+            subjPaths: [
+                [
+                    CGPoint(x: -30, y: -30),
+                    CGPoint(x: -30, y: 30),
+                    CGPoint(x: 30, y: 30),
+                    CGPoint(x: 30, y: -30)
+                ],
+                [
+                    CGPoint(x: -20, y: -20),
+                    CGPoint(x: -20, y: 20),
+                    CGPoint(x: 20, y: 20),
+                    CGPoint(x: 20, y: -20)
+                ],
+                [
+                    CGPoint(x: 0, y: 0),
+                    CGPoint(x: 0, y: 10),
+                    CGPoint(x: 10, y: 10),
+                    CGPoint(x: 10, y: 0)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: -5, y: 5),
+                    CGPoint(x: 5, y: 5),
+                    CGPoint(x: 5, y: -5)
+                ]
+            ]
+        ),
+        .init(
+            name: "Intersecting Holes",
+            subjPaths: [
+                [
+                    CGPoint(x: -20, y: -20),
+                    CGPoint(x: -20, y: 20),
+                    CGPoint(x: 20, y: 20),
+                    CGPoint(x: 20, y: -20)
+                ],
+                [
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x: -10, y: 0),
+                    CGPoint(x: 0, y: 0),
+                    CGPoint(x: 0, y: -10)
+                ],
+                [
+                    CGPoint(x: 0, y: -10),
+                    CGPoint(x: 0, y: 10),
+                    CGPoint(x: 10, y: 10),
+                    CGPoint(x: 10, y: -10)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: -5, y: 5),
+                    CGPoint(x: 5, y: 5),
+                    CGPoint(x: 5, y: -5)
+                ]
+            ]
+        ),
+        .init(
+            name: "Multiple Non-Intersecting Holes",
+            subjPaths: [
+                [
+                    CGPoint(x: -30, y: -30),
+                    CGPoint(x: -30, y: 30),
+                    CGPoint(x: 30, y: 30),
+                    CGPoint(x: 30, y: -30)
+                ],
+                [
+                    CGPoint(x: -15, y: -15),
+                    CGPoint(x: -15, y: -5),
+                    CGPoint(x: -5, y: -5),
+                    CGPoint(x: -5, y: -15)
+                ],
+                [
+                    CGPoint(x: 5, y: 5),
+                    CGPoint(x: 5, y: 15),
+                    CGPoint(x: 15, y: 15),
+                    CGPoint(x: 15, y: 5)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x: -10, y: 10),
+                    CGPoint(x: 10, y: 10),
+                    CGPoint(x: 10, y: -10)
+                ]
+            ]
+        ),
         .init(
             name: "Close Intersections",
             subjPaths: [
@@ -342,6 +545,63 @@ final class TwoTestStore: TestStore {
                 [
                     CGPoint(x:  10, y:  10),
                     CGPoint(x:  20, y:  20)
+                ]
+            ]
+        ),
+        .init(
+            name: "Disjoint Polygons",
+            subjPaths: [[CGPoint(x: -20, y: -20), CGPoint(x: -20, y: 20), CGPoint(x: -10, y: 20), CGPoint(x: -10, y: -20)]],
+            clipPaths: [[CGPoint(x: 10, y: -20), CGPoint(x: 10, y: 20), CGPoint(x: 20, y: 20), CGPoint(x: 20, y: -20)]]
+        ),
+        .init(
+            name: "Nested Polygons",
+            subjPaths: [[CGPoint(x: -15, y: -15), CGPoint(x: -15, y: 15), CGPoint(x: 15, y: 15), CGPoint(x: 15, y: -15)]],
+            clipPaths: [[CGPoint(x: -10, y: -10), CGPoint(x: -10, y: 10), CGPoint(x: 10, y: 10), CGPoint(x: 10, y: -10)]]
+        ),
+        .init(
+            name: "Touching Polygons",
+            subjPaths: [[CGPoint(x: -10, y: -10), CGPoint(x: -10, y: 10), CGPoint(x: 10, y: 10), CGPoint(x: 10, y: -10)]],
+            clipPaths: [[CGPoint(x: 10, y: -10), CGPoint(x: 10, y: 10), CGPoint(x: 30, y: 10), CGPoint(x: 30, y: -10)]]
+        ),
+        .init(
+            name: "Overlapping Polygons with Holes",
+            subjPaths: [
+                [CGPoint(x: -15, y: -15), CGPoint(x: -15, y: 15), CGPoint(x: 15, y: 15), CGPoint(x: 15, y: -15)],
+                [CGPoint(x: -5, y: -5), CGPoint(x: -5, y: 5), CGPoint(x: 5, y: 5), CGPoint(x: 5, y: -5)]
+            ],
+            clipPaths: [
+                [CGPoint(x: -10, y: -10), CGPoint(x: -10, y: 10), CGPoint(x: 20, y: 10), CGPoint(x: 20, y: -10)],
+                [CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 10), CGPoint(x: 10, y: 10), CGPoint(x: 10, y: 0)]
+            ]
+        ),
+        .init(
+            name: "Multiple Overlapping Polygons",
+            subjPaths: [[CGPoint(x: -20, y: -20), CGPoint(x: -20, y: 20), CGPoint(x: 20, y: 20), CGPoint(x: 20, y: -20)]],
+            clipPaths: [
+                [CGPoint(x: -10, y: -10), CGPoint(x: -10, y: 10), CGPoint(x: 10, y: 10), CGPoint(x: 10, y: -10)],
+                [CGPoint(x: -5, y: -5), CGPoint(x: -5, y: 5), CGPoint(x: 15, y: 5), CGPoint(x: 15, y: -5)]
+            ]
+        ),
+        .init(
+            name: "C + I Polygons Creating a Hole",
+            subjPaths: [
+                [
+                    CGPoint(x:   5, y:   5),
+                    CGPoint(x:   5, y:  10),
+                    CGPoint(x: -10, y:  10),
+                    CGPoint(x: -10, y: -10),
+                    CGPoint(x:   5, y: -10),
+                    CGPoint(x:   5, y:  -5),
+                    CGPoint(x:  -5, y:  -5),
+                    CGPoint(x:  -5, y:   5)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x:   5, y:  10),
+                    CGPoint(x:  10, y:  10),
+                    CGPoint(x:  10, y: -10),
+                    CGPoint(x:   5, y: -10)
                 ]
             ]
         ),

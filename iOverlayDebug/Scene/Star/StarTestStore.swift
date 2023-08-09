@@ -51,7 +51,7 @@ final class StarTestStore: TestStore {
         .init(
             name: "3 - Star",
             count: 3,
-            smallRadius: 5,
+            smallRadius: 7,
             bigRadius: 10
         ),
         .init(

@@ -14,6 +14,12 @@
 		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
 		54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261162A78E315007BFBEF /* TwoSegmentScene.swift */; };
 		54D261192A78E31F007BFBEF /* TwoSegmentSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */; };
+		54D4BCF72A838FE600443253 /* UnionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BCF62A838FE600443253 /* UnionScene.swift */; };
+		54D4BCF92A838FF300443253 /* UnionSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BCF82A838FF300443253 /* UnionSceneView.swift */; };
+		54D4BCFC2A83AF5600443253 /* DifferenceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BCFB2A83AF5600443253 /* DifferenceScene.swift */; };
+		54D4BCFE2A83AF6200443253 /* DifferenceSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BCFD2A83AF6200443253 /* DifferenceSceneView.swift */; };
+		54D4BD012A83C0ED00443253 /* XorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BD002A83C0ED00443253 /* XorScene.swift */; };
+		54D4BD032A83C0FA00443253 /* XorSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BD022A83C0FA00443253 /* XorSceneView.swift */; };
 		54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA172A77BE610011AAAF /* StarSceneView.swift */; };
 		54D5CA1A2A77BE690011AAAF /* StarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA192A77BE690011AAAF /* StarScene.swift */; };
 		54D5CA1C2A77BF4C0011AAAF /* StarTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */; };
@@ -29,6 +35,8 @@
 		54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A62A6404530064D79B /* AngleSortSceneView.swift */; };
 		54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744A82A6405960064D79B /* AngleSortTestStore.swift */; };
 		54D744AB2A6451220064D79B /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D744AA2A6451220064D79B /* SegmentView.swift */; };
+		54DB520F2A82AAE600C031A2 /* IntersectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB520E2A82AAE600C031A2 /* IntersectScene.swift */; };
+		54DB52112A82AAF300C031A2 /* IntersectSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB52102A82AAF300C031A2 /* IntersectSceneView.swift */; };
 		54EBAFE92A5C315B00E4E31F /* iOverlayDebugApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBAFE82A5C315B00E4E31F /* iOverlayDebugApp.swift */; };
 		54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EBAFEA2A5C315B00E4E31F /* MainView.swift */; };
 		54EBAFED2A5C315D00E4E31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54EBAFEC2A5C315D00E4E31F /* Assets.xcassets */; };
@@ -60,6 +68,12 @@
 		5489C0E52A6FCE5200E1B26C /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
 		54D261162A78E315007BFBEF /* TwoSegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentScene.swift; sourceTree = "<group>"; };
 		54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentSceneView.swift; sourceTree = "<group>"; };
+		54D4BCF62A838FE600443253 /* UnionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionScene.swift; sourceTree = "<group>"; };
+		54D4BCF82A838FF300443253 /* UnionSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionSceneView.swift; sourceTree = "<group>"; };
+		54D4BCFB2A83AF5600443253 /* DifferenceScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceScene.swift; sourceTree = "<group>"; };
+		54D4BCFD2A83AF6200443253 /* DifferenceSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceSceneView.swift; sourceTree = "<group>"; };
+		54D4BD002A83C0ED00443253 /* XorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorScene.swift; sourceTree = "<group>"; };
+		54D4BD022A83C0FA00443253 /* XorSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorSceneView.swift; sourceTree = "<group>"; };
 		54D5CA172A77BE610011AAAF /* StarSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarSceneView.swift; sourceTree = "<group>"; };
 		54D5CA192A77BE690011AAAF /* StarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarScene.swift; sourceTree = "<group>"; };
 		54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTestStore.swift; sourceTree = "<group>"; };
@@ -75,6 +89,8 @@
 		54D744A62A6404530064D79B /* AngleSortSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortSceneView.swift; sourceTree = "<group>"; };
 		54D744A82A6405960064D79B /* AngleSortTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleSortTestStore.swift; sourceTree = "<group>"; };
 		54D744AA2A6451220064D79B /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		54DB520E2A82AAE600C031A2 /* IntersectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectScene.swift; sourceTree = "<group>"; };
+		54DB52102A82AAF300C031A2 /* IntersectSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectSceneView.swift; sourceTree = "<group>"; };
 		54EBAFE52A5C315B00E4E31F /* iOverlayDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOverlayDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EBAFE82A5C315B00E4E31F /* iOverlayDebugApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOverlayDebugApp.swift; sourceTree = "<group>"; };
 		54EBAFEA2A5C315B00E4E31F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -150,6 +166,33 @@
 			path = TwoSegment;
 			sourceTree = "<group>";
 		};
+		54D4BCF52A838FCD00443253 /* Union */ = {
+			isa = PBXGroup;
+			children = (
+				54D4BCF62A838FE600443253 /* UnionScene.swift */,
+				54D4BCF82A838FF300443253 /* UnionSceneView.swift */,
+			);
+			path = Union;
+			sourceTree = "<group>";
+		};
+		54D4BCFA2A83AF4600443253 /* Difference */ = {
+			isa = PBXGroup;
+			children = (
+				54D4BCFB2A83AF5600443253 /* DifferenceScene.swift */,
+				54D4BCFD2A83AF6200443253 /* DifferenceSceneView.swift */,
+			);
+			path = Difference;
+			sourceTree = "<group>";
+		};
+		54D4BCFF2A83C0DF00443253 /* Xor */ = {
+			isa = PBXGroup;
+			children = (
+				54D4BD002A83C0ED00443253 /* XorScene.swift */,
+				54D4BD022A83C0FA00443253 /* XorSceneView.swift */,
+			);
+			path = Xor;
+			sourceTree = "<group>";
+		};
 		54D5CA162A77BE470011AAAF /* Star */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +240,15 @@
 				54D744A82A6405960064D79B /* AngleSortTestStore.swift */,
 			);
 			path = AngleSort;
+			sourceTree = "<group>";
+		};
+		54DB520D2A82AAD500C031A2 /* Intersect */ = {
+			isa = PBXGroup;
+			children = (
+				54DB520E2A82AAE600C031A2 /* IntersectScene.swift */,
+				54DB52102A82AAF300C031A2 /* IntersectSceneView.swift */,
+			);
+			path = Intersect;
 			sourceTree = "<group>";
 		};
 		54EBAFDC2A5C315B00E4E31F = {
@@ -263,6 +315,10 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54D4BCFF2A83C0DF00443253 /* Xor */,
+				54D4BCFA2A83AF4600443253 /* Difference */,
+				54D4BCF52A838FCD00443253 /* Union */,
+				54DB520D2A82AAD500C031A2 /* Intersect */,
 				54D261152A78E302007BFBEF /* TwoSegment */,
 				54D5CA1D2A77DA330011AAAF /* Overlay */,
 				54D5CA162A77BE470011AAAF /* Star */,
@@ -404,10 +460,14 @@
 			files = (
 				54D65DEB2A74004D004EB898 /* TwoTestStore.swift in Sources */,
 				54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */,
+				54D4BCFE2A83AF6200443253 /* DifferenceSceneView.swift in Sources */,
 				54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */,
 				54D65DE72A73FEF0004EB898 /* TwoSplitScene.swift in Sources */,
 				54D5CA1C2A77BF4C0011AAAF /* StarTestStore.swift in Sources */,
+				54D4BD032A83C0FA00443253 /* XorSceneView.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
+				54DB520F2A82AAE600C031A2 /* IntersectScene.swift in Sources */,
+				54D4BD012A83C0ED00443253 /* XorScene.swift in Sources */,
 				5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */,
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
@@ -415,6 +475,7 @@
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
 				544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */,
 				54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */,
+				54D4BCF92A838FF300443253 /* UnionSceneView.swift in Sources */,
 				54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */,
 				54D65DE92A73FEFB004EB898 /* TwoSplitSceneView.swift in Sources */,
 				54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */,
@@ -427,6 +488,7 @@
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
+				54D4BCF72A838FE600443253 /* UnionScene.swift in Sources */,
 				54D744AB2A6451220064D79B /* SegmentView.swift in Sources */,
 				54D65DE42A73B4E6004EB898 /* ComplexTestStore.swift in Sources */,
 				54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */,
@@ -434,7 +496,9 @@
 				5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */,
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
+				54D4BCFC2A83AF5600443253 /* DifferenceScene.swift in Sources */,
 				54D5CA1F2A77DA430011AAAF /* OverlayScene.swift in Sources */,
+				54DB52112A82AAF300C031A2 /* IntersectSceneView.swift in Sources */,
 				54D5CA212A77DA4D0011AAAF /* OverlaySceneView.swift in Sources */,
 				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,

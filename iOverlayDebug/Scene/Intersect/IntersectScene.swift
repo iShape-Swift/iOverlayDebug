@@ -1,8 +1,8 @@
 //
-//  ComplexScene.swift
+//  IntersectScene.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 28.07.2023.
+//  Created by Nail Sharipov on 08.08.2023.
 //
 
 import SwiftUI
@@ -10,22 +10,22 @@ import iDebug
 import iOverlay
 import iFixFloat
 
-final class ComplexScene: ObservableObject, SceneContainer {
+final class IntersectScene: ObservableObject, SceneContainer {
 
     let id: Int
-    let title = "Complex"
+    let title = "Intersect"
     
-    let complexTestStore = ComplexTestStore()
-    var testStore: TestStore { complexTestStore }
-    var editors: [ContourEditor] = []
-    var shapes: [XShape] = []
-    
+    let twoTestStore = TwoTestStore()
+    var testStore: TestStore { twoTestStore }
+    var subjEditors: [ContourEditor] = []
+    var clipEditors: [ContourEditor] = []
+    private (set) var shapes: [XShape] = []
     
     private var matrix: Matrix = .empty
     
     init(id: Int) {
         self.id = id
-        complexTestStore.onUpdate = self.didUpdateTest
+        twoTestStore.onUpdate = self.didUpdateTest
     }
     
     func initSize(screenSize: CGSize) {
@@ -37,8 +37,8 @@ final class ComplexScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> ComplexSceneView {
-        ComplexSceneView(scene: self)
+    func makeView() -> IntersectSceneView {
+        IntersectSceneView(scene: self)
     }
 
     func editorView(editor: ContourEditor) -> ContourEditorView {
@@ -46,22 +46,32 @@ final class ComplexScene: ObservableObject, SceneContainer {
     }
 
     func didUpdateTest() {
-        let test = complexTestStore.test
+        let test = twoTestStore.test
 
-        var newEditors = [ContourEditor]()
-        for path in test.paths {
-            let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7), showArrows: false)
+        var newSubjEditors = [ContourEditor]()
+        for path in test.subjPaths {
+            let editor = ContourEditor(showIndex: true, color: .red.opacity(0.7), showArrows: false)
             editor.onUpdate = { [weak self] _ in
                 self?.didUpdateEditor()
             }
             editor.set(points: path)
-            newEditors.append(editor)
+            newSubjEditors.append(editor)
         }
         
+        var newClipEditors = [ContourEditor]()
+        for path in test.clipPaths {
+            let editor = ContourEditor(showIndex: true, color: .blue.opacity(0.7), showArrows: false)
+            editor.onUpdate = { [weak self] _ in
+                self?.didUpdateEditor()
+            }
+            editor.set(points: path)
+            newClipEditors.append(editor)
+        }
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.editors = newEditors
+            self.subjEditors = newSubjEditors
+            self.clipEditors = newClipEditors
             self.solve()
         }
     }
@@ -79,24 +89,28 @@ final class ComplexScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        
         shapes.removeAll()
         
         defer {
             self.objectWillChange.send()
         }
         
-        guard !editors.isEmpty else { return }
-        
-        var overlay = Overlay()
+        guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
 
-        for editor in editors {
+        var overlay = Overlay()
+        
+        for editor in subjEditors {
             let path = editor.points.map({ $0.fixVec })
             overlay.add(path: path, type: .subject)
         }
-
-        let list = overlay.buildGraph().shapes(type: .subject)
-
+        
+        for editor in clipEditors {
+            let path = editor.points.map({ $0.fixVec })
+            overlay.add(path: path, type: .clip)
+        }
+        
+        let list = overlay.buildGraph().intersectShapes()
+        
         for i in 0..<list.count {
             let color = Color(index: i)
             let item = list[i]
@@ -121,9 +135,14 @@ final class ComplexScene: ObservableObject, SceneContainer {
     }
     
     func printTest() {
-        for editor in editors {
+        print("subjEditors:")
+        for editor in subjEditors {
             print("path \(editor.id): \(editor.points.prettyPrint())")
-            print("")
+        }
+        
+        print("clipEditors:")
+        for editor in clipEditors {
+            print("path \(editor.id): \(editor.points.prettyPrint())")
         }
     }
     
