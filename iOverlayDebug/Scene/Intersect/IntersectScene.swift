@@ -109,7 +109,7 @@ final class IntersectScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph().intersectShapes()
+        let list = overlay.buildGraph().extractShapes(operation: .intersect)
         
         for i in 0..<list.count {
             let color = Color(index: i)

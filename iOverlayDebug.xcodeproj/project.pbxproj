@@ -20,11 +20,11 @@
 		54D4BCFE2A83AF6200443253 /* DifferenceSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BCFD2A83AF6200443253 /* DifferenceSceneView.swift */; };
 		54D4BD012A83C0ED00443253 /* XorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BD002A83C0ED00443253 /* XorScene.swift */; };
 		54D4BD032A83C0FA00443253 /* XorSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BD022A83C0FA00443253 /* XorSceneView.swift */; };
+		54D5AFED2A851C2400F02800 /* StarExtractSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5AFEC2A851C2400F02800 /* StarExtractSceneView.swift */; };
+		54D5AFEF2A851C2C00F02800 /* StarExtractScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5AFEE2A851C2C00F02800 /* StarExtractScene.swift */; };
 		54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA172A77BE610011AAAF /* StarSceneView.swift */; };
 		54D5CA1A2A77BE690011AAAF /* StarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA192A77BE690011AAAF /* StarScene.swift */; };
 		54D5CA1C2A77BF4C0011AAAF /* StarTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */; };
-		54D5CA1F2A77DA430011AAAF /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA1E2A77DA430011AAAF /* OverlayScene.swift */; };
-		54D5CA212A77DA4D0011AAAF /* OverlaySceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D5CA202A77DA4D0011AAAF /* OverlaySceneView.swift */; };
 		54D65DE02A73B472004EB898 /* ComplexScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65DDF2A73B472004EB898 /* ComplexScene.swift */; };
 		54D65DE22A73B47B004EB898 /* ComplexSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65DE12A73B47B004EB898 /* ComplexSceneView.swift */; };
 		54D65DE42A73B4E6004EB898 /* ComplexTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65DE32A73B4E6004EB898 /* ComplexTestStore.swift */; };
@@ -74,11 +74,11 @@
 		54D4BCFD2A83AF6200443253 /* DifferenceSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceSceneView.swift; sourceTree = "<group>"; };
 		54D4BD002A83C0ED00443253 /* XorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorScene.swift; sourceTree = "<group>"; };
 		54D4BD022A83C0FA00443253 /* XorSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorSceneView.swift; sourceTree = "<group>"; };
+		54D5AFEC2A851C2400F02800 /* StarExtractSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarExtractSceneView.swift; sourceTree = "<group>"; };
+		54D5AFEE2A851C2C00F02800 /* StarExtractScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarExtractScene.swift; sourceTree = "<group>"; };
 		54D5CA172A77BE610011AAAF /* StarSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarSceneView.swift; sourceTree = "<group>"; };
 		54D5CA192A77BE690011AAAF /* StarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarScene.swift; sourceTree = "<group>"; };
 		54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTestStore.swift; sourceTree = "<group>"; };
-		54D5CA1E2A77DA430011AAAF /* OverlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
-		54D5CA202A77DA4D0011AAAF /* OverlaySceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySceneView.swift; sourceTree = "<group>"; };
 		54D65DDF2A73B472004EB898 /* ComplexScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexScene.swift; sourceTree = "<group>"; };
 		54D65DE12A73B47B004EB898 /* ComplexSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexSceneView.swift; sourceTree = "<group>"; };
 		54D65DE32A73B4E6004EB898 /* ComplexTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexTestStore.swift; sourceTree = "<group>"; };
@@ -193,6 +193,15 @@
 			path = Xor;
 			sourceTree = "<group>";
 		};
+		54D5AFEB2A851BE700F02800 /* StarExtract */ = {
+			isa = PBXGroup;
+			children = (
+				54D5AFEE2A851C2C00F02800 /* StarExtractScene.swift */,
+				54D5AFEC2A851C2400F02800 /* StarExtractSceneView.swift */,
+			);
+			path = StarExtract;
+			sourceTree = "<group>";
+		};
 		54D5CA162A77BE470011AAAF /* Star */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,15 +210,6 @@
 				54D5CA1B2A77BF4C0011AAAF /* StarTestStore.swift */,
 			);
 			path = Star;
-			sourceTree = "<group>";
-		};
-		54D5CA1D2A77DA330011AAAF /* Overlay */ = {
-			isa = PBXGroup;
-			children = (
-				54D5CA1E2A77DA430011AAAF /* OverlayScene.swift */,
-				54D5CA202A77DA4D0011AAAF /* OverlaySceneView.swift */,
-			);
-			path = Overlay;
 			sourceTree = "<group>";
 		};
 		54D65DDE2A73B43A004EB898 /* Complex */ = {
@@ -315,12 +315,12 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54D5AFEB2A851BE700F02800 /* StarExtract */,
 				54D4BCFF2A83C0DF00443253 /* Xor */,
 				54D4BCFA2A83AF4600443253 /* Difference */,
 				54D4BCF52A838FCD00443253 /* Union */,
 				54DB520D2A82AAD500C031A2 /* Intersect */,
 				54D261152A78E302007BFBEF /* TwoSegment */,
-				54D5CA1D2A77DA330011AAAF /* Overlay */,
 				54D5CA162A77BE470011AAAF /* Star */,
 				54D65DE52A73FED5004EB898 /* TwoSplit */,
 				54D65DDE2A73B43A004EB898 /* Complex */,
@@ -480,11 +480,13 @@
 				54D65DE92A73FEFB004EB898 /* TwoSplitSceneView.swift in Sources */,
 				54D744A52A6404470064D79B /* AngleSortScene.swift in Sources */,
 				54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */,
+				54D5AFEF2A851C2C00F02800 /* StarExtractScene.swift in Sources */,
 				54ED9D932A71A46D00E5CBDB /* AngleClockWiseTestStore.swift in Sources */,
 				54D261192A78E31F007BFBEF /* TwoSegmentSceneView.swift in Sources */,
 				54D5CA1A2A77BE690011AAAF /* StarScene.swift in Sources */,
 				54D65DE22A73B47B004EB898 /* ComplexSceneView.swift in Sources */,
 				54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */,
+				54D5AFED2A851C2400F02800 /* StarExtractSceneView.swift in Sources */,
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
@@ -497,9 +499,7 @@
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
 				54D4BCFC2A83AF5600443253 /* DifferenceScene.swift in Sources */,
-				54D5CA1F2A77DA430011AAAF /* OverlayScene.swift in Sources */,
 				54DB52112A82AAF300C031A2 /* IntersectSceneView.swift in Sources */,
-				54D5CA212A77DA4D0011AAAF /* OverlaySceneView.swift in Sources */,
 				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,
 				54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */,

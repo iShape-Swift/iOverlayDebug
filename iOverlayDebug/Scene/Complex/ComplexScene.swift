@@ -95,7 +95,7 @@ final class ComplexScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .subject)
         }
 
-        let list = overlay.buildGraph().shapes(type: .subject)
+        let list = overlay.buildGraph().extractShapes(operation: .subject)
 
         for i in 0..<list.count {
             let color = Color(index: i)

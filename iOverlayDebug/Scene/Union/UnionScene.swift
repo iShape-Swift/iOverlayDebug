@@ -109,7 +109,7 @@ final class UnionScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph().unionShapes()
+        let list = overlay.buildGraph().extractShapes(operation: .union)
         
         for i in 0..<list.count {
             let color = Color(index: i)

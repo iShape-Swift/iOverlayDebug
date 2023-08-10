@@ -109,7 +109,7 @@ final class XorScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph().xorShapes()
+        let list = overlay.buildGraph().extractShapes(operation: .xor)
         
         for i in 0..<list.count {
             let color = Color(index: i)

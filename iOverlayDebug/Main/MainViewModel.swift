@@ -24,6 +24,7 @@ final class MainViewModel: ObservableObject {
     private let unionScene = UnionScene(id: 11)
     private let differenceScene = DifferenceScene(id: 12)
     private let xorScene = XorScene(id: 13)
+    private let starExtractScene = StarExtractScene(id: 14)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -42,7 +43,8 @@ final class MainViewModel: ObservableObject {
         intersectScene.handler,
         unionScene.handler,
         differenceScene.handler,
-        xorScene.handler
+        xorScene.handler,
+        starExtractScene.handler
     ]
 
     @Published
@@ -93,6 +95,8 @@ final class MainViewModel: ObservableObject {
             differenceScene.makeView()
         case 13:
             xorScene.makeView()
+        case 14:
+            starExtractScene.makeView()
             
         default:
             fatalError("scene not set")
@@ -141,6 +145,8 @@ final class MainViewModel: ObservableObject {
             testStore = differenceScene.testStore
         case 13:
             testStore = xorScene.testStore
+        case 14:
+            testStore = starExtractScene.testStore
         default:
             break
         }
