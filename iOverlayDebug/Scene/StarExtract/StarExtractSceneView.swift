@@ -25,6 +25,15 @@ struct StarExtractSceneView: View {
         scene.initSize(screenSize: size)
         return ZStack {
             Color.white
+            VStack {
+                Picker("Operation", selection: $scene.operation) {
+                    ForEach(scene.operations, id: \.self) {
+                        Text($0.title).foregroundColor(.black)
+                    }
+                }
+                Spacer()
+            }
+            
             ForEach(scene.shapes) { shape in
                 XShapeView(shape: shape)
             }

@@ -20,6 +20,18 @@ final class StarExtractScene: ObservableObject, SceneContainer {
     
     private (set) var shapes: [XShape] = []
     
+    @Published
+    var operation: BoolOperation = .union
+    
+    let operations: [BoolOperation] = [
+        .clip,
+        .subject,
+        .difference,
+        .intersect,
+        .union,
+        .xor
+    ]
+    
     private var matrix: Matrix = .empty
     private var timer: Timer?
     private var angle: Double = 0
@@ -59,7 +71,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
 
         let test = starTestStore.test
         
-        let scale: CGFloat = 1
+        let scale: CGFloat = 50_000
         let iScale: CGFloat = 1 / scale
         shapes.removeAll()
         
@@ -86,7 +98,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         overlay.add(path: sA, type: .subject)
         overlay.add(path: sB, type: .clip)
         
-        let list = overlay.buildGraph().extractShapes(operation: .union)
+        let list = overlay.buildGraph().extractShapes(operation: operation)
         
         for i in 0..<list.count {
             let color = Color(index: i)
@@ -138,4 +150,27 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         
         return points
     }
+}
+
+extension BoolOperation {
+    
+    
+    var title: String {
+        switch self {
+        case .subject:
+            return "subject"
+        case .clip:
+            return "clip"
+        case .intersect:
+            return "intersect"
+        case .union:
+            return "union"
+        case .difference:
+            return "difference"
+        case .xor:
+            return "xor"
+        }
+        
+    }
+    
 }
