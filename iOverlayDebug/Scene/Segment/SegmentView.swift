@@ -61,25 +61,25 @@ private extension SegmentData {
     var subjTopPos: CGPoint {
         let n = (start - end).normalize
         let o = CGPoint(x: -n.y, y: n.x)
-        return 0.5 * (start + end) + 6 * (o + n)
+        return 0.5 * (start + end) + 6 * o + 4 * n
     }
     
     var subjBottomPos: CGPoint {
         let n = (start - end).normalize
         let o = CGPoint(x:  n.y, y: -n.x)
-        return 0.5 * (start + end) + 6 * (o + n)
+        return 0.5 * (start + end) + 6 * o + 4 * n
     }
     
     var clipTopPos: CGPoint {
         let n = (start - end).normalize
         let o = CGPoint(x: -n.y, y: n.x)
-        return 0.5 * (start + end) + 6 * (o - n)
+        return 0.5 * (start + end) + 6 * o - 4 * n
     }
     
     var clipBottomPos: CGPoint {
         let n = (start - end).normalize
         let o = CGPoint(x: n.y, y: -n.x)
-        return 0.5 * (start + end) + 6 * (o - n)
+        return 0.5 * (start + end) + 6 * o - 4 * n
     }
     
     var color: Color {
