@@ -49,6 +49,31 @@ final class TwoTestStore: TestStore {
     
     let data: [TwoTest] = [
         .init(
+            name: "Doc",
+            subjPaths: [
+                [
+                    CGPoint(x: -20, y: -16),
+                    CGPoint(x: -20, y:  16),
+                    CGPoint(x:  20, y:  16),
+                    CGPoint(x:  20, y: -16)
+                ],
+                [
+                    CGPoint(x: -12, y: -8),
+                    CGPoint(x: -12, y:  8),
+                    CGPoint(x:  12, y:  8),
+                    CGPoint(x:  12, y: -8)
+                ]
+            ],
+            clipPaths: [
+                [
+                    CGPoint(x: -4, y: -24),
+                    CGPoint(x: -4, y:  24),
+                    CGPoint(x:  4, y:  24),
+                    CGPoint(x:  4, y: -24)
+                ]
+            ]
+        ),
+        .init(
             name: "Square",
             subjPaths: [
                 [
