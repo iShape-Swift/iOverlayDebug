@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54387D2A2A9B49EB00FBC6C2 /* StarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54387D292A9B49EB00FBC6C2 /* StarTests.swift */; };
 		544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A22A60071D00EC8F70 /* SplitScene.swift */; };
 		544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A42A60072600EC8F70 /* SplitSceneView.swift */; };
 		54628A012A9757970023E251 /* SelfIntersectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54628A002A9757970023E251 /* SelfIntersectionTests.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54387D292A9B49EB00FBC6C2 /* StarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTests.swift; sourceTree = "<group>"; };
 		544680A22A60071D00EC8F70 /* SplitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScene.swift; sourceTree = "<group>"; };
 		544680A42A60072600EC8F70 /* SplitSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitSceneView.swift; sourceTree = "<group>"; };
 		546289FE2A9757970023E251 /* iOverlayDebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOverlayDebugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				54628A092A9788940023E251 /* IntersectTests.swift */,
 				54628A0B2A978F190023E251 /* DifferenceTests.swift */,
 				54628A0D2A9793790023E251 /* XorTests.swift */,
+				54387D292A9B49EB00FBC6C2 /* StarTests.swift */,
 			);
 			path = iOverlayDebugTests;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			files = (
 				54628A0A2A9788940023E251 /* IntersectTests.swift in Sources */,
 				54628A012A9757970023E251 /* SelfIntersectionTests.swift in Sources */,
+				54387D2A2A9B49EB00FBC6C2 /* StarTests.swift in Sources */,
 				54628A0C2A978F190023E251 /* DifferenceTests.swift in Sources */,
 				54628A0E2A9793790023E251 /* XorTests.swift in Sources */,
 				54628A082A97774A0023E251 /* UnionTests.swift in Sources */,
