@@ -28,6 +28,9 @@ struct TwoSegmentSceneView: View {
                 Button("Print Test") {
                     scene.printTest()
                 }.buttonStyle(.borderedProminent).padding()
+                Button("Print JS") {
+                    scene.printJS()
+                }.buttonStyle(.borderedProminent).padding()
                 Button("Solve") {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
