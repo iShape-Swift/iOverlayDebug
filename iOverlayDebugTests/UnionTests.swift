@@ -245,4 +245,44 @@ final class UnionTests: XCTestCase {
         
         XCTAssertEqual(shapes[0].holes[1], path1)
     }
+    
+    func test_4() throws {
+        var overlay = Overlay()
+        
+        let subj = [
+            CGPoint(x: -10, y: -10),
+            CGPoint(x: -10, y:  10),
+            CGPoint(x:  20, y:  10),
+            CGPoint(x:  20, y: -10)
+        ].map({ $0.fix })
+        
+        let clip = [
+            CGPoint(x: -10, y:   0),
+            CGPoint(x: -10, y: -20),
+            CGPoint(x:  10, y: -20),
+            CGPoint(x:  10, y:   0)
+        ].map({ $0.fix })
+        
+        
+        overlay.add(path: subj, type: .subject)
+        overlay.add(path: clip, type: .clip)
+        
+        let shapes = overlay.buildGraph().extractShapes(fillRule: .union)
+        
+        XCTAssertEqual(shapes.count, 1)
+        
+        let contour = shapes[0].contour
+        
+        
+        let test = [
+            CGPoint(x: -10, y: -20),
+            CGPoint(x: -10, y:  10),
+            CGPoint(x:  20, y:  10),
+            CGPoint(x:  20, y: -10),
+            CGPoint(x:  10, y: -10),
+            CGPoint(x:  10, y: -20)
+        ].map({ $0.fix })
+        
+        XCTAssertEqual(contour, test)
+    }
 }
