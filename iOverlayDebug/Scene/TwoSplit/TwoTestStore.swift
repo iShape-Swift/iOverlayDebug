@@ -1534,7 +1534,68 @@ final class TwoTestStore: TestStore {
                 CGPoint(x: 7.577552048201168, y: -15.21777595303605),
                 CGPoint(x: 5, y: 5)
             ]]
-        )
+        ),
+        .init(
+            name: "Cheese 1",
+            subjPaths: [
+                [
+                    FixVec(0, 20480),
+                    FixVec(8192, 10240),
+                    FixVec(7168, 6144),
+                    FixVec(9216, 1024),
+                    FixVec(13312, -1024),
+                    FixVec(17408, 1024),
+                    FixVec(26624, -7168),
+                    FixVec(14336, -15360),
+                    FixVec(0, -18432),
+                    FixVec(-14336, -15360),
+                    FixVec(-25600, -7168),
+                    FixVec(-18432, 0),
+                    FixVec(-16384, -3072),
+                    FixVec(-13312, -4096),
+                    FixVec(-8192, -2048),
+                    FixVec(-6144, 2048),
+                    FixVec(-7168, 6144),
+                    FixVec(-10240, 8192),
+                ].map({ $0.cgPoint }),
+                [
+                    FixVec(2048, 0),
+                    FixVec(-2048, -2048),
+                    FixVec(-4096, -5120),
+                    FixVec(9216, 1024),
+                    FixVec(2048, -11264),
+                    FixVec(5120, -9216),
+                    FixVec(7168, -5120),
+                    FixVec(5120, -2048)
+                ].map({ $0.cgPoint })
+            ],
+            clipPaths: [
+                []
+            ]
+        ),
+        .init(
+            name: "Cheese 2",
+            subjPaths: [
+                [
+                    FixVec(0, 20480),
+                    FixVec(9216, 1024),
+                    FixVec(26624, -7168),
+                    FixVec(14336, -15360),
+                    FixVec(-14336, -15360),
+                    FixVec(-25600, -7168),
+                ].map({ $0.cgPoint }),
+                [
+                    FixVec(-2048, -2048),
+                    FixVec(-4096, -5120),
+                    FixVec(9216, 1024),
+                    FixVec(2048, -11264),
+                    FixVec(5120, -9216),
+                ].map({ $0.cgPoint })
+            ],
+            clipPaths: [
+                []
+            ]
+        ),
     ]
     
 }
