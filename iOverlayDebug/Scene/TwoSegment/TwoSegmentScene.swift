@@ -142,36 +142,4 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         }
     }
     
-    func printJS() {
-        print("subjEditors:")
-        for editor in subjEditors {
-            print("path \(editor.id): \(editor.points.jsPrint())")
-        }
-        
-        print("clipEditors:")
-        for editor in clipEditors {
-            print("path \(editor.id): \(editor.points.jsPrint())")
-        }
-    }
-}
-
-private extension Array where Element == CGPoint {
-
-    func jsPrint() -> String {
-        var s = "points: ["
-        for i in 0..<self.count {
-            let p = self[i]
-            let x = 400 + Int(10 * p.x)
-            let y = 400 + Int(10 * p.y)
-            if i + 1 != self.count {
-                s += "[\(x), \(y)], "
-            } else {
-                s += "[\(x), \(y)]"
-            }
-        }
-        s += "]"
-        
-        return s
-    }
-    
 }
