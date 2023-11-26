@@ -41,7 +41,6 @@ struct OverlayTestBank {
         return folderUrl
     }
     
-    
     func count() -> Int {
         let fileManager = FileManager.default
         do {
