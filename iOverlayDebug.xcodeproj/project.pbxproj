@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5428FA6F2B1D05980080D9F8 /* ScanBeamScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428FA6E2B1D05980080D9F8 /* ScanBeamScene.swift */; };
+		5428FA712B1D05A40080D9F8 /* ScanBeamSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428FA702B1D05A40080D9F8 /* ScanBeamSceneView.swift */; };
+		5428FA732B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428FA722B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift */; };
 		544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A22A60071D00EC8F70 /* SplitScene.swift */; };
 		544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544680A42A60072600EC8F70 /* SplitSceneView.swift */; };
 		545645D52AFA7CFD008ED0AA /* TwoTestStoreExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545645D42AFA7CFD008ED0AA /* TwoTestStoreExtract.swift */; };
 		545646872AFA9980008ED0AA /* OverlayTestBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545646862AFA9980008ED0AA /* OverlayTestBank.swift */; };
 		5456468A2AFA9B5A008ED0AA /* Tests in Resources */ = {isa = PBXBuildFile; fileRef = 545646892AFA9B59008ED0AA /* Tests */; };
+		5477AA1C2B1DA928009407A6 /* ScanBeamListViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477AA1B2B1DA928009407A6 /* ScanBeamListViewer.swift */; };
+		5477AA1E2B1DA95A009407A6 /* ScanBeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477AA1D2B1DA95A009407A6 /* ScanBeamListView.swift */; };
 		5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E02A6FC6A600E1B26C /* FixScene.swift */; };
 		5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */; };
 		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
@@ -64,11 +69,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5428FA6E2B1D05980080D9F8 /* ScanBeamScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamScene.swift; sourceTree = "<group>"; };
+		5428FA702B1D05A40080D9F8 /* ScanBeamSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamSceneView.swift; sourceTree = "<group>"; };
+		5428FA722B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamSceneTestStore.swift; sourceTree = "<group>"; };
 		544680A22A60071D00EC8F70 /* SplitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScene.swift; sourceTree = "<group>"; };
 		544680A42A60072600EC8F70 /* SplitSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitSceneView.swift; sourceTree = "<group>"; };
 		545645D42AFA7CFD008ED0AA /* TwoTestStoreExtract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTestStoreExtract.swift; sourceTree = "<group>"; };
 		545646862AFA9980008ED0AA /* OverlayTestBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTestBank.swift; sourceTree = "<group>"; };
 		545646892AFA9B59008ED0AA /* Tests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tests; sourceTree = "<group>"; };
+		5477AA1B2B1DA928009407A6 /* ScanBeamListViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamListViewer.swift; sourceTree = "<group>"; };
+		5477AA1D2B1DA95A009407A6 /* ScanBeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamListView.swift; sourceTree = "<group>"; };
 		5489C0E02A6FC6A600E1B26C /* FixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixScene.swift; sourceTree = "<group>"; };
 		5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixSceneView.swift; sourceTree = "<group>"; };
 		5489C0E52A6FCE5200E1B26C /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
@@ -137,6 +147,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5428FA6D2B1D05730080D9F8 /* ScanBeam */ = {
+			isa = PBXGroup;
+			children = (
+				5428FA6E2B1D05980080D9F8 /* ScanBeamScene.swift */,
+				5428FA702B1D05A40080D9F8 /* ScanBeamSceneView.swift */,
+				5428FA722B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift */,
+				5477AA1B2B1DA928009407A6 /* ScanBeamListViewer.swift */,
+				5477AA1D2B1DA95A009407A6 /* ScanBeamListView.swift */,
+			);
+			path = ScanBeam;
+			sourceTree = "<group>";
+		};
 		544680A12A60070D00EC8F70 /* Split */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +344,7 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				5428FA6D2B1D05730080D9F8 /* ScanBeam */,
 				54D5AFEB2A851BE700F02800 /* StarExtract */,
 				54D4BCFF2A83C0DF00443253 /* Xor */,
 				54D4BCFA2A83AF4600443253 /* Difference */,
@@ -474,6 +497,7 @@
 				54D4BCFE2A83AF6200443253 /* DifferenceSceneView.swift in Sources */,
 				54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */,
 				54D65DE72A73FEF0004EB898 /* TwoSplitScene.swift in Sources */,
+				5428FA6F2B1D05980080D9F8 /* ScanBeamScene.swift in Sources */,
 				54D5CA1C2A77BF4C0011AAAF /* StarTestStore.swift in Sources */,
 				54D4BD032A83C0FA00443253 /* XorSceneView.swift in Sources */,
 				54EBB0042A5C329600E4E31F /* MainViewModel.swift in Sources */,
@@ -481,11 +505,13 @@
 				54D4BD012A83C0ED00443253 /* XorScene.swift in Sources */,
 				5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */,
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
+				5477AA1E2B1DA95A009407A6 /* ScanBeamListView.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
 				54D65DE02A73B472004EB898 /* ComplexScene.swift in Sources */,
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
 				544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */,
 				54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */,
+				5428FA712B1D05A40080D9F8 /* ScanBeamSceneView.swift in Sources */,
 				54D4BCF92A838FF300443253 /* UnionSceneView.swift in Sources */,
 				54EBB0152A5C332000E4E31F /* DegenerateScene.swift in Sources */,
 				54D65DE92A73FEFB004EB898 /* TwoSplitSceneView.swift in Sources */,
@@ -498,6 +524,7 @@
 				54D5CA1A2A77BE690011AAAF /* StarScene.swift in Sources */,
 				54D65DE22A73B47B004EB898 /* ComplexSceneView.swift in Sources */,
 				54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */,
+				5477AA1C2B1DA928009407A6 /* ScanBeamListViewer.swift in Sources */,
 				54D5AFED2A851C2400F02800 /* StarExtractSceneView.swift in Sources */,
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
@@ -512,6 +539,7 @@
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
 				54D4BCFC2A83AF5600443253 /* DifferenceScene.swift in Sources */,
 				54DB52112A82AAF300C031A2 /* IntersectSceneView.swift in Sources */,
+				5428FA732B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift in Sources */,
 				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,
 				54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */,

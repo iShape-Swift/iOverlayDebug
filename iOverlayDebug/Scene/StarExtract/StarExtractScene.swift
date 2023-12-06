@@ -21,9 +21,9 @@ final class StarExtractScene: ObservableObject, SceneContainer {
     private (set) var shapes: [XShape] = []
     
     @Published
-    var operation: FillRule = .union
+    var operation: OverlayRule = .union
     
-    let operations: [FillRule] = [
+    let operations: [OverlayRule] = [
         .clip,
         .subject,
         .difference,
@@ -98,7 +98,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         overlay.add(path: sA, type: .subject)
         overlay.add(path: sB, type: .clip)
         
-        let list = overlay.buildGraph().extractShapes(fillRule: operation)
+        let list = overlay.buildGraph().extractShapes(overlayRule: operation)
         
         for i in 0..<list.count {
             let color = Color(index: i)
@@ -152,7 +152,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
     }
 }
 
-extension FillRule {
+extension OverlayRule {
     
     
     var title: String {

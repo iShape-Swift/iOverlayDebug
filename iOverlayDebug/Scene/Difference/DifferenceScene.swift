@@ -109,7 +109,7 @@ final class DifferenceScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph().extractShapes(fillRule: .difference)
+        let list = overlay.buildGraph().extractShapes(overlayRule: .difference)
         
         for i in 0..<list.count {
             let color = Color(index: i)
