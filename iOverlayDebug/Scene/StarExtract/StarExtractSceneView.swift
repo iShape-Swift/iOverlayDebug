@@ -26,11 +26,18 @@ struct StarExtractSceneView: View {
         return ZStack {
             Color.white
             VStack {
+                Button("Print Test") {
+                    scene.printTest()
+                }.buttonStyle(.borderedProminent).padding()
                 Picker("Operation", selection: $scene.operation) {
                     ForEach(scene.operations, id: \.self) {
                         Text($0.title).foregroundColor(.black)
                     }
                 }
+                Slider(
+                    value: $scene.angle,
+                    in: -Double.pi...Double.pi
+                )
                 Spacer()
             }
             

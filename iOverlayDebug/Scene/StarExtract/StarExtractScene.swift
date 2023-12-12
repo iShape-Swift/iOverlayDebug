@@ -17,6 +17,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
     
     let id: Int
     let title = "Star Extract"
+    let scale: CGFloat = 1
     
     private (set) var shapes: [XShape] = []
     
@@ -32,9 +33,15 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         .xor
     ]
     
+    @Published
+    var angle: Double = 0 {
+        didSet {
+            self.solve()
+        }
+    }
+    
     private var matrix: Matrix = .empty
     private var timer: Timer?
-    private var angle: Double = 0
     
     init(id: Int) {
         self.id = id
@@ -54,9 +61,10 @@ final class StarExtractScene: ObservableObject, SceneContainer {
     }
     
     func onAppear() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] timer in
-            self?.solve()
-        }
+//        timer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] timer in
+//            self?.solve()
+    //        angle += 0.01
+//        }
     }
 
     func onDisappear() {
@@ -69,36 +77,21 @@ final class StarExtractScene: ObservableObject, SceneContainer {
             self.objectWillChange.send()
         }
 
-        let test = starTestStore.test
-        
-        let scale: CGFloat = 50_000
-        let iScale: CGFloat = 1 / scale
         shapes.removeAll()
-        
-        let pointsA = self.generateStarPoints(
-            smallRadius: test.smallRadius,
-            bigRadius: test.bigRadius,
-            count: test.count,
-            angle: angle,
-            scale: scale
-        )
 
-        let pointsB = self.generateStarPoints(
-            smallRadius: test.smallRadius,
-            bigRadius: test.bigRadius,
-            count: test.count,
-            angle: 0,
-            scale: scale
-        )
-        
-        let sA = pointsA.map({ $0.fixVec })
-        let sB = pointsB.map({ $0.fixVec })
+        let sA = self.startA()
+        let sB = self.startB()
 
+        print("starA : \(sA)")
+        print("starB : \(sB)")
+        
         var overlay = Overlay()
         overlay.add(path: sA, type: .subject)
         overlay.add(path: sB, type: .clip)
         
         let list = overlay.buildGraph().extractShapes(overlayRule: operation)
+        
+        let iScale: CGFloat = 1 / scale
         
         for i in 0..<list.count {
             let color = Color(index: i)
@@ -121,8 +114,6 @@ final class StarExtractScene: ObservableObject, SceneContainer {
                 )
             )
         }
-
-        angle += 0.01
     }
  
     
@@ -150,6 +141,36 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         
         return points
     }
+    
+    private func startA() -> [FixVec] {
+        let test = starTestStore.test
+        
+        return self.generateStarPoints(
+            smallRadius: test.smallRadius,
+            bigRadius: test.bigRadius,
+            count: test.count,
+            angle: angle,
+            scale: scale
+        ).map({ $0.fixVec })
+    }
+    
+    private func startB() -> [FixVec] {
+        let test = starTestStore.test
+        
+        return self.generateStarPoints(
+            smallRadius: test.smallRadius,
+            bigRadius: test.bigRadius,
+            count: test.count,
+            angle: 0,
+            scale: scale
+        ).map({ $0.fixVec })
+    }
+    
+    func printTest() {
+        print("starA : \(self.startA())")
+        print("starB : \(self.startB())")
+    }
+    
 }
 
 extension OverlayRule {

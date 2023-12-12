@@ -86,7 +86,7 @@ final class SplitScene: ObservableObject, SceneContainer {
         var overlay = Overlay()
         overlay.add(path: path, type: .subject)
 
-        let segments = overlay.buildSegments()
+        let segments = overlay.buildSegments(fillRule: .evenOdd)
         
         var set = Set<FixVec>()
         for seg in segments {

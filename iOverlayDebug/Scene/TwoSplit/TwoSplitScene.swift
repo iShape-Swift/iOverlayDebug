@@ -113,7 +113,7 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
             original.formUnion(path)
         }
         
-        let segments = overlay.buildSegments()
+        let segments = overlay.buildSegments(fillRule: .evenOdd)
         
         var points = Set<FixVec>()
         

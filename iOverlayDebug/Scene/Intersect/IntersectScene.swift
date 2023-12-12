@@ -12,6 +12,18 @@ import iFixFloat
 
 final class IntersectScene: ObservableObject, SceneContainer {
 
+    @Published
+    var rule: FillRule = .evenOdd {
+        didSet {
+            self.solve()
+        }
+    }
+    
+    let rules: [FillRule] = [
+        .nonZero,
+        .evenOdd
+    ]
+    
     let id: Int
     let title = "Intersect"
     
@@ -95,7 +107,7 @@ final class IntersectScene: ObservableObject, SceneContainer {
             self.objectWillChange.send()
         }
         
-        guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
+        guard !subjEditors.isEmpty || !clipEditors.isEmpty else { return }
 
         var overlay = Overlay()
         
@@ -109,7 +121,7 @@ final class IntersectScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph().extractShapes(overlayRule: .intersect)
+        let list = overlay.buildGraph(fillRule: rule).extractShapes(overlayRule: .intersect)
         
         for i in 0..<list.count {
             let color = Color(index: i)

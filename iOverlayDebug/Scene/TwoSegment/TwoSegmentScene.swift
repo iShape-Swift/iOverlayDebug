@@ -13,6 +13,18 @@ import iFixFloat
 
 final class TwoSegmentScene: ObservableObject, SceneContainer {
 
+    @Published
+    var rule: FillRule = .nonZero {
+        didSet {
+            self.solve()
+        }
+    }
+    
+    let rules: [FillRule] = [
+        .nonZero,
+        .evenOdd
+    ]
+    
     let id: Int
     let title = "Two Segment"
     
@@ -31,7 +43,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     
     func initSize(screenSize: CGSize) {
         if !matrix.screenSize.isIntSame(screenSize) {
-            matrix = Matrix(screenSize: screenSize, scale: 10, inverseY: true)
+            matrix = Matrix(screenSize: screenSize, scale: 100000, inverseY: true)
             DispatchQueue.main.async { [weak self] in
                 self?.solve()
             }
@@ -48,7 +60,6 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
 
     func didUpdateTest() {
         let test = twoTestStore.test
-
         var newSubjEditors = [ContourEditor]()
         for path in test.subjPaths {
             let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7), showArrows: false)
@@ -96,7 +107,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             self.objectWillChange.send()
         }
         
-        guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
+        guard !subjEditors.isEmpty else { return }
         
         var overlay = Overlay()
         
@@ -105,12 +116,14 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .subject)
         }
         
-        for editor in clipEditors {
-            let path = editor.points.map({ $0.fixVec })
-            overlay.add(path: path, type: .clip)
+        if !clipEditors.isEmpty {
+            for editor in clipEditors {
+                let path = editor.points.map({ $0.fixVec })
+                overlay.add(path: path, type: .clip)
+            }
         }
         
-        let segments = overlay.buildSegments()
+        let segments = overlay.buildSegments(fillRule: rule)
 
         var id = 0
         for s in segments {
@@ -140,6 +153,21 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         for editor in clipEditors {
             print("path \(editor.id): \(editor.points.prettyPrint())")
         }
+    }
+    
+}
+
+extension FillRule {
+    
+    
+    var title: String {
+        switch self {
+        case .evenOdd:
+            return "evenOdd"
+        case .nonZero:
+            return "nonZero"
+        }
+        
     }
     
 }

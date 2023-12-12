@@ -12,6 +12,18 @@ import iFixFloat
 
 final class UnionScene: ObservableObject, SceneContainer {
 
+    @Published
+    var rule: FillRule = .evenOdd {
+        didSet {
+            self.solve()
+        }
+    }
+    
+    let rules: [FillRule] = [
+        .nonZero,
+        .evenOdd
+    ]
+    
     let id: Int
     let title = "Union"
     
@@ -22,7 +34,7 @@ final class UnionScene: ObservableObject, SceneContainer {
     private (set) var shapes: [XShape] = []
     
     private var matrix: Matrix = .empty
-    
+
     init(id: Int) {
         self.id = id
         twoTestStore.onUpdate = self.didUpdateTest
@@ -95,7 +107,7 @@ final class UnionScene: ObservableObject, SceneContainer {
             self.objectWillChange.send()
         }
         
-        guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
+        guard !subjEditors.isEmpty || !clipEditors.isEmpty else { return }
 
         var overlay = Overlay()
         
@@ -109,7 +121,7 @@ final class UnionScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph().extractShapes(overlayRule: .union)
+        let list = overlay.buildGraph(fillRule: rule).extractShapes(overlayRule: .union)
         
         for i in 0..<list.count {
             let color = Color(index: i)

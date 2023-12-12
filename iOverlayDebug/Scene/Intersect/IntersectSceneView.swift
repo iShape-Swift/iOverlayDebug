@@ -32,6 +32,11 @@ struct IntersectSceneView: View {
                 Button("Solve") {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
+                Picker("FillRule", selection: $scene.rule) {
+                    ForEach(scene.rules, id: \.self) {
+                        Text($0.title).foregroundColor(.black)
+                    }
+                }.frame(maxWidth: 300)
                 Spacer()
             }
             ForEach(scene.subjEditors) { editor in
