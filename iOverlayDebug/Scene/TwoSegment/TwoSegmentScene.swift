@@ -43,7 +43,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     
     func initSize(screenSize: CGSize) {
         if !matrix.screenSize.isIntSame(screenSize) {
-            matrix = Matrix(screenSize: screenSize, scale: 100000, inverseY: true)
+            matrix = Matrix(screenSize: screenSize, scale: 10, inverseY: true)
             DispatchQueue.main.async { [weak self] in
                 self?.solve()
             }
