@@ -19,6 +19,21 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             self.solve()
         }
     }
+
+    @Published
+    var power: Float = 1 {
+        didSet {
+            let scale = pow(10.0, power)
+            matrix.update(scale: scale)
+            for editor in subjEditors {
+                editor.matrix = matrix
+            }
+            for editor in clipEditors {
+                editor.matrix = matrix
+            }
+            self.solve()
+        }
+    }
     
     let rules: [FillRule] = [
         .nonZero,
@@ -43,7 +58,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     
     func initSize(screenSize: CGSize) {
         if !matrix.screenSize.isIntSame(screenSize) {
-            matrix = Matrix(screenSize: screenSize, scale: 10, inverseY: true)
+            matrix = Matrix(screenSize: screenSize, scale: pow(10.0, power), inverseY: true)
             DispatchQueue.main.async { [weak self] in
                 self?.solve()
             }

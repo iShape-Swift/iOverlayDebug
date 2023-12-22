@@ -36,6 +36,10 @@ struct TwoSegmentSceneView: View {
                         Text($0.title).foregroundColor(.black)
                     }
                 }.frame(maxWidth: 300)
+                Slider(
+                    value: $scene.power,
+                    in: 1...5
+                ).frame(maxWidth: 300)
                 Spacer()
             }
             ForEach(scene.subjEditors) { editor in
