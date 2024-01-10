@@ -64,6 +64,9 @@
 		54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED9D8E2A71A34100E5CBDB /* AngleClockWiseScene.swift */; };
 		54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED9D902A71A34B00E5CBDB /* AngleClockWiseSceneView.swift */; };
 		54ED9D932A71A46D00E5CBDB /* AngleClockWiseTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ED9D922A71A46D00E5CBDB /* AngleClockWiseTestStore.swift */; };
+		54EEDB722B4EC88D0062D585 /* EdgeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEDB6F2B4EC88D0062D585 /* EdgeScene.swift */; };
+		54EEDB732B4EC88D0062D585 /* EdgeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEDB702B4EC88D0062D585 /* EdgeSceneView.swift */; };
+		54EEDB742B4EC88D0062D585 /* EdgeTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EEDB712B4EC88D0062D585 /* EdgeTestStore.swift */; };
 		54FC0EAC2A5D94E400BF38DB /* SegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */; };
 		54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +131,9 @@
 		54ED9D8E2A71A34100E5CBDB /* AngleClockWiseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleClockWiseScene.swift; sourceTree = "<group>"; };
 		54ED9D902A71A34B00E5CBDB /* AngleClockWiseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleClockWiseSceneView.swift; sourceTree = "<group>"; };
 		54ED9D922A71A46D00E5CBDB /* AngleClockWiseTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleClockWiseTestStore.swift; sourceTree = "<group>"; };
+		54EEDB6F2B4EC88D0062D585 /* EdgeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeScene.swift; sourceTree = "<group>"; };
+		54EEDB702B4EC88D0062D585 /* EdgeSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeSceneView.swift; sourceTree = "<group>"; };
+		54EEDB712B4EC88D0062D585 /* EdgeTestStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeTestStore.swift; sourceTree = "<group>"; };
 		54FC0EAB2A5D94E400BF38DB /* SegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentScene.swift; sourceTree = "<group>"; };
 		54FC0EAD2A5D94FD00BF38DB /* SegmentSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSceneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,6 +350,7 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54EEDB6E2B4EC88D0062D585 /* Edge */,
 				5428FA6D2B1D05730080D9F8 /* ScanBeam */,
 				54D5AFEB2A851BE700F02800 /* StarExtract */,
 				54D4BCFF2A83C0DF00443253 /* Xor */,
@@ -402,6 +409,16 @@
 				54ED9D922A71A46D00E5CBDB /* AngleClockWiseTestStore.swift */,
 			);
 			path = AngleClockWise;
+			sourceTree = "<group>";
+		};
+		54EEDB6E2B4EC88D0062D585 /* Edge */ = {
+			isa = PBXGroup;
+			children = (
+				54EEDB6F2B4EC88D0062D585 /* EdgeScene.swift */,
+				54EEDB702B4EC88D0062D585 /* EdgeSceneView.swift */,
+				54EEDB712B4EC88D0062D585 /* EdgeTestStore.swift */,
+			);
+			path = Edge;
 			sourceTree = "<group>";
 		};
 		54FC0EAA2A5D94C500BF38DB /* Segment */ = {
@@ -507,6 +524,7 @@
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
 				5477AA1E2B1DA95A009407A6 /* ScanBeamListView.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
+				54EEDB742B4EC88D0062D585 /* EdgeTestStore.swift in Sources */,
 				54D65DE02A73B472004EB898 /* ComplexScene.swift in Sources */,
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
 				544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */,
@@ -530,6 +548,7 @@
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
 				54D4BCF72A838FE600443253 /* UnionScene.swift in Sources */,
+				54EEDB722B4EC88D0062D585 /* EdgeScene.swift in Sources */,
 				54D744AB2A6451220064D79B /* SegmentView.swift in Sources */,
 				54D65DE42A73B4E6004EB898 /* ComplexTestStore.swift in Sources */,
 				54EBB0172A5C332B00E4E31F /* DegenerateSceneView.swift in Sources */,
@@ -538,6 +557,7 @@
 				544680A32A60071D00EC8F70 /* SplitScene.swift in Sources */,
 				54EBAFFF2A5C324200E4E31F /* SceneContainer.swift in Sources */,
 				54D4BCFC2A83AF5600443253 /* DifferenceScene.swift in Sources */,
+				54EEDB732B4EC88D0062D585 /* EdgeSceneView.swift in Sources */,
 				54DB52112A82AAF300C031A2 /* IntersectSceneView.swift in Sources */,
 				5428FA732B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift in Sources */,
 				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
