@@ -12,22 +12,10 @@ import Foundation
 struct OverlayTest: Decodable {
     let subjPaths: [[FixVec]]
     let clipPaths: [[FixVec]]
-    let clip: [FixShape]
-    let subject: [FixShape]
-    let difference: [FixShape]
-    let intersect: [FixShape]
-    let union: [FixShape]
-    let xor: [FixShape]
 
     enum CodingKeys: String, CodingKey {
         case subjPaths
         case clipPaths
-        case clip
-        case subject
-        case difference
-        case intersect
-        case union
-        case xor
     }
 }
 
