@@ -118,8 +118,8 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
         var points = Set<FixVec>()
         
         for seg in segments {
-            points.insert(seg.a)
-            points.insert(seg.b)
+            points.insert(FixVec(seg.seg.a))
+            points.insert(FixVec(seg.seg.b))
         }
         
         points.subtract(original)

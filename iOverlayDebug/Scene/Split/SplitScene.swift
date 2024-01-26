@@ -90,8 +90,8 @@ final class SplitScene: ObservableObject, SceneContainer {
         
         var set = Set<FixVec>()
         for seg in segments {
-            set.insert(seg.a)
-            set.insert(seg.b)
+            set.insert(FixVec(seg.seg.a))
+            set.insert(FixVec(seg.seg.b))
         }
 
         let points = Array(set)
@@ -103,8 +103,8 @@ final class SplitScene: ObservableObject, SceneContainer {
         }
 
         for seg in segments {
-            let a = matrix.screen(worldPoint: seg.a.cgPoint)
-            let b = matrix.screen(worldPoint: seg.b.cgPoint)
+            let a = matrix.screen(worldPoint: FixVec(seg.seg.a).cgPoint)
+            let b = matrix.screen(worldPoint: FixVec(seg.seg.b).cgPoint)
             clean.append(a)
             clean.append(b)
         }

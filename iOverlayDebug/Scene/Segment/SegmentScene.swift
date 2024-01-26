@@ -86,8 +86,8 @@ final class SegmentScene: ObservableObject, SceneContainer {
 
         var id = 0
         for s in segments {
-            let start = matrix.screen(worldPoint: s.a.cgPoint)
-            let end = matrix.screen(worldPoint: s.b.cgPoint)
+            let start = matrix.screen(worldPoint: FixVec(s.seg.a).cgPoint)
+            let end = matrix.screen(worldPoint: FixVec(s.seg.b).cgPoint)
             
             segs.append(
                 SegmentData(
