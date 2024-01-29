@@ -99,7 +99,7 @@ private extension SegmentData {
 extension SegmentFill {
 
     var isFillSubject: Bool {
-        self & SegmentFill.subjectBoth != 0
+        self & SegmentFill.subjBoth != 0
     }
 
     var isFillClip: Bool {
@@ -107,11 +107,11 @@ extension SegmentFill {
     }
 
     var isFillSubjectTop: Bool {
-        self & SegmentFill.subjectTop == SegmentFill.subjectTop
+        self & SegmentFill.subjTop == SegmentFill.subjTop
     }
 
     var isFillSubjectBottom: Bool {
-        self & SegmentFill.subjectBottom == SegmentFill.subjectBottom
+        self & SegmentFill.subjBottom == SegmentFill.subjBottom
     }
 
     var isFillClipTop: Bool {

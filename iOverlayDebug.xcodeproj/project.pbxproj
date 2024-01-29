@@ -20,6 +20,8 @@
 		5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E02A6FC6A600E1B26C /* FixScene.swift */; };
 		5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */; };
 		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
+		54A98C442B67CBE800865725 /* SubjScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98C432B67CBE800865725 /* SubjScene.swift */; };
+		54A98C462B67CBF800865725 /* SubjSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98C452B67CBF800865725 /* SubjSceneView.swift */; };
 		54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261162A78E315007BFBEF /* TwoSegmentScene.swift */; };
 		54D261192A78E31F007BFBEF /* TwoSegmentSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */; };
 		54D4BCF72A838FE600443253 /* UnionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D4BCF62A838FE600443253 /* UnionScene.swift */; };
@@ -85,6 +87,8 @@
 		5489C0E02A6FC6A600E1B26C /* FixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixScene.swift; sourceTree = "<group>"; };
 		5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixSceneView.swift; sourceTree = "<group>"; };
 		5489C0E52A6FCE5200E1B26C /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
+		54A98C432B67CBE800865725 /* SubjScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjScene.swift; sourceTree = "<group>"; };
+		54A98C452B67CBF800865725 /* SubjSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjSceneView.swift; sourceTree = "<group>"; };
 		54D261162A78E315007BFBEF /* TwoSegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentScene.swift; sourceTree = "<group>"; };
 		54D261182A78E31F007BFBEF /* TwoSegmentSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentSceneView.swift; sourceTree = "<group>"; };
 		54D4BCF62A838FE600443253 /* UnionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionScene.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 				5489C0E52A6FCE5200E1B26C /* XShape.swift */,
 			);
 			path = Shape;
+			sourceTree = "<group>";
+		};
+		54A98C422B67CBCC00865725 /* Subj */ = {
+			isa = PBXGroup;
+			children = (
+				54A98C432B67CBE800865725 /* SubjScene.swift */,
+				54A98C452B67CBF800865725 /* SubjSceneView.swift */,
+			);
+			path = Subj;
 			sourceTree = "<group>";
 		};
 		54D261152A78E302007BFBEF /* TwoSegment */ = {
@@ -350,6 +363,7 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54A98C422B67CBCC00865725 /* Subj */,
 				54EEDB6E2B4EC88D0062D585 /* Edge */,
 				5428FA6D2B1D05730080D9F8 /* ScanBeam */,
 				54D5AFEB2A851BE700F02800 /* StarExtract */,
@@ -526,6 +540,7 @@
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
 				54EEDB742B4EC88D0062D585 /* EdgeTestStore.swift in Sources */,
 				54D65DE02A73B472004EB898 /* ComplexScene.swift in Sources */,
+				54A98C462B67CBF800865725 /* SubjSceneView.swift in Sources */,
 				54EBAFEB2A5C315B00E4E31F /* MainView.swift in Sources */,
 				544680A52A60072600EC8F70 /* SplitSceneView.swift in Sources */,
 				54EBB0242A5C36F600E4E31F /* DVert.swift in Sources */,
@@ -544,6 +559,7 @@
 				54D5CA182A77BE610011AAAF /* StarSceneView.swift in Sources */,
 				5477AA1C2B1DA928009407A6 /* ScanBeamListViewer.swift in Sources */,
 				54D5AFED2A851C2400F02800 /* StarExtractSceneView.swift in Sources */,
+				54A98C442B67CBE800865725 /* SubjScene.swift in Sources */,
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,

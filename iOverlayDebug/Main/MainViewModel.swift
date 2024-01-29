@@ -24,9 +24,10 @@ final class MainViewModel: ObservableObject {
     private let unionScene = UnionScene(id: 11)
     private let differenceScene = DifferenceScene(id: 12)
     private let xorScene = XorScene(id: 13)
-    private let starExtractScene = StarExtractScene(id: 14)
-    private let scanBeamScene = ScanBeamScene(id: 15)
-    private let edgeScene = EdgeScene(id: 16)
+    private let subjScene = SubjScene(id: 14)
+    private let starExtractScene = StarExtractScene(id: 15)
+    private let scanBeamScene = ScanBeamScene(id: 16)
+    private let edgeScene = EdgeScene(id: 17)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -46,6 +47,7 @@ final class MainViewModel: ObservableObject {
         unionScene.handler,
         differenceScene.handler,
         xorScene.handler,
+        subjScene.handler,
         starExtractScene.handler,
         scanBeamScene.handler,
         edgeScene.handler
@@ -100,10 +102,12 @@ final class MainViewModel: ObservableObject {
         case 13:
             xorScene.makeView()
         case 14:
-            starExtractScene.makeView()
+            subjScene.makeView()
         case 15:
-            scanBeamScene.makeView()
+            starExtractScene.makeView()
         case 16:
+            scanBeamScene.makeView()
+        case 17:
             edgeScene.makeView()
         default:
             fatalError("scene not set")
@@ -153,10 +157,12 @@ final class MainViewModel: ObservableObject {
         case 13:
             testStore = xorScene.testStore
         case 14:
-            testStore = starExtractScene.testStore
+            testStore = subjScene.testStore
         case 15:
-            testStore = scanBeamScene.testStore
+            testStore = starExtractScene.testStore
         case 16:
+            testStore = scanBeamScene.testStore
+        case 17:
             testStore = edgeScene.testStore
         default:
             break
