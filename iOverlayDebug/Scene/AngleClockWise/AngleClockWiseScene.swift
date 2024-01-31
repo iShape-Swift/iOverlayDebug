@@ -20,7 +20,7 @@ final class AngleClockWiseScene: ObservableObject, SceneContainer {
     var testStore: TestStore { angleSortTestStore }
     let editor = PointsEditor(showIndex: true)
     private (set) var dots: [TextDot] = []
-    private (set) var vectors: [Vector] = []
+    private (set) var vectors: [iDebug.Vector] = []
     
     var isClockWise: Bool = true {
         didSet {

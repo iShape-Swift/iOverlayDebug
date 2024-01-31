@@ -96,7 +96,7 @@ private extension SegmentData {
     
 }
 
-extension SegmentFill {
+private extension SegmentFill {
 
     var isFillSubject: Bool {
         self & SegmentFill.subjBoth != 0
