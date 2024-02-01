@@ -15,11 +15,11 @@ struct VectorFillData: Identifiable {
     let start: CGPoint
     let end: CGPoint
     let normalize: CGPoint
-    let fill: VectorFill
+    let fill: SideFill
     let arrow: Arrow
     let color: Color
     
-    init(id: Int, start: CGPoint, end: CGPoint, fill: VectorFill) {
+    init(id: Int, start: CGPoint, end: CGPoint, fill: SideFill) {
         self.id = id
         self.start = start
         self.end = end
@@ -97,7 +97,7 @@ private extension VectorFillData {
     }
 }
 
-private extension VectorFill {
+private extension SideFill {
 
     var isFillSubjectLeft: Bool {
         self & .subjLeft == .subjLeft
@@ -117,11 +117,11 @@ private extension VectorFill {
     
     
     var isFillSubject: Bool {
-        self & VectorFill.subjLeftAndRight != 0
+        self & SideFill.subjLeftAndRight != 0
     }
     
     var isFillClip: Bool {
-        self & VectorFill.clipLeftAndRight != 0
+        self & SideFill.clipLeftAndRight != 0
     }
     
     var isFillBoth: Bool {
