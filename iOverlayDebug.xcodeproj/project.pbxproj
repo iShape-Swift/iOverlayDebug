@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		545D19D72B693939002D3C6A /* VectorFillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D19D62B693939002D3C6A /* VectorFillView.swift */; };
 		5477AA1C2B1DA928009407A6 /* ScanBeamListViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477AA1B2B1DA928009407A6 /* ScanBeamListViewer.swift */; };
 		5477AA1E2B1DA95A009407A6 /* ScanBeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5477AA1D2B1DA95A009407A6 /* ScanBeamListView.swift */; };
+		548224CC2B8BC68000BDF8B5 /* iOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = 548224CB2B8BC68000BDF8B5 /* iOverlay */; };
 		5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E02A6FC6A600E1B26C /* FixScene.swift */; };
 		5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */; };
 		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
@@ -154,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54EBB00D2A5C32CF00E4E31F /* iShape in Frameworks */,
+				548224CC2B8BC68000BDF8B5 /* iOverlay in Frameworks */,
 				54EBB0072A5C32CF00E4E31F /* iDebug in Frameworks */,
 				54EBB00B2A5C32CF00E4E31F /* iOverlay in Frameworks */,
 				54EBB0092A5C32CF00E4E31F /* iFixFloat in Frameworks */,
@@ -483,6 +485,7 @@
 				54EBB0082A5C32CF00E4E31F /* iFixFloat */,
 				54EBB00A2A5C32CF00E4E31F /* iOverlay */,
 				54EBB00C2A5C32CF00E4E31F /* iShape */,
+				548224CB2B8BC68000BDF8B5 /* iOverlay */,
 			);
 			productName = iOverlayDebug;
 			productReference = 54EBAFE52A5C315B00E4E31F /* iOverlayDebug.app */;
@@ -512,6 +515,9 @@
 				Base,
 			);
 			mainGroup = 54EBAFDC2A5C315B00E4E31F;
+			packageReferences = (
+				548224CA2B8BC68000BDF8B5 /* XCLocalSwiftPackageReference "../../iOverlay" */,
+			);
 			productRefGroup = 54EBAFE62A5C315B00E4E31F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -815,7 +821,18 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		548224CA2B8BC68000BDF8B5 /* XCLocalSwiftPackageReference "../../iOverlay" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../iOverlay;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		548224CB2B8BC68000BDF8B5 /* iOverlay */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iOverlay;
+		};
 		54EBB0062A5C32CF00E4E31F /* iDebug */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = iDebug;
