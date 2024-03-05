@@ -1,8 +1,8 @@
 //
-//  EdgeScene.swift
-//  iShapeDebug
+//  CrossScene.swift
+//  iOverlayDebug
 //
-//  Created by Nail Sharipov on 10.07.2023.
+//  Created by Nail Sharipov on 28.02.2024.
 //
 
 import SwiftUI
@@ -11,36 +11,28 @@ import iShape
 import iOverlay
 import iFixFloat
 
-struct Edge: Identifiable, Hashable {
-    let id: Int
-    let a: CGPoint
-    let b: CGPoint
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(a.x)
-        hasher.combine(a.y)
-        hasher.combine(b.x)
-        hasher.combine(b.y)
-    }
-}
 
-final class EdgeScene: ObservableObject, SceneContainer {
+final class CrossScene: ObservableObject, SceneContainer {
 
     let id: Int
-    let title = "Edge"
+    let title = "Cross"
     let edgeTestStore = EdgeTestStore()
     var testStore: TestStore { edgeTestStore }
     let editor = PointsEditor()
     
     static let colorA: Color = .orange
     static let colorB: Color = .purple
+    
+    var crossColor: Color = .gray
+    var crossTitle: String = ""
 
     private (set) var edgeA: Edge?
     private (set) var edgeB: Edge?
     private (set) var crossVecs: [CGPoint] = []
     private (set) var crossResult = ""
     
-    private (set) var colorA: Color = EdgeScene.colorA
-    private (set) var colorB: Color = EdgeScene.colorB
+    private (set) var colorA: Color = CrossScene.colorA
+    private (set) var colorB: Color = CrossScene.colorB
     
     private var matrix: Matrix = .empty
     
@@ -62,8 +54,8 @@ final class EdgeScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> EdgeSceneView {
-        EdgeSceneView(scene: self)
+    func makeView() -> CrossSceneView {
+        CrossSceneView(scene: self)
     }
 
     func dotsEditorView() -> PointsEditorView {
@@ -151,6 +143,25 @@ final class EdgeScene: ObservableObject, SceneContainer {
 
         crossVecs = matrix.screen(worldPoints: pnts.map({ $0.cgPoint }) )
         
+        let crossType = CrossSolver.isCross(a0: edA.a, b0: edA.b, a1: edB.a, b1: edB.b)
+        
+        switch crossType {
+        case .pure:
+            crossTitle = "Cross"
+            self.crossColor = .red
+        case .overlap:
+            crossTitle = "Overlap"
+            self.crossColor = .purple
+        case .sameEnd:
+            crossTitle = "SameEnd"
+            self.crossColor = .green
+        case .equal:
+            crossTitle = "Equal"
+            self.crossColor = .purple
+        case .notCross:
+            crossTitle = "NotCross"
+            self.crossColor = .gray.opacity(0.6)
+        }
     }
     
     
@@ -162,7 +173,6 @@ final class EdgeScene: ObservableObject, SceneContainer {
         print("A: \(edgeA.prettyPrint())")
         print("B: \(edgeB.prettyPrint())")
     }
-    
 }
 
 private extension FixVec {

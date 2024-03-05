@@ -24,6 +24,11 @@
 		5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E02A6FC6A600E1B26C /* FixScene.swift */; };
 		5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */; };
 		5489C0E62A6FCE5200E1B26C /* XShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489C0E52A6FCE5200E1B26C /* XShape.swift */; };
+		548F4C952B8F14490086C94F /* CrossScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F4C942B8F14490086C94F /* CrossScene.swift */; };
+		548F4C972B8F14520086C94F /* CrossSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F4C962B8F14520086C94F /* CrossSceneView.swift */; };
+		548F4C9A2B8F43A80086C94F /* RandomSegmScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F4C992B8F43A80086C94F /* RandomSegmScene.swift */; };
+		548F4C9C2B8F43B10086C94F /* RandomSegmSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F4C9B2B8F43B10086C94F /* RandomSegmSceneView.swift */; };
+		548F4C9F2B8F45110086C94F /* CrossSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548F4C9E2B8F45110086C94F /* CrossSolver.swift */; };
 		54A98C442B67CBE800865725 /* SubjScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98C432B67CBE800865725 /* SubjScene.swift */; };
 		54A98C462B67CBF800865725 /* SubjSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A98C452B67CBF800865725 /* SubjSceneView.swift */; };
 		54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D261162A78E315007BFBEF /* TwoSegmentScene.swift */; };
@@ -94,6 +99,11 @@
 		5489C0E02A6FC6A600E1B26C /* FixScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixScene.swift; sourceTree = "<group>"; };
 		5489C0E22A6FC6B000E1B26C /* FixSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixSceneView.swift; sourceTree = "<group>"; };
 		5489C0E52A6FCE5200E1B26C /* XShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XShape.swift; sourceTree = "<group>"; };
+		548F4C942B8F14490086C94F /* CrossScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossScene.swift; sourceTree = "<group>"; };
+		548F4C962B8F14520086C94F /* CrossSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossSceneView.swift; sourceTree = "<group>"; };
+		548F4C992B8F43A80086C94F /* RandomSegmScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSegmScene.swift; sourceTree = "<group>"; };
+		548F4C9B2B8F43B10086C94F /* RandomSegmSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSegmSceneView.swift; sourceTree = "<group>"; };
+		548F4C9E2B8F45110086C94F /* CrossSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossSolver.swift; sourceTree = "<group>"; };
 		54A98C432B67CBE800865725 /* SubjScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjScene.swift; sourceTree = "<group>"; };
 		54A98C452B67CBF800865725 /* SubjSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjSceneView.swift; sourceTree = "<group>"; };
 		54D261162A78E315007BFBEF /* TwoSegmentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSegmentScene.swift; sourceTree = "<group>"; };
@@ -211,6 +221,32 @@
 				5489C0E52A6FCE5200E1B26C /* XShape.swift */,
 			);
 			path = Shape;
+			sourceTree = "<group>";
+		};
+		548F4C932B8F14370086C94F /* Cross */ = {
+			isa = PBXGroup;
+			children = (
+				548F4C942B8F14490086C94F /* CrossScene.swift */,
+				548F4C962B8F14520086C94F /* CrossSceneView.swift */,
+			);
+			path = Cross;
+			sourceTree = "<group>";
+		};
+		548F4C982B8F43910086C94F /* RandomSegm */ = {
+			isa = PBXGroup;
+			children = (
+				548F4C992B8F43A80086C94F /* RandomSegmScene.swift */,
+				548F4C9B2B8F43B10086C94F /* RandomSegmSceneView.swift */,
+			);
+			path = RandomSegm;
+			sourceTree = "<group>";
+		};
+		548F4C9D2B8F44FB0086C94F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				548F4C9E2B8F45110086C94F /* CrossSolver.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		54A98C422B67CBCC00865725 /* Subj */ = {
@@ -338,6 +374,7 @@
 		54EBAFE72A5C315B00E4E31F /* iOverlayDebug */ = {
 			isa = PBXGroup;
 			children = (
+				548F4C9D2B8F44FB0086C94F /* Util */,
 				5489C0E42A6FCE3E00E1B26C /* Shape */,
 				54EBB0002A5C325400E4E31F /* Test */,
 				54EBAFFD2A5C320500E4E31F /* Scene */,
@@ -381,6 +418,8 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				548F4C982B8F43910086C94F /* RandomSegm */,
+				548F4C932B8F14370086C94F /* Cross */,
 				545D19D12B691C86002D3C6A /* Vector */,
 				54A98C422B67CBCC00865725 /* Subj */,
 				54EEDB6E2B4EC88D0062D585 /* Edge */,
@@ -546,8 +585,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				545646872AFA9980008ED0AA /* OverlayTestBank.swift in Sources */,
+				548F4C9A2B8F43A80086C94F /* RandomSegmScene.swift in Sources */,
 				54D65DEB2A74004D004EB898 /* TwoTestStore.swift in Sources */,
 				54FC0EAE2A5D94FD00BF38DB /* SegmentSceneView.swift in Sources */,
+				548F4C952B8F14490086C94F /* CrossScene.swift in Sources */,
 				54D4BCFE2A83AF6200443253 /* DifferenceSceneView.swift in Sources */,
 				54D261172A78E315007BFBEF /* TwoSegmentScene.swift in Sources */,
 				54D65DE72A73FEF0004EB898 /* TwoSplitScene.swift in Sources */,
@@ -585,7 +626,9 @@
 				5477AA1C2B1DA928009407A6 /* ScanBeamListViewer.swift in Sources */,
 				54D5AFED2A851C2400F02800 /* StarExtractSceneView.swift in Sources */,
 				54A98C442B67CBE800865725 /* SubjScene.swift in Sources */,
+				548F4C9C2B8F43B10086C94F /* RandomSegmSceneView.swift in Sources */,
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
+				548F4C972B8F14520086C94F /* CrossSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				545D19D52B691CA6002D3C6A /* VectorSceneView.swift in Sources */,
 				54EBB0222A5C369200E4E31F /* DegenerateTestStore.swift in Sources */,
@@ -603,6 +646,7 @@
 				54DB52112A82AAF300C031A2 /* IntersectSceneView.swift in Sources */,
 				5428FA732B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift in Sources */,
 				54ED9D8F2A71A34100E5CBDB /* AngleClockWiseScene.swift in Sources */,
+				548F4C9F2B8F45110086C94F /* CrossSolver.swift in Sources */,
 				54EBB0022A5C325F00E4E31F /* TestStore.swift in Sources */,
 				54D744A72A6404530064D79B /* AngleSortSceneView.swift in Sources */,
 			);
