@@ -92,7 +92,7 @@ final class CrossScene: ObservableObject, SceneContainer {
         }
         
         let points = editor.points
-        let vecs = points.map { $0.fixVec }
+        let vecs = points.map { $0.point }
         crossVecs.removeAll()
         guard !vecs.isEmpty else {
             edgeA = nil
@@ -109,8 +109,8 @@ final class CrossScene: ObservableObject, SceneContainer {
         let edA = ShapeEdge(a: vecs[0], b: vecs[1], count: ShapeCount(subj: 0, clip: 0))
         let edB = ShapeEdge(a: vecs[2], b: vecs[3], count: ShapeCount(subj: 0, clip: 0))
         
-        let cross = edA.cross(edB)
-        var pnts = [FixVec]()
+        let cross = edA.xSegment.cross(edB.xSegment)
+        var pnts = [Point]()
 
         if let cross = cross {
             switch cross.type {
@@ -143,7 +143,13 @@ final class CrossScene: ObservableObject, SceneContainer {
 
         crossVecs = matrix.screen(worldPoints: pnts.map({ $0.cgPoint }) )
         
-        let crossType = CrossSolver.isCross(a0: edA.a, b0: edA.b, a1: edB.a, b1: edB.b)
+        
+        let a0 = FixVec(edA.xSegment.a)
+        let b0 = FixVec(edA.xSegment.b)
+        let a1 = FixVec(edB.xSegment.a)
+        let b1 = FixVec(edB.xSegment.b)
+        
+        let crossType = CrossSolver.isCross(a0: a0, b0: b0, a1: a1, b1: b1)
         
         switch crossType {
         case .pure:
@@ -175,10 +181,10 @@ final class CrossScene: ObservableObject, SceneContainer {
     }
 }
 
-private extension FixVec {
+private extension Point {
     
     var floatString: String {
-        let p = self.float
+        let p = self.cgPoint
         let x = String(format: "%.1f", p.x)
         let y = String(format: "%.1f", p.y)
         return "(\(x), \(y))"

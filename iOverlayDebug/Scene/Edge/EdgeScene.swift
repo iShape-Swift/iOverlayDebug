@@ -100,7 +100,7 @@ final class EdgeScene: ObservableObject, SceneContainer {
         }
         
         let points = editor.points
-        let vecs = points.map { $0.fixVec }
+        let vecs = points.map { $0.point }
         crossVecs.removeAll()
         guard !vecs.isEmpty else {
             edgeA = nil
@@ -117,8 +117,8 @@ final class EdgeScene: ObservableObject, SceneContainer {
         let edA = ShapeEdge(a: vecs[0], b: vecs[1], count: ShapeCount(subj: 0, clip: 0))
         let edB = ShapeEdge(a: vecs[2], b: vecs[3], count: ShapeCount(subj: 0, clip: 0))
         
-        let cross = edA.cross(edB)
-        var pnts = [FixVec]()
+        let cross = edA.xSegment.cross(edB.xSegment)
+        var pnts = [Point]()
 
         if let cross = cross {
             switch cross.type {
@@ -165,10 +165,10 @@ final class EdgeScene: ObservableObject, SceneContainer {
     
 }
 
-private extension FixVec {
+private extension Point {
     
     var floatString: String {
-        let p = self.float
+        let p = self.cgPoint
         let x = String(format: "%.1f", p.x)
         let y = String(format: "%.1f", p.y)
         return "(\(x), \(y))"

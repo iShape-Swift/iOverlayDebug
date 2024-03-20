@@ -82,7 +82,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
 
         var overlay = Overlay()
         overlay.add(path: path, type: .subject)
-        let segments = overlay.buildSegments(fillRule: .evenOdd)
+        let segments = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
 
         var id = 0
         for s in segments {

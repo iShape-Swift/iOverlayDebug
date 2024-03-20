@@ -138,7 +138,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             }
         }
         
-        let segments = overlay.buildSegments(fillRule: rule)
+        let segments = overlay.buildSegments(fillRule: rule, solver: .list)
 
         var id = 0
         for s in segments {

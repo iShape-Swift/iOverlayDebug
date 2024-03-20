@@ -144,6 +144,7 @@ final class IntersectScene: ObservableObject, SceneContainer {
                 )
             )
         }
+        
     }
     
     func printTest() {
