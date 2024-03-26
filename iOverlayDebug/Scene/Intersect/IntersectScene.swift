@@ -121,7 +121,7 @@ final class IntersectScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph(fillRule: rule).extractShapes(overlayRule: .intersect)
+        let list = overlay.buildGraph(fillRule: rule, solver: .tree).extractShapes(overlayRule: .intersect)
         
         for i in 0..<list.count {
             let color = Color(index: i)
