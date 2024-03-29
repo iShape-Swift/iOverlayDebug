@@ -8,7 +8,7 @@
 import SwiftUI
 import iDebug
 import iShape
-import iOverlay
+@testable import iOverlay
 import iFixFloat
 
 struct Edge: Identifiable, Hashable {
@@ -117,28 +117,26 @@ final class EdgeScene: ObservableObject, SceneContainer {
         let edA = ShapeEdge(a: vecs[0], b: vecs[1], count: ShapeCount(subj: 0, clip: 0))
         let edB = ShapeEdge(a: vecs[2], b: vecs[3], count: ShapeCount(subj: 0, clip: 0))
         
-        let cross = edA.xSegment.cross(edB.xSegment)
+        let cross = edA.xSegment.debugCross(edB.xSegment)
         var pnts = [Point]()
 
         if let cross = cross {
-            switch cross.type {
-            case .pure:
-                crossResult = "middle cross : \(cross.point.floatString)"
-                pnts.append(cross.point)
-            case .end_a:
-                crossResult = "A end cross : \(cross.point.floatString)"
-                pnts.append(cross.point)
-            case .end_b:
-                crossResult = "B end cross : \(cross.point.floatString)"
-                pnts.append(cross.point)
-            case .overlay_a:
-                crossResult = "A overlay B"
-            case .overlay_b:
-                crossResult = "B overlay A"
-            case .penetrate:
-                crossResult = "penetrate A: \(cross.point.floatString) B: \(cross.second.floatString)"
-                pnts.append(cross.point)
-                pnts.append(cross.second)
+            switch cross {
+            case .pure(let p):
+                crossResult = "middle cross : \(p.floatString)"
+                pnts.append(p)
+            case .equal:
+                crossResult = "equal overlap"
+            case .end_overlap:
+                crossResult = "end overlap"
+            case .overlap:
+                crossResult = "mid overlap"
+            case .this_end(let p):
+                crossResult = "A end cross : \(p.floatString)"
+                pnts.append(p)
+            case .scan_end(let p):
+                crossResult = "B end cross : \(p.floatString)"
+                pnts.append(p)
             }
             colorA = EdgeScene.colorA.opacity(0.8)
             colorB = EdgeScene.colorB.opacity(0.8)

@@ -156,6 +156,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             
             id += 1
         }
+        
     }
     
     func printTest() {

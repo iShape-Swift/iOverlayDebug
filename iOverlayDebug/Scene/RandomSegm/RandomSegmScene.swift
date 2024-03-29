@@ -21,9 +21,9 @@ final class RandomSegmScene: ObservableObject, SceneContainer {
     var testStore: TestStore { edgeTestStore }
 
     private (set) var edges: [Edge] = []
-    
-    private (set) var colorA: Color = CrossScene.colorA
-    private (set) var colorB: Color = CrossScene.colorB
+
+    private (set) var colorA: Color = .orange
+    private (set) var colorB: Color = .purple
     
     private var matrix: Matrix = .empty
     

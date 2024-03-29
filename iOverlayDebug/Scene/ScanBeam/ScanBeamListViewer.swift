@@ -31,10 +31,6 @@ final class ScanBeamListViewer: ObservableObject {
     }
     
     func set(ids: [Int]) {
-        let activeIds = Set(ids)
-        
-        
-        
         
     }
 }
