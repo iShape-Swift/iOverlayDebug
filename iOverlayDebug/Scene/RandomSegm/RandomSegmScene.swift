@@ -56,7 +56,7 @@ final class RandomSegmScene: ObservableObject, SceneContainer {
         edges.removeAll()
         
         let length: Int32 = 20
-        let reandEdges = CrossSolver.randomSegments(range: 0..<2 * length, length: 4..<8, count: 100)
+        let reandEdges = TestCrossSolver.randomSegments(range: 0..<2 * length, length: 4..<8, count: 100)
         
         for id in 0..<reandEdges.count {
             let e = reandEdges[id]

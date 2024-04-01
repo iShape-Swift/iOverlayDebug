@@ -116,8 +116,8 @@ final class EdgeScene: ObservableObject, SceneContainer {
 
         let edA = ShapeEdge(a: vecs[0], b: vecs[1], count: ShapeCount(subj: 0, clip: 0))
         let edB = ShapeEdge(a: vecs[2], b: vecs[3], count: ShapeCount(subj: 0, clip: 0))
-        
-        let cross = edA.xSegment.debugCross(edB.xSegment)
+
+        let cross = ScanCrossSolver.debugCross(target: edA.xSegment, other: edB.xSegment)
         var pnts = [Point]()
 
         if let cross = cross {
@@ -125,16 +125,20 @@ final class EdgeScene: ObservableObject, SceneContainer {
             case .pure(let p):
                 crossResult = "middle cross : \(p.floatString)"
                 pnts.append(p)
-            case .equal:
-                crossResult = "equal overlap"
-            case .end_overlap:
+            case .endOverlap:
                 crossResult = "end overlap"
             case .overlap:
                 crossResult = "mid overlap"
-            case .this_end(let p):
+            case .targetEndExact(let p):
                 crossResult = "A end cross : \(p.floatString)"
                 pnts.append(p)
-            case .scan_end(let p):
+            case .targetEndRound(let p):
+                crossResult = "A end cross : \(p.floatString)"
+                pnts.append(p)
+            case .otherEndExact(let p):
+                crossResult = "B end cross : \(p.floatString)"
+                pnts.append(p)
+            case .otherEndRound(let p):
                 crossResult = "B end cross : \(p.floatString)"
                 pnts.append(p)
             }
