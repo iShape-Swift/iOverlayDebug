@@ -82,7 +82,7 @@ final class FixScene: ObservableObject, SceneContainer {
         
         guard !editor.points.isEmpty else { return }
         
-        let path = editor.points.map({ $0.fixVec })
+        let path = editor.points.map({ $0.point })
 
         var overlay = Overlay()
         overlay.add(path: path, type: .subject)
@@ -92,11 +92,13 @@ final class FixScene: ObservableObject, SceneContainer {
         for i in 0..<list.count {
             let color = Color(index: i)
             let item = list[i]
-            let hull = matrix.screen(worldPoints: item.contour.map({ $0.cgPoint }))
+            let hull = matrix.screen(worldPoints: item[0].map({ $0.cgPoint }))
             
             var holes = [[CGPoint]]()
-            for hole in item.holes {
-                holes.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
+            if item.count > 1 {
+                for hole in item[1..<item.count] {
+                    holes.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
+                }
             }
 
             shapes.append(

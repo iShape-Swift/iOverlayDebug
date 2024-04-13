@@ -97,29 +97,29 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
         
         guard !subjEditors.isEmpty, !clipEditors.isEmpty else { return }
 
-        var original = Set<FixVec>()
+        var original = Set<Point>()
         
         var overlay = Overlay()
         
         for editor in subjEditors {
-            let path = editor.points.map({ $0.fixVec })
+            let path = editor.points.map({ $0.point })
             overlay.add(path: path, type: .subject)
             original.formUnion(path)
         }
         
         for editor in clipEditors {
-            let path = editor.points.map({ $0.fixVec })
+            let path = editor.points.map({ $0.point })
             overlay.add(path: path, type: .clip)
             original.formUnion(path)
         }
         
         let segments = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
         
-        var points = Set<FixVec>()
+        var points = Set<Point>()
         
         for seg in segments {
-            points.insert(FixVec(seg.seg.a))
-            points.insert(FixVec(seg.seg.b))
+            points.insert(seg.seg.a)
+            points.insert(seg.seg.b)
         }
         
         points.subtract(original)

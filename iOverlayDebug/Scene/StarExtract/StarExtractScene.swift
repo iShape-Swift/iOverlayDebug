@@ -97,11 +97,13 @@ final class StarExtractScene: ObservableObject, SceneContainer {
             let color = Color(index: i)
             let item = list[i]
 
-            let hull = matrix.screen(worldPoints: item.contour.map({ iScale * $0.cgPoint }))
+            let hull = matrix.screen(worldPoints: item[0].map({ iScale * $0.cgPoint }))
             
             var holes = [[CGPoint]]()
-            for hole in item.holes {
-                holes.append(matrix.screen(worldPoints: hole.map({ iScale * $0.cgPoint })))
+            if item.count > 1 {
+                for hole in item[1..<item.count] {
+                    holes.append(matrix.screen(worldPoints: hole.map({ iScale * $0.cgPoint })))
+                }
             }
 
             shapes.append(
@@ -142,7 +144,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         return points
     }
     
-    private func startA() -> [FixVec] {
+    private func startA() -> [Point] {
         let test = starTestStore.test
         
         return self.generateStarPoints(
@@ -151,10 +153,10 @@ final class StarExtractScene: ObservableObject, SceneContainer {
             count: test.count,
             angle: angle,
             scale: scale
-        ).map({ $0.fixVec })
+        ).map({ $0.point })
     }
     
-    private func startB() -> [FixVec] {
+    private func startB() -> [Point] {
         let test = starTestStore.test
         
         return self.generateStarPoints(
@@ -163,7 +165,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
             count: test.count,
             angle: 0,
             scale: scale
-        ).map({ $0.fixVec })
+        ).map({ $0.point })
     }
     
     func printTest() {

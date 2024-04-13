@@ -81,7 +81,7 @@ final class SplitScene: ObservableObject, SceneContainer {
         
         guard !editor.points.isEmpty else { return }
         
-        let path = editor.points.map({ $0.fixVec })
+        let path = editor.points.map({ $0.point })
         
         var overlay = Overlay()
         overlay.add(path: path, type: .subject)

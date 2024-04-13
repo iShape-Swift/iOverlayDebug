@@ -29,14 +29,14 @@ extension FixShape: Codable {
 }
 
 struct TwoTestData: Encodable {
-    let subjPaths: [[FixVec]]
-    let clipPaths: [[FixVec]]
-    let clip: [FixShape]
-    let subject: [FixShape]
-    let difference: [FixShape]
-    let intersect: [FixShape]
-    let union: [FixShape]
-    let xor: [FixShape]
+    let subjPaths: [[Point]]
+    let clipPaths: [[Point]]
+    let clip: [Shape]
+    let subject: [Shape]
+    let difference: [Shape]
+    let intersect: [Shape]
+    let union: [Shape]
+    let xor: [Shape]
 }
 
 
@@ -53,8 +53,8 @@ extension TwoTestStore {
         
         var i = 0
         for test in self.data {
-            let subjs = test.subjPaths.map({ $0.map({ $0.fix }) })
-            let clips = test.clipPaths.map({ $0.map({ $0.fix }) })
+            let subjs = test.subjPaths.map({ $0.map({ $0.point }) })
+            let clips = test.clipPaths.map({ $0.map({ $0.point }) })
 
             var overlay = Overlay()
             overlay.add(paths: subjs, type: .subject)

@@ -127,13 +127,13 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         var overlay = Overlay()
         
         for editor in subjEditors {
-            let path = editor.points.map({ $0.fixVec })
+            let path = editor.points.map({ $0.point })
             overlay.add(path: path, type: .subject)
         }
         
         if !clipEditors.isEmpty {
             for editor in clipEditors {
-                let path = editor.points.map({ $0.fixVec })
+                let path = editor.points.map({ $0.point })
                 overlay.add(path: path, type: .clip)
             }
         }

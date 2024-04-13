@@ -71,7 +71,7 @@ final class SegmentScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        let path = editor.points.map({ $0.fixVec })
+        let path = editor.points.map({ $0.point })
         segs.removeAll()
         
         defer {

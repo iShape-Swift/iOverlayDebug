@@ -78,8 +78,8 @@ final class StarScene: ObservableObject, SceneContainer {
         self.starA = matrix.screen(worldPoints: pointsA)
         self.starB = matrix.screen(worldPoints: pointsB)
         
-        let sA = pointsA.map({ $0.fixVec })
-        let sB = pointsB.map({ $0.fixVec })
+        let sA = pointsA.map({ $0.point })
+        let sB = pointsB.map({ $0.point })
         
 //        var original = Set<FixVec>()
         

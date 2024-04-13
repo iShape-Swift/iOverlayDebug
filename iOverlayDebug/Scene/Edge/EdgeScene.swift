@@ -42,7 +42,7 @@ final class EdgeScene: ObservableObject, SceneContainer {
     private (set) var colorA: Color = EdgeScene.colorA
     private (set) var colorB: Color = EdgeScene.colorB
     
-    private var matrix: Matrix = .empty
+    private var matrix: iDebug.Matrix = .empty
     
     init(id: Int) {
         self.id = id
@@ -122,8 +122,11 @@ final class EdgeScene: ObservableObject, SceneContainer {
 
         if let cross = cross {
             switch cross {
-            case .pure(let p):
-                crossResult = "middle cross : \(p.floatString)"
+            case .pureRound(let p):
+                crossResult = "middle round cross : \(p.floatString)"
+                pnts.append(p)
+            case .pureExact(let p):
+                crossResult = "middle exact cross : \(p.floatString)"
                 pnts.append(p)
             case .endOverlap:
                 crossResult = "end overlap"

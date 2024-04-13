@@ -127,12 +127,12 @@ final class SubjScene: ObservableObject, SceneContainer {
         var overlay = Overlay()
         
         for editor in subjEditors {
-            let path = editor.points.map({ $0.fixVec })
+            let path = editor.points.map({ $0.point })
             overlay.add(path: path, type: .subject)
         }
         
         for editor in clipEditors {
-            let path = editor.points.map({ $0.fixVec })
+            let path = editor.points.map({ $0.point })
             overlay.add(path: path, type: .clip)
         }
         
@@ -142,11 +142,13 @@ final class SubjScene: ObservableObject, SceneContainer {
             let color = Color(index: i)
             let item = list[i]
 
-            let hull = matrix.screen(worldPoints: item.contour.map({ $0.cgPoint }))
+            let hull = matrix.screen(worldPoints: item[0].map({ $0.cgPoint }))
             
             var holes = [[CGPoint]]()
-            for hole in item.holes {
-                holes.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
+            if item.count > 1 {
+                for hole in item[1..<item.count] {
+                    holes.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
+                }
             }
 
             shapes.append(
