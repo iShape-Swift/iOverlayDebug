@@ -38,6 +38,9 @@ final class EdgeScene: ObservableObject, SceneContainer {
     private (set) var edgeB: Edge?
     private (set) var crossVecs: [CGPoint] = []
     private (set) var crossResult = ""
+    private (set) var crossColor: Color = .gray
+    private (set) var connected = ""
+    private (set) var connectedColor: Color = .gray
     
     private (set) var colorA: Color = EdgeScene.colorA
     private (set) var colorB: Color = EdgeScene.colorB
@@ -117,44 +120,64 @@ final class EdgeScene: ObservableObject, SceneContainer {
         let edA = ShapeEdge(a: vecs[0], b: vecs[1], count: ShapeCount(subj: 0, clip: 0))
         let edB = ShapeEdge(a: vecs[2], b: vecs[3], count: ShapeCount(subj: 0, clip: 0))
 
+        
+        let a0b0a1 = Triangle.clockDirection(p0: edA.xSegment.a, p1: edA.xSegment.b, p2: edB.xSegment.a)
+        let a0b0b1 = Triangle.clockDirection(p0: edA.xSegment.a, p1: edA.xSegment.b, p2: edB.xSegment.b)
+
+        let a1b1a0 = Triangle.clockDirection(p0: edB.xSegment.a, p1: edB.xSegment.b, p2: edA.xSegment.a)
+        let a1b1b0 = Triangle.clockDirection(p0: edB.xSegment.a, p1: edB.xSegment.b, p2: edA.xSegment.b)
+        
+        let s = a0b0a1 + a0b0b1 + a1b1a0 + a1b1b0
+
+        crossColor = edA.xSegment.isCross(other: edB.xSegment) ? .red : .gray
+        
         let cross = ScanCrossSolver.debugCross(target: edA.xSegment, other: edB.xSegment)
         var pnts = [Point]()
 
         if let cross = cross {
             switch cross {
             case .pureRound(let p):
-                crossResult = "middle round cross : \(p.floatString)"
+                crossResult = "middle round cross : \(p.floatString) s: \(s)"
                 pnts.append(p)
             case .pureExact(let p):
-                crossResult = "middle exact cross : \(p.floatString)"
+                crossResult = "middle exact cross : \(p.floatString) s: \(s)"
                 pnts.append(p)
             case .endOverlap:
-                crossResult = "end overlap"
+                crossResult = "end overlap s: \(s)"
             case .overlap:
-                crossResult = "mid overlap"
+                crossResult = "mid overlap s: \(s)"
             case .targetEndExact(let p):
-                crossResult = "A end cross : \(p.floatString)"
+                crossResult = "A end cross : \(p.floatString) s: \(s)"
                 pnts.append(p)
             case .targetEndRound(let p):
-                crossResult = "A end cross : \(p.floatString)"
+                crossResult = "A end cross : \(p.floatString) s: \(s)"
                 pnts.append(p)
             case .otherEndExact(let p):
-                crossResult = "B end cross : \(p.floatString)"
+                crossResult = "B end cross : \(p.floatString) s: \(s)"
                 pnts.append(p)
             case .otherEndRound(let p):
-                crossResult = "B end cross : \(p.floatString)"
+                crossResult = "B end cross : \(p.floatString) s: \(s)"
                 pnts.append(p)
             }
             colorA = EdgeScene.colorA.opacity(0.8)
             colorB = EdgeScene.colorB.opacity(0.8)
         } else {
-            crossResult = "not cross or parallel"
+            crossResult = "not cross or parallel s: \(s)"
             colorA = EdgeScene.colorA
             colorB = EdgeScene.colorB
         }
         
 
         crossVecs = matrix.screen(worldPoints: pnts.map({ $0.cgPoint }) )
+        
+        
+        if edA.xSegment.isConnected(other: edB.xSegment) {
+            self.connected = "True"
+            self.connectedColor = .green
+        } else {
+            self.connected = "False"
+            self.connectedColor = .gray
+        }
         
     }
     
@@ -179,4 +202,56 @@ private extension Point {
         return "(\(x), \(y))"
     }
 
+}
+
+private extension XSegment {
+    
+    func isCross(other: XSegment) -> Bool {
+        guard !ScanCrossSolver.testX(target: self, other: other) else {
+            return false
+        }
+
+        guard !ScanCrossSolver.testY(target: self, other: other) else {
+            return false
+        }
+        
+        let a0b0a1 = Triangle.clockDirection(p0: self.a, p1: self.b, p2: other.a)
+        let a0b0b1 = Triangle.clockDirection(p0: self.a, p1: self.b, p2: other.b)
+
+        let a1b1a0 = Triangle.clockDirection(p0: other.a, p1: other.b, p2: self.a)
+        let a1b1b0 = Triangle.clockDirection(p0: other.a, p1: other.b, p2: self.b)
+
+        let s = (1 & (a0b0a1 + 1)) + (1 & (a0b0b1 + 1)) + (1 & (a1b1a0 + 1)) + (1 & (a1b1b0 + 1))
+
+        print("\(a0b0a1), \(a0b0b1), \(a1b1a0), \(a1b1b0)")
+        print("s: \(s)")
+
+        let isCross = a0b0a1 != a0b0b1 && a1b1a0 != a1b1b0
+
+        return isCross && s != 2 || s == 4
+    }
+    
+    func isConnected(other: XSegment) -> Bool {
+        guard !ScanCrossSolver.testX(target: self, other: other) else {
+            return false
+        }
+
+        guard !ScanCrossSolver.testY(target: self, other: other) else {
+            return false
+        }
+        
+        let a0b0a1 = Triangle.clockDirection(p0: self.a, p1: self.b, p2: other.a)
+        let a0b0b1 = Triangle.clockDirection(p0: self.a, p1: self.b, p2: other.b)
+
+        let a1b1a0 = Triangle.clockDirection(p0: other.a, p1: other.b, p2: self.a)
+        let a1b1b0 = Triangle.clockDirection(p0: other.a, p1: other.b, p2: self.b)
+
+        let isCollinear = (a0b0a1 | a0b0b1 | a1b1a0 | a1b1b0) == 0
+        
+        let isCross = a0b0a1 != a0b0b1 && a1b1a0 != a1b1b0 || isCollinear
+
+        return isCross
+    }
+    
+    
 }

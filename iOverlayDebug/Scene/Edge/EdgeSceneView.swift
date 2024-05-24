@@ -35,7 +35,8 @@ struct EdgeSceneView: View {
                 HStack {
                     Text("Edge A").font(.title2).foregroundColor(EdgeScene.colorA)
                     Text("Edge B").font(.title2).foregroundColor(EdgeScene.colorB)
-                    Text(scene.crossResult).font(.title2).foregroundColor(.gray)
+                    Text(scene.crossResult).font(.title2).foregroundColor(scene.crossColor)
+                    Text(scene.connected).font(.title2).foregroundColor(scene.connectedColor)
                 }
                 Spacer()
             }
