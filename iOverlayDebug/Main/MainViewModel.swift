@@ -24,12 +24,13 @@ final class MainViewModel: ObservableObject {
     private let intersectScene = IntersectScene(id: 11)
     private let unionScene = UnionScene(id: 12)
     private let differenceScene = DifferenceScene(id: 13)
-    private let xorScene = XorScene(id: 14)
-    private let subjScene = SubjScene(id: 15)
-    private let starExtractScene = StarExtractScene(id: 16)
-    private let scanBeamScene = ScanBeamScene(id: 17)
-    private let edgeScene = EdgeScene(id: 18)
-    private let randomSegmScene = RandomSegmScene(id: 19)
+    private let inverseDifferenceScene = InverseDifferenceScene(id: 14)
+    private let xorScene = XorScene(id: 15)
+    private let subjScene = SubjScene(id: 16)
+    private let starExtractScene = StarExtractScene(id: 17)
+    private let scanBeamScene = ScanBeamScene(id: 18)
+    private let edgeScene = EdgeScene(id: 19)
+    private let randomSegmScene = RandomSegmScene(id: 20)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -49,6 +50,7 @@ final class MainViewModel: ObservableObject {
         intersectScene.handler,
         unionScene.handler,
         differenceScene.handler,
+        inverseDifferenceScene.handler,
         xorScene.handler,
         subjScene.handler,
         starExtractScene.handler,
@@ -106,16 +108,18 @@ final class MainViewModel: ObservableObject {
         case 13:
             differenceScene.makeView()
         case 14:
-            xorScene.makeView()
+            inverseDifferenceScene.makeView()
         case 15:
-            subjScene.makeView()
+            xorScene.makeView()
         case 16:
-            starExtractScene.makeView()
+            subjScene.makeView()
         case 17:
-            scanBeamScene.makeView()
+            starExtractScene.makeView()
         case 18:
-            edgeScene.makeView()
+            scanBeamScene.makeView()
         case 19:
+            edgeScene.makeView()
+        case 20:
             randomSegmScene.makeView()
         default:
             fatalError("scene not set")
@@ -165,16 +169,18 @@ final class MainViewModel: ObservableObject {
         case 13:
             testStore = differenceScene.testStore
         case 14:
-            testStore = xorScene.testStore
+            testStore = inverseDifferenceScene.testStore
         case 15:
-            testStore = subjScene.testStore
+            testStore = xorScene.testStore
         case 16:
-            testStore = starExtractScene.testStore
+            testStore = subjScene.testStore
         case 17:
-            testStore = scanBeamScene.testStore
+            testStore = starExtractScene.testStore
         case 18:
-            testStore = edgeScene.testStore
+            testStore = scanBeamScene.testStore
         case 19:
+            testStore = edgeScene.testStore
+        case 20:
             testStore = randomSegmScene.testStore
         default:
             break

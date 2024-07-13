@@ -1,8 +1,8 @@
 //
-//  TwoSegmentScene.swift
+//  InverseDifferenceScene.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 01.08.2023.
+//  Created by Nail Sharipov on 01.07.2024.
 //
 
 import SwiftUI
@@ -10,34 +10,11 @@ import iDebug
 import iOverlay
 import iFixFloat
 
-
-final class TwoSegmentScene: ObservableObject, SceneContainer {
-
-    @Published
-    var solver: Solver = .auto {
-        didSet {
-            self.solve()
-        }
-    }
-    
-    @Published
-    var rule: FillRule = .nonZero {
-        didSet {
-            self.solve()
-        }
-    }
+final class InverseDifferenceScene: ObservableObject, SceneContainer {
 
     @Published
-    var power: Float = 1 {
+    var rule: FillRule = .evenOdd {
         didSet {
-            let scale = pow(10.0, power)
-            matrix.update(scale: scale)
-            for editor in subjEditors {
-                editor.matrix = matrix
-            }
-            for editor in clipEditors {
-                editor.matrix = matrix
-            }
             self.solve()
         }
     }
@@ -47,20 +24,14 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         .evenOdd
     ]
     
-    let solvers: [Solver] = [
-        .list,
-        .tree,
-        .auto
-    ]
-    
     let id: Int
-    let title = "Two Segment"
+    let title = "InverseDifference"
     
     let twoTestStore = TwoTestStore()
     var testStore: TestStore { twoTestStore }
     var subjEditors: [ContourEditor] = []
     var clipEditors: [ContourEditor] = []
-    private (set) var segs: [SegmentData] = []
+    private (set) var shapes: [XShape] = []
     
     private var matrix: Matrix = .empty
     
@@ -71,15 +42,15 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     
     func initSize(screenSize: CGSize) {
         if !matrix.screenSize.isIntSame(screenSize) {
-            matrix = Matrix(screenSize: screenSize, scale: pow(10.0, power), inverseY: true)
+            matrix = Matrix(screenSize: screenSize, scale: 10, inverseY: true)
             DispatchQueue.main.async { [weak self] in
                 self?.solve()
             }
         }
     }
     
-    func makeView() -> TwoSegmentSceneView {
-        TwoSegmentSceneView(scene: self)
+    func makeView() -> InverseDifferenceSceneView {
+        InverseDifferenceSceneView(scene: self)
     }
 
     func editorView(editor: ContourEditor) -> ContourEditorView {
@@ -88,9 +59,10 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
 
     func didUpdateTest() {
         let test = twoTestStore.test
+
         var newSubjEditors = [ContourEditor]()
         for path in test.subjPaths {
-            let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7), showArrows: false)
+            let editor = ContourEditor(showIndex: true, color: .red.opacity(0.7), showArrows: false)
             editor.onUpdate = { [weak self] _ in
                 self?.didUpdateEditor()
             }
@@ -100,7 +72,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         
         var newClipEditors = [ContourEditor]()
         for path in test.clipPaths {
-            let editor = ContourEditor(showIndex: true, color: .gray.opacity(0.7), showArrows: false)
+            let editor = ContourEditor(showIndex: true, color: .blue.opacity(0.7), showArrows: false)
             editor.onUpdate = { [weak self] _ in
                 self?.didUpdateEditor()
             }
@@ -128,14 +100,14 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     }
 
     func solve() {
-        segs.removeAll()
+        shapes.removeAll()
         
         defer {
             self.objectWillChange.send()
         }
         
-        guard !subjEditors.isEmpty else { return }
-        
+        guard !subjEditors.isEmpty || !clipEditors.isEmpty else { return }
+
         var overlay = Overlay()
         
         for editor in subjEditors {
@@ -143,30 +115,35 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .subject)
         }
         
-        if !clipEditors.isEmpty {
-            for editor in clipEditors {
-                let path = editor.points.map({ $0.point })
-                overlay.add(path: path, type: .clip)
-            }
+        for editor in clipEditors {
+            let path = editor.points.map({ $0.point })
+            overlay.add(path: path, type: .clip)
         }
         
-        let segments = overlay.buildSegments(fillRule: rule, solver: solver)
+        let list = overlay.buildGraph(fillRule: rule).extractShapes(overlayRule: .inverseDifference)
+        
+        for i in 0..<list.count {
+            let color = Color(index: i)
+            let item = list[i]
 
-        var id = 0
-        for s in segments {
-            let start = matrix.screen(worldPoint: FixVec(s.seg.a).cgPoint)
-            let end = matrix.screen(worldPoint: FixVec(s.seg.b).cgPoint)
+            let hull = matrix.screen(worldPoints: item[0].map({ $0.cgPoint }))
             
-            segs.append(
-                SegmentData(
-                    id: id,
-                    start: start,
-                    end: end,
-                    fill: s.fill
+            var holes = [[CGPoint]]()
+            if item.count > 1 {
+                for hole in item[1..<item.count] {
+                    holes.append(matrix.screen(worldPoints: hole.map({ $0.cgPoint })))
+                }
+            }
+
+            shapes.append(
+                XShape(
+                    id: i,
+                    hull: hull,
+                    holes: holes,
+                    color: color,
+                    fillColor: color.opacity(0.5)
                 )
             )
-            
-            id += 1
         }
     }
     
@@ -179,43 +156,6 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
         print("clipEditors:")
         for editor in clipEditors {
             print("path \(editor.id): \(editor.points.prettyPrint())")
-        }
-    }
-    
-}
-
-extension FillRule {
-
-    var title: String {
-        switch self {
-        case .evenOdd:
-            return "evenOdd"
-        case .nonZero:
-            return "nonZero"
-        }
-    }
-    
-}
-
-extension Solver: Hashable {
-    
-    public static func == (lhs: Solver, rhs: Solver) -> Bool {
-        lhs.strategy == rhs.strategy
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.strategy)
-    }
-    
-
-    var title: String {
-        switch self.strategy {
-        case .list:
-            return "list"
-        case .tree:
-            return "tree"
-        case .auto:
-            return "auto"
         }
     }
     

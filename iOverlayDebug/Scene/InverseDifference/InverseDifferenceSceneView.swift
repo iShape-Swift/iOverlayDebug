@@ -1,16 +1,17 @@
 //
-//  TwoSegmentSceneView.swift
+//  InverseDifferenceSceneView.swift
 //  iOverlayDebug
 //
-//  Created by Nail Sharipov on 01.08.2023.
+//  Created by Nail Sharipov on 01.07.2024.
 //
+
 import SwiftUI
 import iDebug
 
-struct TwoSegmentSceneView: View {
+struct InverseDifferenceSceneView: View {
  
     @ObservedObject
-    var scene: TwoSegmentScene
+    var scene: InverseDifferenceScene
     
     var body: some View {
         HStack {
@@ -36,15 +37,6 @@ struct TwoSegmentSceneView: View {
                         Text($0.title).foregroundColor(.black)
                     }
                 }.frame(maxWidth: 300)
-                Picker("Solver", selection: $scene.solver) {
-                    ForEach(scene.solvers, id: \.self) {
-                        Text($0.title).foregroundColor(.black)
-                    }
-                }.frame(maxWidth: 300)
-                Slider(
-                    value: $scene.power,
-                    in: 0.1...5
-                ).frame(maxWidth: 300)
                 Spacer()
             }
             ForEach(scene.subjEditors) { editor in
@@ -53,8 +45,8 @@ struct TwoSegmentSceneView: View {
             ForEach(scene.clipEditors) { editor in
                 scene.editorView(editor: editor)
             }
-            ForEach(scene.segs) { seg in
-                SegmentView(seg: seg)
+            ForEach(scene.shapes) { shape in
+                XShapeView(shape: shape)
             }
         }.onAppear() {
             scene.onAppear()

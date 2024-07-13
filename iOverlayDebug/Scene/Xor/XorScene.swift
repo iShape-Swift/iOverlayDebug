@@ -19,9 +19,22 @@ final class XorScene: ObservableObject, SceneContainer {
         }
     }
     
+    @Published
+    var solver: Solver = .auto {
+        didSet {
+            self.solve()
+        }
+    }
+    
     let rules: [FillRule] = [
         .nonZero,
         .evenOdd
+    ]
+    
+    let solvers: [Solver] = [
+        .list,
+        .tree,
+        .auto
     ]
     
     let id: Int
@@ -91,7 +104,6 @@ final class XorScene: ObservableObject, SceneContainer {
     func didUpdateEditor() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            // TODO validate convex
             self.solve()
         }
     }
@@ -121,7 +133,7 @@ final class XorScene: ObservableObject, SceneContainer {
             overlay.add(path: path, type: .clip)
         }
         
-        let list = overlay.buildGraph(fillRule: rule).extractShapes(overlayRule: .xor)
+        let list = overlay.buildGraph(fillRule: rule, solver: solver).extractShapes(overlayRule: .xor)
         
         for i in 0..<list.count {
             let color = Color(index: i)

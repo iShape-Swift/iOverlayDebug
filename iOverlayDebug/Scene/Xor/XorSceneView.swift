@@ -37,6 +37,11 @@ struct XorSceneView: View {
                         Text($0.title).foregroundColor(.black)
                     }
                 }.frame(maxWidth: 300)
+                Picker("Solver", selection: $scene.solver) {
+                    ForEach(scene.solvers, id: \.self) {
+                        Text($0.title).foregroundColor(.black)
+                    }
+                }.frame(maxWidth: 300)
                 Spacer()
             }
             ForEach(scene.subjEditors) { editor in

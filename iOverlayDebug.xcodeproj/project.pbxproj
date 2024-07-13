@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540202862C331CBB00996C8B /* InverseDifferenceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540202852C331CBB00996C8B /* InverseDifferenceScene.swift */; };
+		540202882C331CCA00996C8B /* InverseDifferenceSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540202872C331CCA00996C8B /* InverseDifferenceSceneView.swift */; };
 		5428FA6F2B1D05980080D9F8 /* ScanBeamScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428FA6E2B1D05980080D9F8 /* ScanBeamScene.swift */; };
 		5428FA712B1D05A40080D9F8 /* ScanBeamSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428FA702B1D05A40080D9F8 /* ScanBeamSceneView.swift */; };
 		5428FA732B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428FA722B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift */; };
@@ -81,6 +83,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540202852C331CBB00996C8B /* InverseDifferenceScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseDifferenceScene.swift; sourceTree = "<group>"; };
+		540202872C331CCA00996C8B /* InverseDifferenceSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseDifferenceSceneView.swift; sourceTree = "<group>"; };
 		5428FA6E2B1D05980080D9F8 /* ScanBeamScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamScene.swift; sourceTree = "<group>"; };
 		5428FA702B1D05A40080D9F8 /* ScanBeamSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamSceneView.swift; sourceTree = "<group>"; };
 		5428FA722B1D05D30080D9F8 /* ScanBeamSceneTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBeamSceneTestStore.swift; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540202842C331CA500996C8B /* InverseDifference */ = {
+			isa = PBXGroup;
+			children = (
+				540202852C331CBB00996C8B /* InverseDifferenceScene.swift */,
+				540202872C331CCA00996C8B /* InverseDifferenceSceneView.swift */,
+			);
+			path = InverseDifference;
+			sourceTree = "<group>";
+		};
 		5428FA6D2B1D05730080D9F8 /* ScanBeam */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +428,7 @@
 		54EBAFFD2A5C320500E4E31F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				540202842C331CA500996C8B /* InverseDifference */,
 				544C3CAC2BB6C14600458727 /* Edge */,
 				548F4C982B8F43910086C94F /* RandomSegm */,
 				545D19D12B691C86002D3C6A /* Vector */,
@@ -588,6 +602,7 @@
 				544C3CAF2BB6C14600458727 /* EdgeTestStore.swift in Sources */,
 				5489C0E12A6FC6A600E1B26C /* FixScene.swift in Sources */,
 				54D744A92A6405960064D79B /* AngleSortTestStore.swift in Sources */,
+				540202882C331CCA00996C8B /* InverseDifferenceSceneView.swift in Sources */,
 				5477AA1E2B1DA95A009407A6 /* ScanBeamListView.swift in Sources */,
 				54EBB0262A5C375800E4E31F /* FixTestStore.swift in Sources */,
 				54D65DE02A73B472004EB898 /* ComplexScene.swift in Sources */,
@@ -614,6 +629,7 @@
 				54A98C442B67CBE800865725 /* SubjScene.swift in Sources */,
 				548F4C9C2B8F43B10086C94F /* RandomSegmSceneView.swift in Sources */,
 				5489C0E32A6FC6B000E1B26C /* FixSceneView.swift in Sources */,
+				540202862C331CBB00996C8B /* InverseDifferenceScene.swift in Sources */,
 				544C3CAE2BB6C14600458727 /* EdgeSceneView.swift in Sources */,
 				54ED9D912A71A34B00E5CBDB /* AngleClockWiseSceneView.swift in Sources */,
 				545D19D52B691CA6002D3C6A /* VectorSceneView.swift in Sources */,
@@ -756,6 +772,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOverlayDebug/iOverlayDebug.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOverlayDebug/Preview Content\"";
@@ -794,6 +811,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iOverlayDebug/iOverlayDebug.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOverlayDebug/Preview Content\"";

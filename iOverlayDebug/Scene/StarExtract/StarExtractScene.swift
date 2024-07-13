@@ -29,6 +29,7 @@ final class StarExtractScene: ObservableObject, SceneContainer {
         .subject,
         .difference,
         .intersect,
+        .inverseDifference,
         .union,
         .xor
     ]
@@ -190,6 +191,8 @@ extension OverlayRule {
             return "union"
         case .difference:
             return "difference"
+        case .inverseDifference:
+            return "inverseDifference"
         case .xor:
             return "xor"
         }
