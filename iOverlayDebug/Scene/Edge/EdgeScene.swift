@@ -101,7 +101,7 @@ final class EdgeScene: ObservableObject, SceneContainer {
         defer {
             self.objectWillChange.send()
         }
-        
+        /*
         let points = editor.points
         let vecs = points.map { $0.point }
         crossVecs.removeAll()
@@ -130,6 +130,7 @@ final class EdgeScene: ObservableObject, SceneContainer {
         let s = a0b0a1 + a0b0b1 + a1b1a0 + a1b1b0
 
         crossColor = edA.xSegment.isCross(other: edB.xSegment) ? .red : .gray
+        
         
         let cross = ScanCrossSolver.debugCross(target: edA.xSegment, other: edB.xSegment)
         var pnts = [Point]()
@@ -178,7 +179,7 @@ final class EdgeScene: ObservableObject, SceneContainer {
             self.connected = "False"
             self.connectedColor = .gray
         }
-        
+         */
     }
     
     
@@ -192,7 +193,7 @@ final class EdgeScene: ObservableObject, SceneContainer {
     }
     
 }
-
+/*
 private extension Point {
     
     var floatString: String {
@@ -255,3 +256,4 @@ private extension XSegment {
     
     
 }
+*/
