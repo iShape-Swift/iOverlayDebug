@@ -30,7 +30,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     @Published
     var power: Float = 1 {
         didSet {
-            let scale = pow(10.0, power)
+            let scale = 0.1 * pow(10.0, power)
             matrix.update(scale: scale)
             for editor in subjEditors {
                 editor.matrix = matrix
@@ -71,7 +71,7 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
     
     func initSize(screenSize: CGSize) {
         if !matrix.screenSize.isIntSame(screenSize) {
-            matrix = Matrix(screenSize: screenSize, scale: pow(10.0, power), inverseY: true)
+            matrix = Matrix(screenSize: screenSize, scale: 0.1 * pow(10.0, power), inverseY: true)
             DispatchQueue.main.async { [weak self] in
                 self?.solve()
             }

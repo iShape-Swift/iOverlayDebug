@@ -43,7 +43,7 @@ struct TwoSegmentSceneView: View {
                 }.frame(maxWidth: 300)
                 Slider(
                     value: $scene.power,
-                    in: 0.1...5
+                    in: 0.01...10
                 ).frame(maxWidth: 300)
                 Spacer()
             }

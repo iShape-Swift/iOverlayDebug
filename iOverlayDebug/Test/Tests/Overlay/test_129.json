@@ -1,0 +1,15 @@
+{
+    "fillRule": 1,
+    "xor" : [],
+    "clip" : [],
+    "subject" : [],
+    "union" : [],
+    "intersect" : [],
+    "difference" : [],
+    "subjPaths": [[
+        [1, -1], [-2, 0], [1, 0], [1, 5], [0, -2]
+    ]],
+    "clipPaths": [[
+        [2, -3], [2, 5], [-1, -2], [-1, -3]
+    ]]
+}
