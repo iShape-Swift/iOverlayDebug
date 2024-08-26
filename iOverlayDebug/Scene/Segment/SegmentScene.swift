@@ -82,23 +82,22 @@ final class SegmentScene: ObservableObject, SceneContainer {
 
         var overlay = Overlay()
         overlay.add(path: path, type: .subject)
-        let segments = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
+        let (segments, fills) = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
 
-        var id = 0
-        for s in segments {
-            let start = matrix.screen(worldPoint: FixVec(s.seg.a).cgPoint)
-            let end = matrix.screen(worldPoint: FixVec(s.seg.b).cgPoint)
+        for i in 0..<segments.count {
+            let s = segments[i]
+            let f = fills[i]
+            let start = matrix.screen(worldPoint: FixVec(s.xSegment.a).cgPoint)
+            let end = matrix.screen(worldPoint: FixVec(s.xSegment.b).cgPoint)
             
             segs.append(
                 SegmentData(
                     id: id,
                     start: start,
                     end: end,
-                    fill: s.fill
+                    fill: f
                 )
             )
-            
-            id += 1
         }
 
     }

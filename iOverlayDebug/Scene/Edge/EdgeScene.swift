@@ -117,15 +117,15 @@ final class EdgeScene: ObservableObject, SceneContainer {
         edgeA = Edge(id: 0, a: screen[0], b: screen[1])
         edgeB = Edge(id: 1, a: screen[2], b: screen[3])
 
-        let edA = ShapeEdge(a: vecs[0], b: vecs[1], count: ShapeCount(subj: 0, clip: 0))
-        let edB = ShapeEdge(a: vecs[2], b: vecs[3], count: ShapeCount(subj: 0, clip: 0))
+        let edA = Segment(xSegment: XSegment(a: vecs[0], b: vecs[1]), count: ShapeCount(subj: 0, clip: 0))
+        let edB = Segment(xSegment: XSegment(a: vecs[2], b: vecs[3]), count: ShapeCount(subj: 0, clip: 0))
 
         let s = edA.xSegment.factor(other: edB.xSegment)
 
         crossColor = edA.xSegment.isCross(other: edB.xSegment) ? .red : .gray
         
         
-        let cross = CrossSolver.cross(target: edA.xSegment, other: edB.xSegment)
+        let cross = CrossSolver.cross(target: edA.xSegment, other: edB.xSegment, radius: 2)
         var pnts = [Point]()
 
         if let cross = cross {

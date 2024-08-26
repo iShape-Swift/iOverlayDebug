@@ -150,23 +150,22 @@ final class TwoSegmentScene: ObservableObject, SceneContainer {
             }
         }
         
-        let segments = overlay.buildSegments(fillRule: rule, solver: solver)
+        let (segments, fills) = overlay.buildSegments(fillRule: rule, solver: solver)
 
-        var id = 0
-        for s in segments {
-            let start = matrix.screen(worldPoint: FixVec(s.seg.a).cgPoint)
-            let end = matrix.screen(worldPoint: FixVec(s.seg.b).cgPoint)
+        for i in 0..<segments.count {
+            let s = segments[i]
+            let f = fills[i]
+            let start = matrix.screen(worldPoint: FixVec(s.xSegment.a).cgPoint)
+            let end = matrix.screen(worldPoint: FixVec(s.xSegment.b).cgPoint)
             
             segs.append(
                 SegmentData(
-                    id: id,
+                    id: i,
                     start: start,
                     end: end,
-                    fill: s.fill
+                    fill: f
                 )
             )
-            
-            id += 1
         }
     }
     

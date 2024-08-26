@@ -86,12 +86,12 @@ final class SplitScene: ObservableObject, SceneContainer {
         var overlay = Overlay()
         overlay.add(path: path, type: .subject)
 
-        let segments = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
+        let (segments, _) = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
         
         var set = Set<FixVec>()
         for seg in segments {
-            set.insert(FixVec(seg.seg.a))
-            set.insert(FixVec(seg.seg.b))
+            set.insert(FixVec(seg.xSegment.a))
+            set.insert(FixVec(seg.xSegment.b))
         }
 
         let points = Array(set)
@@ -103,8 +103,8 @@ final class SplitScene: ObservableObject, SceneContainer {
         }
 
         for seg in segments {
-            let a = matrix.screen(worldPoint: FixVec(seg.seg.a).cgPoint)
-            let b = matrix.screen(worldPoint: FixVec(seg.seg.b).cgPoint)
+            let a = matrix.screen(worldPoint: FixVec(seg.xSegment.a).cgPoint)
+            let b = matrix.screen(worldPoint: FixVec(seg.xSegment.b).cgPoint)
             clean.append(a)
             clean.append(b)
         }

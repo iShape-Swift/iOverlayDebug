@@ -113,13 +113,13 @@ final class TwoSplitScene: ObservableObject, SceneContainer {
             original.formUnion(path)
         }
         
-        let segments = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
+        let (segments, _) = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
         
         var points = Set<Point>()
         
         for seg in segments {
-            points.insert(seg.seg.a)
-            points.insert(seg.seg.b)
+            points.insert(seg.xSegment.a)
+            points.insert(seg.xSegment.b)
         }
         
         points.subtract(original)

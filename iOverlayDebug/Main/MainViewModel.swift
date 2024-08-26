@@ -31,6 +31,7 @@ final class MainViewModel: ObservableObject {
     private let scanBeamScene = ScanBeamScene(id: 18)
     private let edgeScene = EdgeScene(id: 19)
     private let randomSegmScene = RandomSegmScene(id: 20)
+    private let spiralScene = SpiralScene(id: 21)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
@@ -56,7 +57,8 @@ final class MainViewModel: ObservableObject {
         starExtractScene.handler,
         scanBeamScene.handler,
         edgeScene.handler,
-        randomSegmScene.handler
+        randomSegmScene.handler,
+        spiralScene.handler
     ]
 
     @Published
@@ -121,6 +123,8 @@ final class MainViewModel: ObservableObject {
             edgeScene.makeView()
         case 20:
             randomSegmScene.makeView()
+        case 21:
+            spiralScene.makeView()
         default:
             fatalError("scene not set")
         }
@@ -182,6 +186,8 @@ final class MainViewModel: ObservableObject {
             testStore = edgeScene.testStore
         case 20:
             testStore = randomSegmScene.testStore
+        case 21:
+            testStore = spiralScene.testStore
         default:
             break
         }

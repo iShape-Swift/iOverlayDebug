@@ -86,13 +86,13 @@ final class StarScene: ObservableObject, SceneContainer {
         var overlay = Overlay()
         overlay.add(path: sA, type: .subject)
         overlay.add(path: sB, type: .clip)
-        let segments = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
+        let (segments, _) = overlay.buildSegments(fillRule: .evenOdd, solver: .list)
         
         var points = Set<FixVec>()
         
         for seg in segments {
-            points.insert(FixVec(seg.seg.a))
-            points.insert(FixVec(seg.seg.b))
+            points.insert(FixVec(seg.xSegment.a))
+            points.insert(FixVec(seg.xSegment.b))
         }
         
 //        points.subtract(original)
